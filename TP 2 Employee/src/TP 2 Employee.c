@@ -33,6 +33,7 @@ int main(void) {
 
 	int flag = 0;
 
+	int id = 1000;
 
 
 
@@ -82,7 +83,7 @@ int main(void) {
 
 
 
-	 	            		 askEmployee (list,  len);
+	 	            		 askEmployee (list,  len, id);
 
 
 
@@ -94,7 +95,7 @@ int main(void) {
 	 	            	{
 
 
-	 	            		 askEmployee (list,  len);
+	 	            		 askEmployee (list,  len, id);
 
 
 

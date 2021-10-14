@@ -43,7 +43,7 @@ int sortEmployees(Employee list[], int len, int order);//this function sort the 
 int printEmployees(Employee list[], int len);//This function show all the EMPLOYEES
 
 
-int askEmployee (Employee list[], int len);//This function asks for the data
+int askEmployee (Employee list[], int len, int id);//This function asks for the data
 
 
 

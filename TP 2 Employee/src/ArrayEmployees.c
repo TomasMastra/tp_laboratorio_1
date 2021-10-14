@@ -107,11 +107,11 @@ int findEmployeeById(Employee list[], int len, int id)
 	return index;
 }
 
-int askEmployee (Employee list[], int len)
+int askEmployee (Employee list[], int len, int id)
 {
 
 
-	int id=0;
+	//int id=0;
 	char name[51];
 	char lastName[51];
 	float salary;
@@ -126,7 +126,7 @@ int askEmployee (Employee list[], int len)
 	for(i=0;i<len;i++)
 	{
 
-		id=1000+i;
+		id++;
 
 
 
@@ -324,7 +324,7 @@ int removeEmployee(Employee list[], int len, int id)
 int sortEmployees(Employee list[], int len, int order)
 {
 
-	Employee auxProducto;
+	Employee auxEmployee;
 	int i;
 	int j;
 
@@ -355,10 +355,16 @@ if(order==0)
 				{
 					if(list[i].sector > list[j].sector /*|| strcmp(list[i].lastName, list[j].lastName) == 1*/)
 					{
-						auxProducto = list[i];
+						auxEmployee = list[i];
 						list[i] = list[j];
-						list[j] = auxProducto;
-					}
+						list[j] = auxEmployee;
+					}else
+	    				if((strcmp(list[i].lastName, list[j].lastName ) == 1))
+	    				{
+	    					auxEmployee = list[i];
+	    					list[i] = list[j];
+	    					list[j] = auxEmployee;
+	    				}
 				}
 			}
 		}
@@ -373,10 +379,16 @@ if(order==0)
 					{
 						if(list[j].sector > list[i].sector /*|| strcmp(list[i].lastName, list[j].lastName) == 1*/)
 						{
-							auxProducto = list[i];
+							auxEmployee = list[i];
 							list[i] = list[j];
-							list[j] = auxProducto;
-						}
+							list[j] = auxEmployee;
+						}else
+    	    				if((strcmp(list[i].lastName, list[j].lastName ) == 1))
+    	    				{
+    	    					auxEmployee = list[i];
+    	    					list[i] = list[j];
+    	    					list[j] = auxEmployee;
+    	    				}
 					}
 				}
 			}
