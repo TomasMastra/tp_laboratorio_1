@@ -114,6 +114,7 @@ int getString(char* string, char* message, char* messageError, int max)
 			}
 		}
 
+		 putCaps(buffer);
 
 		strcpy(string, buffer);
 
@@ -176,6 +177,34 @@ int validateLetters(char *string)
 
 	return ret;
 
+}
+
+int putCaps(char* string)
+{
+
+	int ret = -1;
+	int i;
+	char buffer[21];
+
+	strcpy(buffer, string);
+
+
+	for(i=0; buffer[i]!='\0' ; i++)
+{
+
+        buffer[i] = tolower(buffer[i]);
+
+}
+	buffer[0] = toupper(buffer[0]);
+
+	strcpy(string, buffer);
+
+
+
+
+
+
+	return ret;
 }
 
 

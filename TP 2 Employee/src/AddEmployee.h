@@ -33,6 +33,8 @@ void subMenu(Employee list[], int len);//This function shows a sub menu with oth
 
 int validateLetters(char* string);//This function validate caps for getString
 
+int putCaps(char* string);
+
 
 
 
