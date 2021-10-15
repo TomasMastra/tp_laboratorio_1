@@ -37,11 +37,7 @@ int initEmployees(Employee list[], int len) //INICIALIZA TODOS LOS ISEMPTY EN -1
 
 	    list[i].isEmpty = EMPTY;
 
-	    if(list[i].isEmpty == EMPTY)
-	    {
 
-    	//break;
-	    }
 
 	    }
 
@@ -77,7 +73,6 @@ int findEmployeeById(Employee list[], int len, int id)
 
 			index = i;
 
-			list[i].id= index + 1000;
 
 
 
@@ -111,7 +106,6 @@ int askEmployee (Employee list[], int len, int id)
 {
 
 
-	//int id=0;
 	char name[51];
 	char lastName[51];
 	float salary;
@@ -126,7 +120,6 @@ int askEmployee (Employee list[], int len, int id)
 	for(i=0;i<len;i++)
 	{
 
-		id++;
 
 
 
@@ -138,29 +131,29 @@ int askEmployee (Employee list[], int len, int id)
 
 
 
-	getInt(&sector, "Enter the sector:\n"
+	getInt(&sector, "Ingrese el sector:\n"
 							"1.Sector\n"
 							"2.Sector\n"
 							"3. Sector\n",
-							"Error - invalid option. Enter the correct sector:\n"
+							"Error - Opcion incorrecta, Ingrese el sector:\n"
 							"1.Sector\n"
 							"2.Sector\n"
 							"3.Sector\n", 1, 3);
 
-				getString(name, "Enter the name: ", "ERROR, only 50 characters and letters only, Enter the name: ", 51);
+				getString(name, "Ingrese el nombre: ", "ERROR, Solo 50 caracteres y letras, Ingrese el nombre: ", 51);
 
-				getString(lastName, "Enter the last name: ", "ERROR, only 50 characters and letters only, Enter the last name: ", 51);
+				getString(lastName, "Ingrese el apellido: ", "ERROR, Solo 50 caracteres y letras, ingrese el apellido: ", 51);
 
-				getFloat(&salary, "Enter the salary (10000 - 120000):\n","Error - ERROR, Enter the sasary (10000 - 120000) :\n", 10000, 120000);
+				getFloat(&salary, "Ingrese el salario (10000 - 120000):\n","Error - ERROR, Ingrese el salario (10000 - 120000) :\n", 10000, 120000);
 
 				addEmployee( list,  len,  id,  name,  lastName,  salary,  sector);
 
 				 break;
 	}else
-		if(i==1000)
+		if(i==999)
 	{
 
-		printf("There is no space, delete an employee\n");
+		printf("No hay espacio\n");
 		break;
 	}
 	}
@@ -213,13 +206,12 @@ int addEmployee(Employee list[], int len, int id, char name[], char lastName[], 
 
 
 
-		 getChar(&confirm, "Enter S to load employee: ");
+		 getChar(&confirm, "Ingrese S para cargar el empleado: ");
 
 
 
 		if(confirm ==  's' || confirm == 'S')
 		{
-			//list[i].id = id;
 
 		list[i].sector=sector;
 
@@ -229,9 +221,12 @@ int addEmployee(Employee list[], int len, int id, char name[], char lastName[], 
 
 		list[i].salary = salary;
 
+		list[i].isEmpty = 1;
 
 
-		printf("The employee was charged correctly\n");
+
+
+		printf("El empleado fue cargado\n");
 
 	}else
 	{
@@ -239,7 +234,7 @@ int addEmployee(Employee list[], int len, int id, char name[], char lastName[], 
 
 
 
-		printf("The employee wasn't charged\n");
+		printf("No se cargo el empleado\n");
 
 
 	}
@@ -291,9 +286,9 @@ int removeEmployee(Employee list[], int len, int id)
 
 
 
-		        getInt(&idDelete, "Enter the ID you are going to remove: ", "ERROR, Enter the ID you are going to remove: ", 1000, 2000);
+		        getInt(&idDelete, "Ingrese el ID para eliminar: ", "ERROR, Ingrese la ID para eliminar: ", 1000, 2000);
 
-		        printf("la id a eliminar es %d\n", idDelete);
+		        printf("la ID a eliminar es %d\n", idDelete);
 
 
 		             i=0;
@@ -304,10 +299,10 @@ int removeEmployee(Employee list[], int len, int id)
 		                {
 		                    list[i].isEmpty=EMPTY;
 
-		    		        printf("The ID is  %d\n", idDelete); //////////////////
 
 
-		                    printf("Employee removed successfully  %d  \n\n", list[i].id);
+
+		                    printf("Empleado eliminado correctamente  %d  \n\n", list[i].id);
 
 		                    ret = 1;
 		                    break;
@@ -337,7 +332,7 @@ int sortEmployees(Employee list[], int len, int order)
 
 	len = X;
 
-	getInt(&order, "Enter the order (0.desc - 1.asc)", "ERROR, Enter the order (0.desc - 1.asc)", 0,1);
+	getInt(&order, "Ingrese el orden (0.desc - 1.asc)", "ERROR, Ingrese el orden (0.desc - 1.asc)", 0,1);
 
 
 
@@ -353,7 +348,7 @@ if(order==0)
 			{
 				if(list[i].isEmpty == 1 && list[j].isEmpty == 1)
 				{
-					if(list[i].sector > list[j].sector /*|| strcmp(list[i].lastName, list[j].lastName) == 1*/)
+					if(list[i].sector > list[j].sector )
 					{
 						auxEmployee = list[i];
 						list[i] = list[j];
@@ -410,8 +405,8 @@ int printEmployees(Employee list[], int len)
 	int i;
 	int ret = -1;
 
-	printf("\nShowing product list...\n\n"
-			   "%-5s %-20s %-20s %-20s %-20s\n", "ID", "last name", "Name", "Sector", "Salary");
+	printf("\nLista de empleados...\n\n"
+			   "%-5s %-20s %-20s %-20s %-20s\n", "ID", "Apellido", "Tomas", "Sector", "Salario");
 
 	for(i=0;i<len;i++)
 	{

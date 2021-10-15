@@ -242,7 +242,7 @@ void modifyEmployee(Employee list[], int len)
 
 
 
-			    getInt(&idAsk, "Enter the ID to modify\n ", "ERROR, Enter the ID to modify\n", 1000, 2000);
+			    getInt(&idAsk, "Ingrese el ID a modificar\n ", "ERROR, Ingrese el ID a modificar\n", 1000, 2000);
 
 
 
@@ -254,7 +254,7 @@ void modifyEmployee(Employee list[], int len)
 
 		    		        if(idAsk==list[i].id)
 		    		        {
-		    				    getInt(&optionModify, "Enter the option to modify (1.NAME 2.LAST NAME 3.SECTOR 4.SALARY)\n ", "ERROR, Enter the option to modify (1.NAME 2.LAST NAME 3.SECTOR 4.SALARY)\n", 1, 4);
+		    				    getInt(&optionModify, "Ingresa la opcion para modificar (1.NOMBRE 2.APELLIDO 3.SECTOR 4.SALRIO)\n ", "ERROR, Ingrese la opcion para modificar (1.NOMBRE 2.APELLIDO 3.SECTOR 4.SALARIO)\n", 1, 4);
 
 
 
@@ -262,18 +262,18 @@ void modifyEmployee(Employee list[], int len)
 		    		        	{
 
 		    		        	case 1:
-		    		        		getString(list[i].name, "Enter the name", "ERROR, enter the name", 51);
+		    		        		getString(list[i].name, "Ingrese el nombre", "ERROR, Ingrese el nombre", 51);
 		    		        	break;
 		    		        	case 2:
-		    		        		getString(list[i].lastName, "enter the  last name", "ERROR, enter the last name", 51);
+		    		        		getString(list[i].lastName, "Ingrese el apellido", "ERROR, Ingrese el apellido", 51);
 
 		    		        	break;
 		    		        	case 3:
-		    		        		getInt(&list[i].sector, "Enter the new sector", "ERROR, Enter the new sector", 1, 3);
+		    		        		getInt(&list[i].sector, "Ingrese el sector (1 - 3)", "ERROR, Ingrese el sector (1 - 3)", 1, 3);
 
 		    		        	break;
 		    		        	case 4:
-		    		        		getFloat(&list[i].salary, "Enter the new salary", "ERROR, Enter the new salary", 10000, 120000);
+		    		        		getFloat(&list[i].salary, "Ingrese el salario (10000 - 12000)", "ERROR, Ingrese el salario (10000 - 12000)", 10000, 120000);
 		    		        	break;
 
 
@@ -323,8 +323,8 @@ float averageSalary(Employee list[], int len)
 
 	//printf("-------------------------------------\n");
 
-	printf("The sum of the SALARY is %d\n", sum);
-	printf("The average SALARY is %d\n", average);
+	printf("La suma del salario es %d\n", sum);
+	printf("El salario promedio es %d\n", average);
 
 
 	return average;
@@ -339,8 +339,8 @@ void printAverage(Employee list[], int len)
 
 	moreAverage= averageSalary(list, len);
 
-	printf("\nEmployees who are above average:\n\n"
-				   "%-5s %-20s %-20s %-20s %-20s\n", "ID", "last name", "Name", "Sector", "Salary");
+	printf("\nEmpleados por encima del promedio:\n\n"
+				   "%-5s %-20s %-20s %-20s %-20s\n", "ID", "Apellido", "Nombre", "Sector", "Salario");
 	for(i=0;i<len;i++)
 	{
 
@@ -368,14 +368,14 @@ void subMenu(Employee list[], int len)
 
 	do{
 		getInt(&option, "-------------------------------------\n"
-				 "1. Show all employees sorted by sector and last name\n"
-				 "2. Total, average salaries and how many employees are above the average salary\n"
-				 "3. EXIT\n"
+				 "1. Mostrar empleados ordenados por sector y apellido\n"
+				 "2. Total, salario promedio y cuantos empleados estan por encima del promedio\n"
+				 "3. SALIR\n"
 				 "-------------------------------------\n",
 				 "-------------------------------------\n"
-				 "1. Show all employees sorted by sector and last name\n"
-				 "2. Total, average salaries and how many employees are above the average salary\n"
-				 "3. EXIT\n"
+				 "1. Mostrar empleados ordenados por sector y apellido\n"
+				 "2. Total, salario promedio y cuantos empleados estan por encima del promedio\n"
+				 "3. SALIR\n"
 				 "-------------------------------------\n",1,3);
 
 

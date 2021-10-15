@@ -49,65 +49,38 @@ int main(void) {
 
 
 
+	 initEmployees( list,  len); //INICIALIZA TODOS LOS ISEMPTY EN -1
 
 
 	 	    do
 	 	    {
 
 	 	    	getInt(&option, "-------------------------------------\n"
-	 	    								 "1. Enter an employee\n"
-	 	    								 "2. Delete an employee\n"
-	 	    								 "3. Modify an employee\n"
+	 	    								 "1. ALTA\n"
+	 	    								 "2. BAJA\n"
+	 	    								 "3. MODIFICAR empleado\n"
 	 	    								 "4. SUB MENU\n"
-	 	    								 "5. EXIT\n"
+	 	    								 "5. SALIR\n"
 	 	    								 "-------------------------------------\n",
 	 	    								 "Enter the option: "
 	 	    								 "-------------------------------------\n"
-											 "1. Enter an employee\n"
-											 "2. Delete an employee\n"
-											 "3. Modify an employee\n"
+											 "1. ALTA\n"
+											 "2. BAJA\n"
+											 "3. MODIFICAR empleado\n"
 											 "4. SUB MENU\n"
-											 "5. EXIT\n"
+											 "5. SALIR\n"
 	 	    								 "-------------------------------------\n"
 	 	    								 "Invalid option, Enter the correct option: ", 1, 5);
 
 	 	        switch(option)
 	 	        {
 	 	            case 1:
-	 	            	if(flag==0)
-	 	            	{
-
-
-	 	            		 initEmployees( list,  len); //INICIALIZA TODOS LOS ISEMPTY EN -1
-
-
 
 
 	 	            		 askEmployee (list,  len, id);
 
-
-
-
-
-
+	 	            		 id++;
 	 	            		flag = 1;
-	 	            	}else
-	 	            	{
-
-
-	 	            		 askEmployee (list,  len, id);
-
-
-
-
-
-
-
-
-	 	            	}
-
-
-
 
 	 	            break;
 	 	            case 2:
@@ -121,6 +94,7 @@ int main(void) {
 	 	            	}
 	 	            	else
 	 	            	{
+	 	            		printf("No ingreso un empleado\n");
 
 
 	 	            	}
@@ -131,6 +105,11 @@ int main(void) {
 	 	            	{
 
 	 	            	 modifyEmployee(list,  len);
+
+	 	            	}else
+	 	            	{
+
+	 	            		printf("No ingreso un empleado\n");
 
 	 	            	}
 
@@ -143,6 +122,10 @@ int main(void) {
 	 	            	{
 
 	 	            	 subMenu(list, len);
+
+	 	            	}else
+	 	            	{
+	 	            		printf("No ingreso un empleado\n");
 
 	 	            	}
 
