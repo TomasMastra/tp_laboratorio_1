@@ -94,7 +94,7 @@ int main(void) {
 	 	            	}
 	 	            	else
 	 	            	{
-	 	            		printf("No ingreso un empleado\n");
+	 	            		printf("Enter an employee\n");
 
 
 	 	            	}
@@ -109,7 +109,7 @@ int main(void) {
 	 	            	}else
 	 	            	{
 
-	 	            		printf("No ingreso un empleado\n");
+	 	            		printf("Enter an employee\n");
 
 	 	            	}
 
@@ -125,7 +125,7 @@ int main(void) {
 
 	 	            	}else
 	 	            	{
-	 	            		printf("No ingreso un empleado\n");
+	 	            		printf("Enter an employee\n");
 
 	 	            	}
 
