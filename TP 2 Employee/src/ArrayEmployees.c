@@ -131,20 +131,20 @@ int askEmployee (Employee list[], int len, int id)
 
 
 
-	getInt(&sector, "Ingrese el sector:\n"
+	getInt(&sector, "Enter the sector:\n"
 							"1.Sector\n"
 							"2.Sector\n"
 							"3. Sector\n",
-							"Error - Opcion incorrecta, Ingrese el sector:\n"
+							"Error - Invalid option, Enter the sector:\n"
 							"1.Sector\n"
 							"2.Sector\n"
 							"3.Sector\n", 1, 3);
 
-				getString(name, "Ingrese el nombre: ", "ERROR, Solo 50 caracteres y letras, Ingrese el nombre: ", 51);
+				getString(name, "Enter the name: ", "ERROR, only 50 characters and letters, Enter the name: ", 51);
 
-				getString(lastName, "Ingrese el apellido: ", "ERROR, Solo 50 caracteres y letras, ingrese el apellido: ", 51);
+				getString(lastName, "Enter the last name: ", "ERROR, only 50 characters and letters, Enter the last name: ", 51);
 
-				getFloat(&salary, "Ingrese el salario (10000 - 120000):\n","Error - ERROR, Ingrese el salario (10000 - 120000) :\n", 10000, 120000);
+				getFloat(&salary, "Enter the salary (10000 - 120000):\n","Error - ERROR, Enter the salary (10000 - 120000) :\n", 10000, 120000);
 
 				addEmployee( list,  len,  id,  name,  lastName,  salary,  sector);
 
@@ -206,7 +206,7 @@ int addEmployee(Employee list[], int len, int id, char name[], char lastName[], 
 
 
 
-		 getChar(&confirm, "Ingrese S para cargar el empleado: ");
+		 getChar(&confirm, "Enter S to load the employee: ");
 
 
 
@@ -226,7 +226,7 @@ int addEmployee(Employee list[], int len, int id, char name[], char lastName[], 
 
 
 
-		printf("El empleado fue cargado\n");
+		printf("The employee was charged\n");
 
 	}else
 	{
@@ -234,7 +234,7 @@ int addEmployee(Employee list[], int len, int id, char name[], char lastName[], 
 
 
 
-		printf("No se cargo el empleado\n");
+		printf("The employee wasn't charged\n");
 
 
 	}
@@ -286,9 +286,9 @@ int removeEmployee(Employee list[], int len, int id)
 
 
 
-		        getInt(&idDelete, "Ingrese el ID para eliminar: ", "ERROR, Ingrese la ID para eliminar: ", 1000, 2000);
+		        getInt(&idDelete, "Enter the ID to delete: ", "ERROR, Enter the ID to delete: ", 1000, 2000);
 
-		        printf("la ID a eliminar es %d\n", idDelete);
+		        printf("The ID is %d\n", idDelete);
 
 
 		             i=0;
@@ -302,7 +302,7 @@ int removeEmployee(Employee list[], int len, int id)
 
 
 
-		                    printf("Empleado eliminado correctamente  %d  \n\n", list[i].id);
+		                    printf("The employee was deleted  %d  \n\n", list[i].id);
 
 		                    ret = 1;
 		                    break;
@@ -332,7 +332,7 @@ int sortEmployees(Employee list[], int len, int order)
 
 	len = X;
 
-	getInt(&order, "Ingrese el orden (0.desc - 1.asc)", "ERROR, Ingrese el orden (0.desc - 1.asc)", 0,1);
+	getInt(&order, "Enter the order (0.desc - 1.asc)", "ERROR, Enter the order (0.desc - 1.asc)", 0,1);
 
 
 
@@ -405,8 +405,8 @@ int printEmployees(Employee list[], int len)
 	int i;
 	int ret = -1;
 
-	printf("\nLista de empleados...\n\n"
-			   "%-5s %-20s %-20s %-20s %-20s\n", "ID", "Apellido", "Tomas", "Sector", "Salario");
+	printf("\nList of employees...\n\n"
+			   "%-5s %-20s %-20s %-20s %-20s\n", "ID", "Last name", "Name", "Sector", "Salary");
 
 	for(i=0;i<len;i++)
 	{
