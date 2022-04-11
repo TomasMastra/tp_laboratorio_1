@@ -65,8 +65,8 @@ setbuf(stdout, NULL);
 		        printf("\n1. ingresar kilometros KM = %d \n", kilometros);
 		        printf("------------------------------------------------------------------------\n");
 
-		        printf("2. ingresar precio de vuelos (Aerolineas = %.2f "
-		        		"Latam = %.2f )\n", precioAerolineas, precioLatam);
+		        printf("2. ingresar precio de vuelos (Aerolineas = $%.2f "
+		        		"Latam = $%.2f )\n", precioAerolineas, precioLatam);
 		        printf("------------------------------------------------------------------------\n");
 
 		        printf("3. Calcular todos los costos:\n");
