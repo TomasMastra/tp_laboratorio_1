@@ -96,8 +96,22 @@ setbuf(stdout, NULL);
 		            case 2:
 
 
+		            	printf("Ingrese el precio de (1.Aerolineas o 2.Latam):");
+		            	scanf("%d", &option);
+		            	while(option <1 || option >2 )
+		            	{
+		            		printf("ERROR, Ingrese el precio de (1.Aerolineas o 2.Latam):");
+		            				            	scanf("%d", &option);
+		            	}
+
+		            	if(option == 1)
+		            	{
 		            	precioAerolineas = PedirPrecioAerolineas(precioAerolineas);
+		            	}
+		            	else
+		            	{
 		            	precioLatam = PedirPrecioLatam(precioLatam);
+		            	}
 		            	flagPedirPrecio = 1;
 
 
