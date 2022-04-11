@@ -74,7 +74,8 @@ setbuf(stdout, NULL);
 		            "b) Tarjeta de crédito (interés 25)\n"
 		            "c) Bitcoin (1BTC -> 4606954.55 Pesos Argentinos)\n"
 		            "d) Mostrar precio por km (precio unitario)\n"
-		            "e) Mostrar diferencia de precio ingresada (Latam - Aerolíneas) \n\n");
+		            "e) Mostrar diferencia de precio ingresada (Latam - Aerolíneas)\n"
+		        	" Ingrese 3 para actualizar los precios \n\n");
 		        printf("------------------------------------------------------------------------\n");
 
 		        printf("4. Informar Resultados\n"
@@ -123,14 +124,14 @@ setbuf(stdout, NULL);
 		            	if(flagPedirPrecio == 1 && flagPedirKilometros == 1)
 		            		{
 
-		            		  precioDebitoLatam = CalcularDebitoLatam(precioLatam);
-		            		  precioCreditoLatam = CalcularCreditoLatam(precioLatam);
-		            		  precioBitcoinLatam = CalcularBitCoinLatam(precioLatam);
-		            		  precioUnitarioLatam = CalcularPrecioUnitarioLatam( precioLatam,  kilometros);
-		            		  precioDebitoAerolineas = CalcularDebitoAerolineas(precioAerolineas);
-		            		  precioCreditoAerolineas = CalcularCreditoAerolineas(precioAerolineas);
-		            		  precioBitcoinAerolineas = CalcularBitCoinAerolineas(precioAerolineas);
-		            		  precioUnitarioAerolineas = CalcularPrecioUnitarioAerolineas( precioAerolineas,  kilometros);
+		            		  precioDebitoLatam = CalcularDebito(precioLatam);
+		            		  precioCreditoLatam = CalcularCredito(precioLatam);
+		            		  precioBitcoinLatam = CalcularBitCoin(precioLatam);
+		            		  precioUnitarioLatam = CalcularPrecioUnitario( precioLatam,  kilometros);
+		            		  precioDebitoAerolineas = CalcularDebito(precioAerolineas);
+		            		  precioCreditoAerolineas = CalcularCredito(precioAerolineas);
+		            		  precioBitcoinAerolineas = CalcularBitCoin(precioAerolineas);
+		            		  precioUnitarioAerolineas = CalcularPrecioUnitario( precioAerolineas,  kilometros);
 		            		  diferenciaPrecio = CalcularDiferenciaPrecio(precioAerolineas, precioLatam);
 
 
@@ -166,14 +167,14 @@ setbuf(stdout, NULL);
 		            	precioLatam = 115000;
 		            	precioAerolineas = 134870;
 
-		            	precioDebitoLatam = CalcularDebitoLatam(precioLatam);
-		            	precioCreditoLatam = CalcularCreditoLatam(precioLatam);
-		            	precioBitcoinLatam = CalcularBitCoinLatam(precioLatam);
-		            	precioUnitarioLatam = CalcularPrecioUnitarioLatam( precioLatam,  kilometros);
-		            	precioDebitoAerolineas = CalcularDebitoAerolineas(precioAerolineas);
-		            	precioCreditoAerolineas = CalcularCreditoAerolineas(precioAerolineas);
-		            	precioBitcoinAerolineas = CalcularBitCoinAerolineas(precioAerolineas);
-		            	precioUnitarioAerolineas = CalcularPrecioUnitarioAerolineas( precioAerolineas,  kilometros);
+		            	precioDebitoLatam = CalcularDebito(precioLatam);
+		            	precioCreditoLatam = CalcularCredito(precioLatam);
+		            	precioBitcoinLatam = CalcularBitCoin(precioLatam);
+		            	precioUnitarioLatam = CalcularPrecioUnitario( precioLatam,  kilometros);
+		            	precioDebitoAerolineas = CalcularDebito(precioAerolineas);
+		            	precioCreditoAerolineas = CalcularCredito(precioAerolineas);
+		            	precioBitcoinAerolineas = CalcularBitCoin(precioAerolineas);
+		            	precioUnitarioAerolineas = CalcularPrecioUnitario( precioAerolineas,  kilometros);
 		            	diferenciaPrecio = CalcularDiferenciaPrecio(precioAerolineas, precioLatam);
 	            		mostrarResultados(precioDebitoLatam,  precioCreditoLatam,  precioBitcoinLatam,  precioUnitarioLatam,  precioDebitoAerolineas,  precioCreditoAerolineas,  precioBitcoinAerolineas,  precioUnitarioAerolineas,  diferenciaPrecio);
 

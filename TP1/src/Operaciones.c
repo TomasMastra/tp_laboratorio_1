@@ -17,105 +17,58 @@
 #endif /* OPERACIONES_C_ */
 
 
-float CalcularDebitoLatam(float precioLatam)
+float CalcularDebito(float precio)
 {
 
-	float precioDebitoLatam;
+	float precioDebito;
 
-	precioDebitoLatam = precioLatam * 0.9;
-
-
+	precioDebito = precio * 0.9;
 
 
-	return precioDebitoLatam;
+
+
+	return precioDebito;
 }
-float CalcularCreditoLatam(float precioLatam)
+float CalcularCredito(float precio)
 {
-	float precioCreditoLatam;
+	float precioCredito;
 
 
-	precioCreditoLatam = precioLatam * 1.25;
+	precioCredito = precio * 1.25;
 
 
 
 
-	return precioCreditoLatam;
+	return precioCredito;
 }
-float CalcularBitCoinLatam(float precioLatam)
+float CalcularBitCoin(float precio)
 {
 
-	float precioBitcoinLatam;
+	float precioBitcoin;
 	float bitcoin;
 
 	bitcoin = 4606954.55;
 
 
-	precioBitcoinLatam = precioLatam / bitcoin;
+	precioBitcoin = precio / bitcoin;
 
 
-	return precioBitcoinLatam;
+	return precioBitcoin;
 }
-float CalcularPrecioUnitarioLatam(float precioLatam, int kilometros)
+float CalcularPrecioUnitario(float precio, int kilometros)
 {
-	float precioUnitarioLatam;
+	float precioUnitario;
 
-	precioUnitarioLatam = precioLatam / kilometros;
+	precioUnitario = precio / kilometros;
 
 
 
-	return precioUnitarioLatam;
+	return precioUnitario;
 }
 
 ///////////////////////////
 
-float CalcularDebitoAerolineas(float precioAerolineas)
-{
 
-	float precioDebitoAerolineas;
-
-	precioDebitoAerolineas = precioAerolineas * 0.9;
-
-
-
-
-	return precioDebitoAerolineas;
-}
-float CalcularCreditoAerolineas(float precioAerolineas)
-{
-	float precioCreditoAerolineas;
-
-
-	precioCreditoAerolineas = precioAerolineas * 1.25;
-
-
-
-
-	return precioCreditoAerolineas;
-}
-float CalcularBitCoinAerolineas(float precioAerolineas)
-{
-
-	float precioBitcoinAerolineas;
-	float bitcoin;
-
-	bitcoin = 4606954.55;
-
-
-	precioBitcoinAerolineas = precioAerolineas / bitcoin;
-
-
-	return precioBitcoinAerolineas;
-}
-float CalcularPrecioUnitarioAerolineas(float precioAerolineas, int kilometros)
-{
-	float precioUnitarioAerolineas;
-
-	precioUnitarioAerolineas = precioAerolineas / kilometros;
-
-
-
-	return precioUnitarioAerolineas;
-}
 
 
 float CalcularDiferenciaPrecio(float precioAerolineas, float precioLatam)
@@ -146,12 +99,12 @@ int mostrarResultados(float precioDebitoLatam, float precioCreditoLatam, float p
 			            			printf("Latam: \n"
 										"a) Precio con tarjeta de débito: %.2f \n"
 										"b) Precio con tarjeta de crédito: %.2f \n"
-										"c) Precio pagando con bitcoin : %.2f \n"
+										"c) Precio pagando con bitcoin : %.5f \n"
 										"d) Precio unitario: %.2f \n"
 										"Aerolíneas:\n"
 										"a) Precio con tarjeta de débito: %.2f \n"
 										"b) Precio con tarjeta de crédito: %.2f \n"
-										"c) Precio pagando con bitcoin : %.2f \n"
+										"c) Precio pagando con bitcoin : %.5f \n"
 										"d) Precio unitario: %.2f \n"
 										"La diferencia de precio es : %.2f \n\n", precioDebitoLatam, precioCreditoLatam, precioBitcoinLatam, precioUnitarioLatam, precioDebitoAerolineas, precioCreditoAerolineas, precioBitcoinAerolineas, precioUnitarioAerolineas, diferenciaPrecio);
 
