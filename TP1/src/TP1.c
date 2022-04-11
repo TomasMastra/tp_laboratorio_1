@@ -61,39 +61,23 @@ setbuf(stdout, NULL);
 	 do  //a) Tarjeta de débito (descuento 10%)
 	 {
 
-	            printf("------------------------------------------------------------------------\n");
-		        printf("\n1. ingresar kilometros KM = %d \n\n", kilometros);
+
+		        printf("\n1. ingresar kilometros KM = %d \n", kilometros);
 		        printf("------------------------------------------------------------------------\n");
 
 		        printf("2. ingresar precio de vuelos (Aerolineas = %.2f "
-		        		"Latam = %.2f )\n-Precio vuelo Aerolineas: \n-Precio vuelo Latam \n\n", precioAerolineas, precioLatam);
+		        		"Latam = %.2f )\n", precioAerolineas, precioLatam);
 		        printf("------------------------------------------------------------------------\n");
 
-		        printf("3. Calcular todos los costos:\n"
-		            "a) Tarjeta de débito (descuento 10)\n"
-		            "b) Tarjeta de crédito (interés 25)\n"
-		            "c) Bitcoin (1BTC -> 4606954.55 Pesos Argentinos)\n"
-		            "d) Mostrar precio por km (precio unitario)\n"
-		            "e) Mostrar diferencia de precio ingresada (Latam - Aerolíneas)\n"
-		        	" Ingrese 3 para actualizar los precios \n\n");
+		        printf("3. Calcular todos los costos:\n");
 		        printf("------------------------------------------------------------------------\n");
 
-		        printf("4. Informar Resultados\n"
-		        	   " Latam: \n"
-		        	   "a) Precio con tarjeta de débito: %.2f \n"
-		        		"b) Precio con tarjeta de crédito: %.2f \n"
-		        		"c) Precio pagando con bitcoin : %.2f \n"
-		        		"d) Precio unitario: %.2f \n"
-		        		"Aerolíneas:\n"
-		        		"a) Precio con tarjeta de débito: %.2f \n"
-		        		"b) Precio con tarjeta de crédito: %.2f \n"
-		        		"c) Precio pagando con bitcoin : %.2f \n"
-		        		"d) Precio unitario: %.2f \n"
-		        		"La diferencia de precio es : %.2f \n\n", precioDebitoLatam, precioCreditoLatam, precioBitcoinLatam, precioUnitarioLatam, precioDebitoAerolineas, precioCreditoAerolineas, precioBitcoinAerolineas, precioUnitarioAerolineas, diferenciaPrecio);
+		        printf("4. Informar Resultados\n");
+
 
 		        printf("------------------------------------------------------------------------\n");
 
-		        printf("5. Carga forzada de datos\n\n");
+		        printf("5. Carga forzada de datos\n");
 		        printf("------------------------------------------------------------------------\n");
 
 		        printf("6. Salir\n");
@@ -140,7 +124,7 @@ setbuf(stdout, NULL);
 
 		            		}else
 			            	 {
-		            			printf("----------------------------------\n");
+		            			printf("-----------------------------------\n");
 		            			printf("Ingrese los kilometros o el precio\n");
 		            			printf("-----------------------------------\n");
 			            	 }
@@ -155,9 +139,9 @@ setbuf(stdout, NULL);
 
 		            	}else
 		            	 {
-		            		printf("-----------------------------------\n");
+		            		printf("------------------------------------------------------------\n");
 		            		printf("Ingrese los kilometros, el precio o no calculo los precios\n");
-		            		printf("-----------------------------------\n");
+		            		printf("------------------------------------------------------------\n");
 		            	 }
 
 		            break;

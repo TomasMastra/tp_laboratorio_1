@@ -97,16 +97,16 @@ int mostrarResultados(float precioDebitoLatam, float precioCreditoLatam, float p
 
 
 			            			printf("Latam: \n"
-										"a) Precio con tarjeta de débito: %.2f \n"
-										"b) Precio con tarjeta de crédito: %.2f \n"
-										"c) Precio pagando con bitcoin : %.5f \n"
-										"d) Precio unitario: %.2f \n"
+										"a) Precio con tarjeta de débito: $%.2f \n"
+										"b) Precio con tarjeta de crédito: $%.2f \n"
+										"c) Precio pagando con bitcoin: $%.5f \n"
+										"d) Precio unitario: $%.2f \n"
 										"Aerolíneas:\n"
-										"a) Precio con tarjeta de débito: %.2f \n"
-										"b) Precio con tarjeta de crédito: %.2f \n"
-										"c) Precio pagando con bitcoin : %.5f \n"
-										"d) Precio unitario: %.2f \n"
-										"La diferencia de precio es : %.2f \n\n", precioDebitoLatam, precioCreditoLatam, precioBitcoinLatam, precioUnitarioLatam, precioDebitoAerolineas, precioCreditoAerolineas, precioBitcoinAerolineas, precioUnitarioAerolineas, diferenciaPrecio);
+										"a) Precio con tarjeta de débito: $%.2f \n"
+										"b) Precio con tarjeta de crédito: $%.2f \n"
+										"c) Precio pagando con bitcoin: $%.5f \n"
+										"d) Precio unitario: $%.2f \n"
+										"La diferencia de precio es: $%.2f \n\n", precioDebitoLatam, precioCreditoLatam, precioBitcoinLatam, precioUnitarioLatam, precioDebitoAerolineas, precioCreditoAerolineas, precioBitcoinAerolineas, precioUnitarioAerolineas, diferenciaPrecio);
 
 
 

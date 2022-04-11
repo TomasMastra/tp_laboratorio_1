@@ -13,10 +13,10 @@
 #endif /* OPERACIONES_H_ */
 
 
-float CalcularDebito(float precioLatam);  //Esta funcion calcula el viaje de Latam con un 10% de descuento usando una tarjeta de debito, multiplico el precio del viaje * 0.90
-float CalcularCredito(float precioLatam); 	//Esta funcion calcula el viaje de Latam con un 25% de descuento usando una tarjeta de credito, multiplico el precio del pasaje * 1.25
-float CalcularBitCoin(float precioLatam);  //Esta funcion calcula el viaje de Latam en Bitcoins (1BTC -> 4606954.55 Pesos Argentinos)
-float CalcularPrecioUnitario(float precioLatam, int kilometros); //Calcula el precio por cada kilometro de la aerolinea Latam (COSTO DEL VIAJE / KILOMETROS)
+float CalcularDebito(float precioLatam);  //Esta funcion calcula el viaje con un 10% de descuento usando una tarjeta de debito, multiplico el precio del viaje * 0.90
+float CalcularCredito(float precioLatam); 	//Esta funcion calcula el viaje  con un 25% de descuento usando una tarjeta de credito, multiplico el precio del pasaje * 1.25
+float CalcularBitCoin(float precioLatam);  //Esta funcion calcula el viaje  en Bitcoins (1BTC -> 4606954.55 Pesos Argentinos)
+float CalcularPrecioUnitario(float precioLatam, int kilometros); //Calcula el precio por cada kilometro  (COSTO DEL VIAJE / KILOMETROS)
 
 
 

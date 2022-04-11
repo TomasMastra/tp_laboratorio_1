@@ -35,11 +35,11 @@ int PedirKilometros(int kilometros)
 int PedirPrecioLatam(int precioLatam)
 {
 
-	printf("Ingese el precio de Latam (minimo $1000): ");
+	printf("Ingese el precio de Latam (minimo $10000): ");
 	scanf("%d", &precioLatam);
-	while(precioLatam <1000)
+	while(precioLatam <10000)
 	{
-		printf("ERROR, Ingese el precio de Latam (minimo $1000): ");
+		printf("ERROR, Ingese el precio de Latam (minimo $10000): ");
 		scanf("%d", &precioLatam);
 
 	}
@@ -51,11 +51,11 @@ int PedirPrecioLatam(int precioLatam)
 int PedirPrecioAerolineas(int precioAerolineas)
 {
 
-	printf("Ingrese el precio de Aerolineas(minimo $1000): ");
+	printf("Ingrese el precio de Aerolineas(minimo $10000): ");
 	scanf("%d", &precioAerolineas);
-	while(precioAerolineas <1000)
+	while(precioAerolineas <10000)
 	{
-		printf("ERROR, Ingese el precio de Aerolineas (minimo $1000): ");
+		printf("ERROR, Ingese el precio de Aerolineas (minimo $10000): ");
 		scanf("%d", &precioAerolineas);
 
 	}
