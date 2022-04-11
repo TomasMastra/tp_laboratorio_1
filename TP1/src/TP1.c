@@ -26,7 +26,8 @@ setbuf(stdout, NULL);
 	float precioLatam;
 	float precioAerolineas;
 	int flagPedirKilometros;
-	int flagPedirPrecio;
+	int flagAerolineas;
+	int flagLatam;
 	int flagCalcular;
 
 
@@ -44,7 +45,8 @@ setbuf(stdout, NULL);
 	precioAerolineas = 0;
 	precioLatam = 0;
 	flagPedirKilometros = 0;
-	flagPedirPrecio = 0;
+	flagAerolineas = 0;
+	flagLatam = 0;
 	flagCalcular = 0;
 
 	 precioDebitoLatam = 0;
@@ -107,19 +109,23 @@ setbuf(stdout, NULL);
 		            	if(option == 1)
 		            	{
 		            	precioAerolineas = PedirPrecioAerolineas(precioAerolineas);
+		            	flagAerolineas = 1;
+
 		            	}
 		            	else
 		            	{
 		            	precioLatam = PedirPrecioLatam(precioLatam);
+		            	flagLatam = 1;
+
+
 		            	}
-		            	flagPedirPrecio = 1;
 
 
 
 		            break;
 
 		            case 3:
-		            	if(flagPedirPrecio == 1 && flagPedirKilometros == 1)
+		            	if(flagLatam == 1 && flagAerolineas == 1 && flagPedirKilometros == 1)
 		            		{
 
 		            		  precioDebitoLatam = CalcularDebito(precioLatam);
