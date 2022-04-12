@@ -96,7 +96,7 @@ int mostrarResultados(int kilometros, float precioLatam, float precioDebitoLatam
 
 
 
-   	   	   	   	   	   	   	   printf("KMs Ingersados: %d km\n\n", kilometros );
+   	   	   	   	   	   	   	   printf("KMs Ingresados: %d km\n\n", kilometros );
 
 			            			printf("Aerolineas: $%2.f\n"
 										"a) Precio con tarjeta de débito: $%.2f \n"
