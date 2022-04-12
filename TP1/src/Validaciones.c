@@ -20,11 +20,11 @@
 int PedirKilometros(int kilometros)
 {
 
-	printf("Ingrese los kilometros: ");
+	printf("Ingrese los kilometros (minimo 1000 KMs): ");
 	scanf("%d", &kilometros);
-	while(kilometros <1)
+	while(kilometros <1000 )
 	{
-		printf("ERROR, Ingese los kilometros (mas de 1 KM): ");
+		printf("ERROR, Ingese los kilometros (minimo 1000 KMs): ");
 		scanf("%d", &kilometros);
 
 	}
