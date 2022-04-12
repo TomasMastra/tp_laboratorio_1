@@ -154,7 +154,7 @@ setbuf(stdout, NULL);
 		            case 4:
 		            	if(flagCalcular == 1)
 		            	{
-		            		 mostrarResultados(precioDebitoLatam,  precioCreditoLatam,  precioBitcoinLatam,  precioUnitarioLatam,  precioDebitoAerolineas,  precioCreditoAerolineas,  precioBitcoinAerolineas,  precioUnitarioAerolineas,  diferenciaPrecio);
+		            		 mostrarResultados(kilometros, precioLatam, precioDebitoLatam,  precioCreditoLatam,  precioBitcoinLatam,  precioUnitarioLatam,  precioAerolineas, precioDebitoAerolineas,  precioCreditoAerolineas,  precioBitcoinAerolineas,  precioUnitarioAerolineas,  diferenciaPrecio);
 
 
 		            	}else
@@ -167,9 +167,9 @@ setbuf(stdout, NULL);
 		            break;
 		            case 5:
 
-		            	kilometros = 12944;
-		            	precioLatam = 115000;
-		            	precioAerolineas = 134870;
+		            	kilometros = 7090;
+		            	precioLatam = 1350000.76;
+		            	precioAerolineas = 1335000.66;
 
 		            	precioDebitoLatam = CalcularDebito(precioLatam);
 		            	precioCreditoLatam = CalcularCredito(precioLatam);
@@ -180,7 +180,7 @@ setbuf(stdout, NULL);
 		            	precioBitcoinAerolineas = CalcularBitCoin(precioAerolineas);
 		            	precioUnitarioAerolineas = CalcularPrecioUnitario( precioAerolineas,  kilometros);
 		            	diferenciaPrecio = CalcularDiferenciaPrecio(precioAerolineas, precioLatam);
-	            		mostrarResultados(precioDebitoLatam,  precioCreditoLatam,  precioBitcoinLatam,  precioUnitarioLatam,  precioDebitoAerolineas,  precioCreditoAerolineas,  precioBitcoinAerolineas,  precioUnitarioAerolineas,  diferenciaPrecio);
+	            		mostrarResultados(kilometros, precioLatam, precioDebitoLatam,  precioCreditoLatam,  precioBitcoinLatam,  precioUnitarioLatam,  precioAerolineas, precioDebitoAerolineas,  precioCreditoAerolineas,  precioBitcoinAerolineas,  precioUnitarioAerolineas,  diferenciaPrecio);
 
 		            	break;
 

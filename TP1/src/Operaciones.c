@@ -88,7 +88,7 @@ float CalcularDiferenciaPrecio(float precioAerolineas, float precioLatam)
 	return diferencia;
 }
 
-int mostrarResultados(float precioDebitoLatam, float precioCreditoLatam, float precioBitcoinLatam, float precioUnitarioLatam, float precioDebitoAerolineas, float precioCreditoAerolineas, float precioBitcoinAerolineas, float precioUnitarioAerolineas, float diferenciaPrecio)
+int mostrarResultados(int kilometros, float precioLatam, float precioDebitoLatam, float precioCreditoLatam, float precioBitcoinLatam, float precioUnitarioLatam, float precioAerolineas, float precioDebitoAerolineas, float precioCreditoAerolineas, float precioBitcoinAerolineas, float precioUnitarioAerolineas, float diferenciaPrecio)
 {
 
    int continuar; //Esta variable la cree para que el uauario pueda ver los precios sin que se vuelva a poner el menu
@@ -96,17 +96,21 @@ int mostrarResultados(float precioDebitoLatam, float precioCreditoLatam, float p
 
 
 
-			            			printf("Latam: \n"
+   	   	   	   	   	   	   	   printf("KMs Ingersados: %d km\n\n", kilometros );
+
+			            			printf("Aerolineas: $%2.f\n"
 										"a) Precio con tarjeta de débito: $%.2f \n"
 										"b) Precio con tarjeta de crédito: $%.2f \n"
-										"c) Precio pagando con bitcoin: $%.5f \n"
-										"d) Precio unitario: $%.2f \n"
-										"Aerolíneas:\n"
+										"c) Precio pagando con bitcoin: $%.5f BTC \n"
+										"d) Precio unitario: $%.2f \n\n"
+										"Latam: $%2.f\n"
 										"a) Precio con tarjeta de débito: $%.2f \n"
 										"b) Precio con tarjeta de crédito: $%.2f \n"
-										"c) Precio pagando con bitcoin: $%.5f \n"
-										"d) Precio unitario: $%.2f \n"
-										"La diferencia de precio es: $%.2f \n\n", precioDebitoLatam, precioCreditoLatam, precioBitcoinLatam, precioUnitarioLatam, precioDebitoAerolineas, precioCreditoAerolineas, precioBitcoinAerolineas, precioUnitarioAerolineas, diferenciaPrecio);
+										"c) Precio pagando con bitcoin: %.5f BTC \n"
+										"d) Precio unitario: $%.2f \n\n"
+										"La diferencia de precio es: $%.2f \n\n", precioAerolineas, precioDebitoAerolineas, precioCreditoAerolineas, precioBitcoinAerolineas, precioUnitarioAerolineas, precioLatam, precioDebitoLatam, precioCreditoLatam, precioBitcoinLatam, precioUnitarioLatam,  diferenciaPrecio);
+
+
 
 
 

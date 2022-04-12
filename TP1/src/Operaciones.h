@@ -22,5 +22,5 @@ float CalcularPrecioUnitario(float precioLatam, int kilometros); //Calcula el pr
 
 float CalcularDiferenciaPrecio(float precioAerolineas, float precioLatam); //Calcula la diferencia de precio entre ambas aerolineas. Busca la agencia mas cara para poder restar una sobre la otra,
 
-int mostrarResultados(float precioDebitoLatam, float precioCreditoLatam, float precioBitcoinLatam, float precioUnitarioLatam, float precioDebitoAerolineas, float precioCreditoAerolineas, float precioBitcoinAerolineas, float precioUnitarioAerolineas, float diferenciaPrecio);
+int mostrarResultados(int kilometros, float precioLatam, float precioDebitoLatam, float precioCreditoLatam, float precioBitcoinLatam, float precioUnitarioLatam, float precioAerolineas, float precioDebitoAerolineas, float precioCreditoAerolineas, float precioBitcoinAerolineas, float precioUnitarioAerolineas, float diferenciaPrecio);
 //Esta funcion muestra todos los datos que se los paso en el main
