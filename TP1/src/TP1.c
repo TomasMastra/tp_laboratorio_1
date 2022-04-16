@@ -87,7 +87,7 @@ setbuf(stdout, NULL);
 		 "d) Precio unitario: r\n"
 		 "La diferencia de precio es : r\n"
 		 "5. Carga forzada de datos\n"
-		 "6. Salir\n", kilometros, precioAerolineas, precioLatam);
+		 "6. Salir\n\n", kilometros, precioAerolineas, precioLatam);
 		        scanf("%d", &option);
 
 		        switch(option)
