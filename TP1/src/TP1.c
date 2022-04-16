@@ -64,27 +64,30 @@ setbuf(stdout, NULL);
 	 {
 
 
-		        printf("\n1. ingresar kilometros KM = %d \n", kilometros);
-		        printf("------------------------------------------------------------------------\n");
-
-		        printf("2. ingresar precio de vuelos (Aerolineas = $%.2f "
-		        		"Latam = $%.2f )\n", precioAerolineas, precioLatam);
-		        printf("------------------------------------------------------------------------\n");
-
-		        printf("3. Calcular todos los costos:\n");
-		        printf("------------------------------------------------------------------------\n");
-
-		        printf("4. Informar Resultados\n");
-
-
-		        printf("------------------------------------------------------------------------\n");
-
-		        printf("5. Carga forzada de datos\n");
-		        printf("------------------------------------------------------------------------\n");
-
-		        printf("6. Salir\n");
-		        printf("------------------------------------------------------------------------\n");
-		        printf("Elija una opcion:\n\n\n");
+		 printf("1. Ingresar Kilómetros: ( km = %d )\n"
+		 "2. Ingresar Precio de Vuelos: (Aerolíneas = %.2f, Latam = %.2f)\n"
+		 "- Precio vuelo Aerolíneas:\n"
+		 "- Precio vuelo Latam:\n"
+		 "3. Calcular todos los costos:\n"
+		 "a) Tarjeta de débito (descuento 10) \n"
+		 "b) Tarjeta de crédito (interés 25)\n"
+		 "c) Bitcoin (1BTC -> 4606954.55 Pesos Argentinos)\n"
+		 "d) Mostrar precio por km (precio unitario)"
+		 "e) Mostrar diferencia de precio ingresada (Latam - Aerolíneas)\n"
+		 "4. Informar Resultados\n"
+		 "Latam:\n"
+		 "a) Precio con tarjeta de débito: r\n"
+		 "b) Precio con tarjeta de crédito: r\n"
+		 "c) Precio pagando con bitcoin : r\n"
+		 "d) Precio unitario: r\n"
+		 "Aerolíneas:\n"
+		 "a) Precio con tarjeta de débito: r\n"
+		 "b) Precio con tarjeta de crédito: r\n"
+		 "c) Precio pagando con bitcoin : r\n"
+		 "d) Precio unitario: r\n"
+		 "La diferencia de precio es : r\n"
+		 "5. Carga forzada de datos\n"
+		 "6. Salir\n", kilometros, precioAerolineas, precioLatam);
 		        scanf("%d", &option);
 
 		        switch(option)
