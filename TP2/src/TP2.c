@@ -29,7 +29,7 @@ int main(void) {
 	int len = X;
 	int option;
 	//int flag = 0;
-
+	int error;
 	int id = 10000;
 
 
@@ -46,9 +46,10 @@ int main(void) {
 
 
 
-	 initPassengers(list,  len); //INICIALIZA TODOS LOS ISEMPTY EN -1
+	 error = initPassengers(list,  len); //INICIALIZA TODOS LOS ISEMPTY EN -1 Y VALIDO QUE NO TENGA ERRORES
 
-
+	 if(error == 0)
+	 {
 	 	    do
 	 	    {
 
@@ -108,6 +109,8 @@ int main(void) {
 
 	 	        }
 	 	    }while(option!=5);
+	 }
+
 
 
 	return EXIT_SUCCESS;

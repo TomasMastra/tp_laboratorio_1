@@ -101,9 +101,10 @@ int askPassengers(Passenger list[], int len, int id)
 int addPassengers(Passenger list[], int len, int id, char name[], char lastName[], float price, int typePassenger, char flycode[])
 {
 
-	int ret=-1;
+	int ret;
 	int index;
 	index = EMPTY;
+	ret = -1;
 
 
 	index = searchEmptyPassenger(list, len);
@@ -114,7 +115,7 @@ int addPassengers(Passenger list[], int len, int id, char name[], char lastName[
 
 				if(index!= EMPTY)
 				{
-
+					ret = 0;
 					if(confirmPassengers("Ingrese s para guardar el pasajero: ") == 0)
 					{
 					printf("%d\n",index);
@@ -138,6 +139,7 @@ int addPassengers(Passenger list[], int len, int id, char name[], char lastName[
 				else
 				{
 				printf("\nERROR, no hay mas espacio en la lista\n");
+				ret = 0;
 				}
 
 
@@ -192,7 +194,8 @@ int removePassenger(Passenger list[], int len, int id)
 {
 	int ret;
 	int index;
-	//int confirm;
+	ret = EMPTY;
+
 
 	printPassengers(list, len);
 	getInt(&id, "Ingrese el ID a eliminar: ", "ERROR, Ingrese el ID a eliminar: ", 10000, 12000);
@@ -201,6 +204,7 @@ int removePassenger(Passenger list[], int len, int id)
 
 	 if(index != EMPTY)
 	 {
+		 ret = 0;
 			//getInt(&confirm, "Estas seguro que queres borrar el ID? (1 = si / 2 = no): ", "Estas seguro que queres borrar el ID? (1 = si / 2 = no): ", 1, 2);
 			if(confirmPassengers("Estas seguro que queres borrar el pasajero?: ")==0)
 			{
@@ -218,6 +222,7 @@ int removePassenger(Passenger list[], int len, int id)
 	 }else
 	 {
 		 printf("No se encontro el ID\n");
+		 ret = 0;
 	 }
 
 
