@@ -174,4 +174,6 @@ float calculateAverage(Passenger list[], int len);
 */
 int printAverage(Passenger list[], int len);
 
+int validatePassengers(Passenger list[], int len);
+
 #endif /* ARRAYPASSENGER_H_ */

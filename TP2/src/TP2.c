@@ -31,6 +31,7 @@ int main(void) {
 	//int flag = 0;
 	int error;
 	int id = 10000;
+	int validate;
 
 
 
@@ -70,37 +71,51 @@ int main(void) {
 	 	    								 "-------------------------------------\n"
 	 	    								 "Invalid option, Enter the correct option: ", 1, 5);
 
+	 	    	validate = validatePassengers(list, len);
+
 	 	        switch(option)
 	 	        {
 	 	            case 1:
 
-
 	 	            	 askPassengers(list,  len, id);
-	 	            	 printf("id - %d\n",id);
-
 	 	            	 id++;
 
-
-	 	            		//flag = 1;
 
 	 	            break;
 	 	            case 2:
 
+	 	            	if(validate == 0)
+	 	            	{
 	 	            	removePassenger(list,  len,  id);
+	 	            	}else
+	 	            	{
+	 	            		printf("No hay un pasajero\n\n");
+	 	            	}
 
 
 
 	 	            break;
 	 	            case 3:
+	 	            	if(validate == 0)
+	 	            	{
 	 	            	modifyPassengers(list, len);
+	 	            	}else
+	 	            	{
+	 	            		printf("No hay un pasajero\n\n");
+	 	            	}
 
 
 
 	 	            	break;
-	 	            case 4:
 
+	 	            case 4:
+	 	            	if(validate == 0)
+	                    {
 	 	            	printSubMenu(list, len);
-	 	            	//printPassengers(list, len);
+	 	            	}else
+	 	            	{
+	 	            		printf("No hay un pasajero\n\n");
+	 	            	}
 
 
 
