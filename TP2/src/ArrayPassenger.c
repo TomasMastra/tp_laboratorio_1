@@ -352,7 +352,7 @@ int printPassengers(Passenger list[], int length)
 	int ret;
 	int i;
 
-	printf("\nList of employees...\n\n"
+	printf("\nList of passengers...\n\n"
 				   "%-5s %-20s %-20s %-20s %-20s %-20s\n", "ID", "Apellido", "Nombre", "Precio", "Tipo de Pasajero", "Codigo de Vuelo");
 	for(i=0;i<length;i++)
 	{

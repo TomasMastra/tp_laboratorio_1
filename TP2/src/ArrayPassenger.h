@@ -63,7 +63,7 @@ NULL pointer received or passenger not found]
 int findPassengerById(Passenger list[], int len,int id);
 
 
-/** \brief Remove a Passenger by Id (put isEmpty Flag in 1)
+/** \brief Remove a Passenger by Id (put isEmpty Flag in -1)
 *
 * \param list Passenger[]
 * \param len int
