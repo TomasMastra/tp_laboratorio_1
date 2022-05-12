@@ -80,7 +80,7 @@ int askPassengers(Passenger list[], int len, int id)
 
 				getFloat(&price, "Ingresa el precio (10000 - 300000): ","ERROR, Ingresa el precio (10000 - 300000) : ", 10000, 300000);
 
-				getInt(&typePassenger, "Ingresa el tipo de pasajero (10 - 50): ","ERROR, Ingresa el tipo de pasajero (10 - 50) : ", 10, 50);
+				getInt(&typePassenger, "Ingresa el tipo de pasajero (1. economico, 2. Business, 3. Primera Clase): ","ERROR, Ingresa el tipo de pasajero (1. economico, 2. Business, 3. Primera Clase): ", 1, 3);
 
 				getString(flycode, "Ingresa el codigo de vuelo: ","ERROR, Ingresa el codigo de vuelo: ", 10);
 
@@ -153,7 +153,6 @@ int confirmPassengers(char *message)
 	char confirm;
 	ret = -1;
 
-    //getChar(&confirm, "Ingrese S para guardar el pasajero: ");
     printf("%s", message);
     fflush(stdin);
     scanf("%c", &confirm);
@@ -204,7 +203,6 @@ int removePassenger(Passenger list[], int len, int id)
 	 if(index != EMPTY)
 	 {
 		 ret = 0;
-			//getInt(&confirm, "Estas seguro que queres borrar el ID? (1 = si / 2 = no): ", "Estas seguro que queres borrar el ID? (1 = si / 2 = no): ", 1, 2);
 			if(confirmPassengers("Estas seguro que queres borrar el pasajero (s = si)?: ")==0)
 			{
 				list[index].isEmpty = EMPTY;
@@ -286,7 +284,7 @@ int modifyPassengers(Passenger list[], int len)
 					break;
 
 				case 4:
-					getInt(&typePassenger, "Ingrese el tipo de pasajero a modificar: ", "ERROR, Ingrese el tipo de pasajero a modificar: ", 10, 50);
+					getInt(&typePassenger, "Ingrese el tipo de pasajero a modificar (1. economico, 2. Business, 3. Primera Clase) : ", "ERROR, Ingrese el tipo de pasajero a modificar: 1. economico, 2. Business, 3. Primera Clase)", 1, 3);
 					if(confirmPassengers("Ingrese s para modificar: ")==0)
 					{
 						list[index].typePassenger = typePassenger;
