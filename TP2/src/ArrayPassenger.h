@@ -48,7 +48,7 @@ int initPassengers(Passenger list[], int len);      //
 * \return int Return (-1) if Error [Invalid length or NULL pointer or without
 free space] - (0) if Ok
 */
-int addPassengers(Passenger list[], int len, int id, char name[], char lastName[], float price, int typePassenger, char flycode[]);      //
+int addPassengers(Passenger list[], int len, int id, char name[], char lastName[], float price, int typePassenger, char flycode[], int statusFlight);      //
 
 
 /** \brief find a Passenger by Id en returns the index position in array.
@@ -175,5 +175,7 @@ float calculateAverage(Passenger list[], int len);
 int printAverage(Passenger list[], int len);
 
 int validatePassengers(Passenger list[], int len);
+
+int pintPassengerStatusFlight(Passenger list[], int len);
 
 #endif /* ARRAYPASSENGER_H_ */

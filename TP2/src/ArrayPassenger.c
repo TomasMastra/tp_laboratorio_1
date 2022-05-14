@@ -70,6 +70,7 @@ int askPassengers(Passenger list[], int len, int id)
 	char lastName[51];
 	int typePassenger;
 	char flycode[21];
+	int statusFlight;
 
     ret = -1;
 
@@ -84,10 +85,11 @@ int askPassengers(Passenger list[], int len, int id)
 
 				getString(flycode, "Ingresa el codigo de vuelo: ","ERROR, Ingresa el codigo de vuelo: ", 10);
 
+				getInt(&statusFlight, "Ingresa el estado  de vuelo (1. activado - 0.desactivado): ","ERROR, Ingresa el estado de vuelo (1. activado - 0.desactivado): ", 0, 1);
 
 
 
-				addPassengers( list,  len,  id,  name,  lastName,  price,  typePassenger, flycode);
+				addPassengers( list,  len,  id,  name,  lastName,  price,  typePassenger, flycode, statusFlight);
 
 
 
@@ -98,7 +100,7 @@ int askPassengers(Passenger list[], int len, int id)
 }
 
 
-int addPassengers(Passenger list[], int len, int id, char name[], char lastName[], float price, int typePassenger, char flycode[])
+int addPassengers(Passenger list[], int len, int id, char name[], char lastName[], float price, int typePassenger, char flycode[], int statusFlight)
 {
 
 	int ret;
@@ -126,7 +128,7 @@ int addPassengers(Passenger list[], int len, int id, char name[], char lastName[
 					strcpy(list[index].flycode,flycode);
 
 					list[index].isEmpty = 1;
-					list[index].statusFlight = 1;
+					list[index].statusFlight = statusFlight;
 
 
 					ret=0;
@@ -472,15 +474,18 @@ int sortPassengersByCode(Passenger list[], int len, int order)
 					{
 						for(int j = i+1; j<len; j++)
 						{
-							if(list[i].isEmpty != -1 && list[j].isEmpty)
+							if(list[i].isEmpty != -1 && list[j].isEmpty != -1)
 							{
-							if(strcmp(list[i].flycode, list[j].flycode)>0)
 
-							{
-								auxPassenger = list[i];
-								list[i] = list[j];
-								list[j] = auxPassenger;
-							}
+									if(strcmp(list[i].flycode, list[j].flycode)>0)
+
+									{
+										auxPassenger = list[i];
+										list[i] = list[j];
+										list[j] = auxPassenger;
+
+									}
+
 
 
 							}
@@ -516,6 +521,31 @@ int sortPassengersByCode(Passenger list[], int len, int order)
 
 
 		return ret;
+
+
+}
+
+int pintPassengerStatusFlight(Passenger list[], int len)
+{
+	int ret;
+	int i;
+
+	ret = 0;
+
+
+	for(i=0;i<len;i++)
+	{
+		if(list[i].statusFlight == 1)
+		{
+
+printPassenger(list[i]);
+		}
+
+	}
+
+
+
+	return ret;
 
 
 }
@@ -630,8 +660,7 @@ int printSubMenu(Passenger list[], int len)
 
 	case 3:
 		sortPassengersByCode(list,  len,  1);
-		printPassengers(list, len);
-
+		pintPassengerStatusFlight(list,  len);
 
 		break;
 
