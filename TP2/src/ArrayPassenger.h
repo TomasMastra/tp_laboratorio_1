@@ -151,7 +151,7 @@ int searchEmptyPassenger(Passenger list[], int len);
 *
 * \param list Passenger
 * \param len int
-* \return void
+* \return int
 *
 */
 int printSubMenu(Passenger list[], int len);
@@ -160,7 +160,7 @@ int printSubMenu(Passenger list[], int len);
 *
 * \param list Passenger
 * \param len int
-* \return void
+* \return int
 *
 */
 float calculateAverage(Passenger list[], int len);
@@ -174,8 +174,23 @@ float calculateAverage(Passenger list[], int len);
 */
 int printAverage(Passenger list[], int len);
 
+
+/** \brief validate if an isEmpty is in 1 to enter in the options 2, 3, 4
+*
+* \param list Passenger
+* \param len int
+* \return int
+*
+*/
 int validatePassengers(Passenger list[], int len);
 
+/** \brief print the content of passengers array with statusFlight activated
+*
+* \param list Passenger
+* \param len int
+* \return int
+*
+*/
 int pintPassengerStatusFlight(Passenger list[], int len);
 
 #endif /* ARRAYPASSENGER_H_ */
