@@ -75,7 +75,6 @@ int main()
 		 								"**************************************\n"
 		 								"Opcion invalida, reingrese: ", 1, 10);
 
-		 //Salir del programa usando la opcion 10, de la otra forma si los cargo en el archivo se van a borrar todos los pasajeros
 
 		 switch(option)
 		 {
@@ -93,7 +92,7 @@ int main()
 		 case 2:
 			 if(flag == 0)
 			 {
-			 controller_loadFromBinary("dataBinario.csv", listaPasajeros);
+			 controller_loadFromBinary("dataBinario.bin", listaPasajeros);
 			 flag = 1;
 			 }else
 			 {
@@ -177,7 +176,7 @@ int main()
 		 case 9:
 			 if(flag == 1)
 			 {
-			 controller_saveAsBinary("dataBinario.csv", listaPasajeros);
+			 controller_saveAsBinary("dataBinario.bin", listaPasajeros);
 			 }else
 			 {
 				 printf("No cargo los pasajeros\n");

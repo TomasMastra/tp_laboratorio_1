@@ -4,6 +4,8 @@
 #include "Passenger.h"
 #include "Input.h"
 #include "Parser.h"
+#include "Controller.h"
+
 
 
 
@@ -102,14 +104,75 @@ int controller_addPassenger(LinkedList* pArrayListPassenger, int id)
 		getName(nombre, "Ingrese el nombre: ", "ERROR, Ingrese el nombre (Solo letras): ", 50);
 		getName(apellido, "Ingrese el apellido: ", "ERROR, Ingrese el apellido (Solo letras): ", 50);
 		getFloat(&precio, "Ingrese el precio: ", "ERROR, Ingrese el precio (10.000-100.000)", 10000, 100000);
-		getName(tipo, "Ingrese el tipo de pasajero (FirstClass-ExecutiveClass-EconomyClass): ", "ERROR, Ingrese el tipo de pasajero (FirstClass-ExecutiveClass-EconomyClass): ", 50);
-		getString(codigo, "Ingrese el codigo de vuelo: ", "ERROR, Ingrese el codigo de vuelo: ", 50);
-		getName(estado, "Ingrese el estado del vuelo (En Horario-Aterrizado): ", "ERROR, Ingrese el estado del vuelo (En Horario-Aterrizado): ", 50);
-				//unPasajero->id = id;
 
+	 getName(tipo,
+															"\n***************************\n"
+															"TIPO DE PASAJERO\n"
+															"\n***************************\n"
+															"1. FirstClass\n"
+															"2. ExecutiveClass\n"
+															"3. EconomyClass\n"
+															"Ingrese una opcion: " ,
+															"\n***************************\n"
+															"TIPO DE PASAJERO\n"
+															"\n***************************\n"
+															"1. FirstClass\n"
+												   		    "2. ExecutiveClass\n"
+															"3. EconomyClass\n"
+															"Error, Ingrese de vuelta: " , 21);
+		getString(codigo,
+															 "\n***************************\n"
+															 "CODIGO DE VUELO\n"
+															 "\n***************************\n"
+															 "1. BA2491A\n"
+															 "2. IB0800A\n"
+															 "3. MM0987B\n"
+															 "4. TU6789B\n"
+															 "5. GU2345F\n"
+															 "6. HY4567D\n"
+															 "7. FR5678G\n"
+															 "8. BR3456J\n"
+															 "9. AB7650G\n"
+															 "10.KV7591L\n"
+															 "Ingrese una opcion: " ,
+															 "\n***************************\n"
+															 "CODIGO DE VUELO\n"
+															 "\n***************************\n"
+															 "1. BA2491A\n"
+															 "2. IB0800A\n"
+															 "3. MM0987B\n"
+															 "4. TU6789B\n"
+															 "5. GU2345F\n"
+															 "6. HY4567D\n"
+															 "7. FR5678G\n"
+															 "8. BR3456J\n"
+															 "9. AB7650G\n"
+															 "10.KV7591L\n"
+															 "Error, Ingrese de vuelta: " , 21);
+
+		getString(estado,
+															 "\n***************************\n"
+															 "ESTADO DE VUELO\n"
+															 "\n***************************\n"
+															 "1. En Horario\n"
+															 "2. Aterrizo\n"
+															 "3. En Vuelo\n"
+															 "4. Demorado\n"
+															 "Ingrese una opcion: " ,
+															 "\n***************************\n"
+															 "ESTADO DE VUELO\n"
+															 "\n***************************\n"
+															 "1. En Horario\n"
+															 "2. Aterrizo\n"
+															 "3. En Vuelo\n"
+															 "4. Demorado\n"
+															 "Error, Ingrese de vuelta: " , 21);
+
+
+		printf("Codigo %s - Tipo %s", codigo, tipo);
 		itoa(id, idStr, 10);
 		itoa(precio, precioStr, 10);
-		unPasajero = Passenger_newParametros(idStr, nombre, codigo, apellido, precioStr, tipo, estado);
+		unPasajero = Passenger_newParametros(idStr, nombre, apellido, precioStr, codigo, tipo, estado);
 
 		Passenger_printOne(unPasajero);
 
@@ -414,8 +477,8 @@ int controller_saveAsText(char* path , LinkedList* pArrayListPassenger)
 				for(int i=0;i<len;i++)
 				{
 
-					unPasajero=(Passenger*)ll_get(pArrayListPassenger, i);
-					fprintf(pFile, "%d,%s,%s,%f,%s,%s,%s\n", unPasajero->id,unPasajero->nombre,unPasajero->apellido,unPasajero->precio, unPasajero->tipoPasajero,unPasajero->codigoVuelo,unPasajero->estadoVuelo);
+					unPasajero=ll_get(pArrayListPassenger, i);
+					fprintf(pFile, "%d,%s,%s,%f,%s,%s,%s\n", unPasajero->id,unPasajero->nombre,unPasajero->apellido,unPasajero->precio, unPasajero->codigoVuelo,unPasajero->tipoPasajero,unPasajero->estadoVuelo);
 					Passenger_printOne(unPasajero);
 
 
@@ -459,13 +522,15 @@ int controller_saveAsBinary(char* path , LinkedList* pArrayListPassenger)
 
 	if(pArrayListPassenger != NULL && path!= NULL)
 	{
-		fwrite("id,nombre,apellido,precio,tipo de pasajero, codigo de vuelo, estado de vuelo", sizeof(char*), 1, pFile);
+		//fwrite("id,nombre,apellido,precio,tipo de pasajero, codigo de vuelo, estado de vuelo", sizeof(char*), 1, pFile);
 
 		for(int i=0;i<len;i++)
 		{
 			unPasajero=ll_get(pArrayListPassenger, i);
 			fwrite(unPasajero, sizeof(Passenger), 1, pFile);
 			ret = 1;
+			Passenger_printOne(unPasajero);
+
 
 		}
 	}

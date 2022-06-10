@@ -1,17 +1,17 @@
 id,nombre,apellido,precio,tipo de pasajero, codigo de vuelo, estado de vuelo
-1,Lou,González,10000.000000,BA2491A,FirstClass,Aterrizado
-2,Ulrike,Muñoz,25000.000000,IB0800A,FirstClass,Aterrizado
+1,Lou,Gonzalez,10000.000000,BA2491A,FirstClass,Aterrizado
+2,Ulrike,Muz,25000.000000,IB0800A,FirstClass,Aterrizado
 3,Brade,Rojas,20000.000000,MM0987B,FirstClass,En Horario
-4,Kimbell,Díaz,50000.000000,BA2491A,FirstClass,Aterrizado
-5,Sheelagh,Pérez,18000.000000,IB0800A,FirstClass,Aterrizado
+4,Kimbell,Sola,50000.000000,BA2491A,FirstClass,Aterrizado
+5,Sheelagh,Perez,18000.000000,IB0800A,FirstClass,Aterrizado
 6,Gayle,Soto,30000.000000,MM0987B,FirstClass,En Horario
 7,Kimberlee,Contreras,33000.000000,BA2491A,FirstClass,Aterrizado
 8,Henrieta,Silva,30000.000000,IB0800A,FirstClass,Aterrizado
-9,Jeanine,Martínez,18000.000000,MM0987B,FirstClass,En Horario
-10,Aggie,Sepúlveda,15000.000000,BA2491A,FirstClass,Aterrizado
+9,Jeanine,Marcellino,18000.000000,MM0987B,FirstClass,En Horario
+10,Aggie,Villagra,15000.000000,BA2491A,FirstClass,Aterrizado
 11,Brandea,Morales,15000.000000,IB0800A,FirstClass,Aterrizado
-12,Cordelie,Rodríguez,50000.000000,IB0800A,FirstClass,Aterrizado
-13,Shel,López,50000.000000,MM0987B,FirstClass,En Horario
+12,Cordelie,Cortese,50000.000000,IB0800A,FirstClass,Aterrizado
+13,Shel,Iglesias,50000.000000,MM0987B,FirstClass,En Horario
 14,Bronnie,Fuentes,20000.000000,MM0987B,FirstClass,En Horario
 15,Megen,Hernández,10000.000000,BA2491A,FirstClass,Aterrizado
 16,Iver,Torres,12000.000000,BA2491A,FirstClass,Aterrizado
@@ -22,19 +22,19 @@ id,nombre,apellido,precio,tipo de pasajero, codigo de vuelo, estado de vuelo
 21,Bobbye,Castillo,15000.000000,BA2491A,FirstClass,Aterrizado
 22,Eugene,Tapia,50000.000000,BA2491A,FirstClass,Aterrizado
 23,Johnny,Reyes,33000.000000,MM0987B,FirstClass,En Horario
-24,Reagen,Gutiérrez,42000.000000,MM0987B,FirstClass,En Horario
+24,Reagen,Gutierrez,42000.000000,MM0987B,FirstClass,En Horario
 25,Braden,Castro,25000.000000,MM0987B,FirstClass,En Horario
 26,Karim,Pizarro,25000.000000,MM0987B,FirstClass,En Horario
-27,Anthea,Álvarez,42000.000000,MM0987B,FirstClass,En Horario
-28,Doro,Vásquez,33000.000000,IB0800A,FirstClass,Aterrizado
+27,Anthea,Mastrapasqua,42000.000000,MM0987B,FirstClass,En Horario
+28,Doro,Valenzuela,33000.000000,IB0800A,FirstClass,Aterrizado
 29,Gaye,Sánchez,37000.000000,IB0800A,FirstClass,Aterrizado
 30,Toby,Fernández,15000.000000,IB0800A,FirstClass,Aterrizado
-31,Franny,Ramírez,15000.000000,IB0800A,FirstClass,Aterrizado
+31,Franny,Varela,15000.000000,IB0800A,FirstClass,Aterrizado
 32,Katey,Carrasco,42000.000000,MM0987B,FirstClass,En Horario
 33,Earle,Gómez,10000.000000,BA2491A,FirstClass,Aterrizado
 34,Redd,Cortés,42000.000000,BA2491A,FirstClass,Aterrizado
 35,Jehanna,Herrera,50000.000000,BA2491A,FirstClass,Aterrizado
-36,Cristie,Núñez,10000.000000,BA2491A,FirstClass,Aterrizado
+36,Cristie,Marcellino,10000.000000,BA2491A,FirstClass,Aterrizado
 37,Stefa,Jara,42000.000000,BA2491A,FirstClass,Aterrizado
 38,Roda,Vergara,25000.000000,MM0987B,FirstClass,En Horario
 39,Alfredo,Rivera,10000.000000,MM0987B,FirstClass,En Horario
@@ -49,7 +49,7 @@ id,nombre,apellido,precio,tipo de pasajero, codigo de vuelo, estado de vuelo
 48,Noella,Campos,15000.000000,IB0800A,FirstClass,Aterrizado
 49,Dagmar,Sandoval,25000.000000,IB0800A,FirstClass,Aterrizado
 50,Carroll,Orellana,42000.000000,IB0800A,FirstClass,Aterrizado
-51,Marion,Cárdenas,50000.000000,IB0800A,FirstClass,Aterrizado
+51,Marion,Moreno,50000.000000,IB0800A,FirstClass,Aterrizado
 52,Carline,Olivares,12000.000000,IB0800A,FirstClass,Aterrizado
 53,Hyacinthie,Alarcón,15000.000000,MM0987B,FirstClass,En Horario
 54,Julina,Gallardo,33000.000000,MM0987B,FirstClass,En Horario
@@ -71,7 +71,7 @@ id,nombre,apellido,precio,tipo de pasajero, codigo de vuelo, estado de vuelo
 70,Sayre,Leiva,33000.000000,IB0800A,FirstClass,Aterrizado
 71,Shaughn,Escobar,15000.000000,IB0800A,FirstClass,Aterrizado
 72,Katrine,Ruiz,25000.000000,IB0800A,FirstClass,Aterrizado
-73,Cristi,Valdés,42000.000000,IB0800A,FirstClass,Aterrizado
+73,Cristi,Netto,42000.000000,IB0800A,FirstClass,Aterrizado
 74,Cristie,Vidal,25000.000000,IB0800A,ExecutiveClass,Aterrizado
 75,Solomon,Salinas,10000.000000,IB0800A,ExecutiveClass,Aterrizado
 76,Nananne,Zúñiga,33000.000000,IB0800A,ExecutiveClass,Aterrizado
@@ -102,7 +102,7 @@ id,nombre,apellido,precio,tipo de pasajero, codigo de vuelo, estado de vuelo
 101,Marcille,González,10000.000000,IB0800A,ExecutiveClass,Aterrizado
 102,Ertha,Fernández,10000.000000,IB0800A,ExecutiveClass,Aterrizado
 103,Desiri,Rodríguez,25000.000000,MM0987B,ExecutiveClass,En Horario
-104,Geneva,López,33000.000000,MM0987B,ExecutiveClass,En Horario
+104,Geneva,Moure,33000.000000,MM0987B,ExecutiveClass,En Horario
 105,Kilian,Martínez,42000.000000,MM0987B,ExecutiveClass,En Horario
 106,Nance,Sánchez,10000.000000,MM0987B,ExecutiveClass,En Horario
 107,Gaven,Pérez,10000.000000,MM0987B,ExecutiveClass,En Horario
@@ -124,7 +124,7 @@ id,nombre,apellido,precio,tipo de pasajero, codigo de vuelo, estado de vuelo
 123,Pippa,Vázquez,20000.000000,IB0800A,ExecutiveClass,Aterrizado
 124,Pen,Ramos,18000.000000,IB0800A,EconomyClass,Aterrizado
 125,Esteban,González,15000.000000,IB0800A,EconomyClass,Aterrizado
-126,Fonzie,Muñoz,15000.000000,IB0800A,EconomyClass,Aterrizado
+126,Fonzie,Yazinowsky,15000.000000,IB0800A,EconomyClass,Aterrizado
 127,Cindelyn,Rojas,12000.000000,IB0800A,EconomyClass,Aterrizado
 128,Zacharie,Díaz,30000.000000,BA2491A,ExecutiveClass,Aterrizado
 129,Vina,Pérez,42000.000000,BA2491A,ExecutiveClass,Aterrizado
@@ -137,7 +137,7 @@ id,nombre,apellido,precio,tipo de pasajero, codigo de vuelo, estado de vuelo
 136,Gideon,Rodríguez,15000.000000,BA2491A,ExecutiveClass,Aterrizado
 137,Johnette,López,10000.000000,BA2491A,ExecutiveClass,Aterrizado
 138,Brynn,Fuentes,50000.000000,BA2491A,ExecutiveClass,Aterrizado
-139,Yankee,Hernández,42000.000000,BA2491A,ExecutiveClass,Aterrizado
+139,Yankee,Cortes,42000.000000,BA2491A,ExecutiveClass,Aterrizado
 140,Corbin,Torres,42000.000000,BA2491A,ExecutiveClass,Aterrizado
 141,Coreen,Araya,18000.000000,IB0800A,EconomyClass,Aterrizado
 142,Tanya,Flores,30000.000000,IB0800A,EconomyClass,Aterrizado
@@ -164,7 +164,7 @@ id,nombre,apellido,precio,tipo de pasajero, codigo de vuelo, estado de vuelo
 163,Pascale,Rivera,15000.000000,IB0800A,EconomyClass,Aterrizado
 164,Cathrin,Figueroa,30000.000000,IB0800A,EconomyClass,Aterrizado
 165,Sib,Riquelme,33000.000000,IB0800A,EconomyClass,Aterrizado
-166,Darleen,García,42000.000000,IB0800A,EconomyClass,Aterrizado
+166,Darleen,Evangelista,42000.000000,IB0800A,EconomyClass,Aterrizado
 167,Didi,Miranda,15000.000000,IB0800A,EconomyClass,Aterrizado
 168,Lodovico,Bravo,18000.000000,IB0800A,EconomyClass,Aterrizado
 169,Farley,Vera,12000.000000,IB0800A,EconomyClass,Aterrizado
@@ -226,7 +226,7 @@ id,nombre,apellido,precio,tipo de pasajero, codigo de vuelo, estado de vuelo
 225,Adriano,González,33000.000000,TU6789B,FirstClass,Aterrizado
 226,Trula,Fernández,30000.000000,TU6789B,FirstClass,Aterrizado
 227,Adel,Rodríguez,30000.000000,TU6789B,FirstClass,Aterrizado
-228,Jeniece,López,15000.000000,TU6789B,FirstClass,Aterrizado
+228,Jeniece,Herrera,15000.000000,TU6789B,FirstClass,Aterrizado
 229,Tabina,Martínez,10000.000000,TU6789B,FirstClass,Aterrizado
 230,Liana,Sánchez,33000.000000,TU6789B,FirstClass,Aterrizado
 231,Marmaduke,Pérez,10000.000000,BA2491A,EconomyClass,Aterrizado
@@ -251,20 +251,20 @@ id,nombre,apellido,precio,tipo de pasajero, codigo de vuelo, estado de vuelo
 250,Tiphani,Muñoz,42000.000000,TU6789B,ExecutiveClass,Aterrizado
 251,Jenna,Rojas,30000.000000,TU6789B,ExecutiveClass,Aterrizado
 252,Karlotte,Díaz,20000.000000,BA2491A,EconomyClass,Aterrizado
-253,Norene,Pérez,25000.000000,BA2491A,EconomyClass,Aterrizado
+253,Norene,Ibarra,25000.000000,BA2491A,EconomyClass,Aterrizado
 254,Morris,Soto,10000.000000,BA2491A,EconomyClass,Aterrizado
 255,Yuri,Contreras,25000.000000,BA2491A,EconomyClass,Aterrizado
 256,Gusty,Silva,10000.000000,BA2491A,EconomyClass,Aterrizado
-257,Jori,Martínez,12000.000000,BA2491A,EconomyClass,Aterrizado
+257,Jori,Hofkamp,12000.000000,BA2491A,EconomyClass,Aterrizado
 258,Sydelle,Sepúlveda,30000.000000,BA2491A,EconomyClass,Aterrizado
 259,Merrile,Morales,50000.000000,BA2491A,EconomyClass,Aterrizado
-260,Tadd,Rodríguez,50000.000000,TU6789B,ExecutiveClass,Aterrizado
+260,Tadd,Villafuerte,50000.000000,TU6789B,ExecutiveClass,Aterrizado
 261,Josiah,López,10000.000000,TU6789B,ExecutiveClass,Aterrizado
 262,Melisa,Fuentes,12000.000000,TU6789B,ExecutiveClass,Aterrizado
 263,Orelee,Hernández,20000.000000,TU6789B,ExecutiveClass,Aterrizado
 264,Stephen,Torres,37000.000000,TU6789B,ExecutiveClass,Aterrizado
 265,Blair,Araya,50000.000000,TU6789B,ExecutiveClass,Aterrizado
-266,Arel,Flores,30000.000000,TU6789B,ExecutiveClass,Aterrizado
+266,Ariel,Flores,30000.000000,TU6789B,ExecutiveClass,Aterrizado
 267,Abbie,Espinoza,25000.000000,TU6789B,ExecutiveClass,Aterrizado
 268,Channa,Valenzuela,50000.000000,TU6789B,ExecutiveClass,Aterrizado
 269,Shirl,Castillo,20000.000000,TU6789B,ExecutiveClass,Aterrizado
@@ -322,7 +322,7 @@ id,nombre,apellido,precio,tipo de pasajero, codigo de vuelo, estado de vuelo
 321,Wilona,Valdés,25000.000000,BA2491A,EconomyClass,Aterrizado
 322,Richard,Vidal,42000.000000,BA2491A,EconomyClass,Aterrizado
 323,Hilary,Salinas,37000.000000,BA2491A,EconomyClass,Aterrizado
-324,Ad,Zúñiga,33000.000000,BA2491A,EconomyClass,Aterrizado
+324,Ad,Benitez,33000.000000,BA2491A,EconomyClass,Aterrizado
 325,Maynord,Peña,42000.000000,BA2491A,EconomyClass,Aterrizado
 326,Lina,Godoy,12000.000000,TU6789B,EconomyClass,Aterrizado
 327,Nerty,Lagos,20000.000000,TU6789B,EconomyClass,Aterrizado
@@ -439,7 +439,7 @@ id,nombre,apellido,precio,tipo de pasajero, codigo de vuelo, estado de vuelo
 438,Gardie,Vargas,12000.000000,GU2345F,FirstClass,En Vuelo
 439,Leelah,Vázquez,25000.000000,GU2345F,FirstClass,En Vuelo
 440,Garold,Cáceres,20000.000000,GU2345F,FirstClass,En Vuelo
-441,Regine,Yáñez,10000.000000,GU2345F,FirstClass,En Vuelo
+441,Regine,Folino,10000.000000,GU2345F,FirstClass,En Vuelo
 442,Tam,Leiva,20000.000000,GU2345F,ExecutiveClass,En Vuelo
 443,Davon,Escobar,20000.000000,GU2345F,ExecutiveClass,En Vuelo
 444,Chrissy,Ruiz,18000.000000,GU2345F,ExecutiveClass,En Vuelo
@@ -447,7 +447,7 @@ id,nombre,apellido,precio,tipo de pasajero, codigo de vuelo, estado de vuelo
 446,Rina,Vidal,20000.000000,GU2345F,ExecutiveClass,En Vuelo
 447,Guy,Salinas,42000.000000,GU2345F,ExecutiveClass,En Vuelo
 448,Lenora,Zúñiga,18000.000000,GU2345F,ExecutiveClass,En Vuelo
-449,Julietta,Peña,42000.000000,GU2345F,ExecutiveClass,En Vuelo
+449,Julietta,Carrasco,42000.000000,GU2345F,ExecutiveClass,En Vuelo
 450,Alexandr,Godoy,18000.000000,GU2345F,ExecutiveClass,En Vuelo
 451,Margalit,Lagos,15000.000000,GU2345F,ExecutiveClass,En Vuelo
 452,Samara,Maldonado,50000.000000,GU2345F,ExecutiveClass,En Vuelo
@@ -724,11 +724,11 @@ id,nombre,apellido,precio,tipo de pasajero, codigo de vuelo, estado de vuelo
 723,Darlene,Rodríguez,42000.000000,IB0800A,EconomyClass,Aterrizado
 724,Zia,López,42000.000000,IB0800A,EconomyClass,Aterrizado
 725,Cristina,Martínez,15000.000000,IB0800A,EconomyClass,Aterrizado
-726,Jonathon,Sánchez,50000.000000,IB0800A,EconomyClass,Aterrizado
+726,Jonathon,De Leo,50000.000000,IB0800A,EconomyClass,Aterrizado
 727,Rickie,Pérez,42000.000000,IB0800A,EconomyClass,Aterrizado
 728,Klara,Gómez,50000.000000,IB0800A,EconomyClass,Aterrizado
-729,Osbert,Martín,33000.000000,IB0800A,EconomyClass,Aterrizado
-730,Emmet,Jiménez,37000.000000,IB0800A,EconomyClass,Aterrizado
+729,Osbert,Pautasso,33000.000000,IB0800A,EconomyClass,Aterrizado
+730,Emmet,Lombardia,37000.000000,IB0800A,EconomyClass,Aterrizado
 731,Cassandry,Ruiz,33000.000000,IB0800A,EconomyClass,Aterrizado
 732,Enrica,Hernández,18000.000000,IB0800A,EconomyClass,Aterrizado
 733,Evvy,Díaz,42000.000000,IB0800A,EconomyClass,Aterrizado
@@ -831,7 +831,7 @@ id,nombre,apellido,precio,tipo de pasajero, codigo de vuelo, estado de vuelo
 830,Cale,Sanhueza,50000.000000,FR5678G,EconomyClass,En Horario
 831,Christina,Carvajal,37000.000000,FR5678G,EconomyClass,En Horario
 832,Olivier,Navarrete,20000.000000,FR5678G,EconomyClass,En Horario
-833,Oby,Sáez,12000.000000,FR5678G,EconomyClass,En Horario
+833,Oby,Almeida,12000.000000,FR5678G,EconomyClass,En Horario
 834,Chad,Alvarado,15000.000000,FR5678G,EconomyClass,En Horario
 835,Adelle,Donoso,10000.000000,FR5678G,EconomyClass,En Horario
 836,Keene,Poblete,25000.000000,FR5678G,EconomyClass,En Horario
@@ -841,17 +841,17 @@ id,nombre,apellido,precio,tipo de pasajero, codigo de vuelo, estado de vuelo
 840,Wadsworth,Venegas,30000.000000,FR5678G,EconomyClass,En Horario
 841,Shelley,Guerrero,15000.000000,FR5678G,EconomyClass,En Horario
 842,Irv,Mendoza,15000.000000,FR5678G,EconomyClass,En Horario
-843,Grant,Farías,33000.000000,FR5678G,EconomyClass,En Horario
-844,Bella,San Martín,18000.000000,FR5678G,EconomyClass,En Horario
+843,Grant,Arietto,33000.000000,FR5678G,EconomyClass,En Horario
+844,Bella,San Marcellino,18000.000000,FR5678G,EconomyClass,En Horario
 845,Yardley,González,50000.000000,FR5678G,EconomyClass,En Horario
 846,Brendin,Fernández,10000.000000,FR5678G,EconomyClass,En Horario
 847,Estella,Rodríguez,42000.000000,FR5678G,EconomyClass,En Horario
 848,Rasia,López,37000.000000,FR5678G,EconomyClass,En Horario
 849,Gibb,Martínez,20000.000000,FR5678G,EconomyClass,En Horario
-850,Amanda,Sánchez,37000.000000,FR5678G,EconomyClass,En Horario
-851,Sidoney,Pérez,20000.000000,FR5678G,EconomyClass,En Horario
-852,Giacopo,Gómez,18000.000000,FR5678G,EconomyClass,En Horario
-853,Eve,Martín,12000.000000,FR5678G,EconomyClass,En Horario
+850,Amanda,Disney,37000.000000,FR5678G,EconomyClass,En Horario
+851,Sidoney,Farias,20000.000000,FR5678G,EconomyClass,En Horario
+852,Giacopo,Scalise,18000.000000,FR5678G,EconomyClass,En Horario
+853,Eve,Santoro,12000.000000,FR5678G,EconomyClass,En Horario
 854,Levon,Jiménez,25000.000000,FR5678G,EconomyClass,En Horario
 855,Vassili,Ruiz,33000.000000,FR5678G,EconomyClass,En Horario
 856,Henrieta,Hernández,30000.000000,FR5678G,EconomyClass,En Horario
@@ -925,7 +925,7 @@ id,nombre,apellido,precio,tipo de pasajero, codigo de vuelo, estado de vuelo
 924,Orlan,Garrido,25000.000000,BR3456J,ExecutiveClass,Demorado
 925,Wittie,Salazar,37000.000000,BR3456J,ExecutiveClass,Demorado
 926,Abbie,Guzmán,18000.000000,BR3456J,EconomyClass,Demorado
-927,Robinia,Henríquez,10000.000000,BR3456J,EconomyClass,Demorado
+927,Robinia,Abdo,10000.000000,BR3456J,EconomyClass,Demorado
 928,Hayden,Saavedra,30000.000000,BR3456J,EconomyClass,Demorado
 929,Melody,Navarro,20000.000000,BR3456J,EconomyClass,Demorado
 930,Emory,Aguilera,37000.000000,BR3456J,EconomyClass,Demorado
@@ -933,7 +933,7 @@ id,nombre,apellido,precio,tipo de pasajero, codigo de vuelo, estado de vuelo
 932,Debby,Romero,18000.000000,IB0800A,EconomyClass,Aterrizado
 933,Gui,Aravena,20000.000000,IB0800A,EconomyClass,Aterrizado
 934,Dorette,Vargas,37000.000000,IB0800A,EconomyClass,Aterrizado
-935,Jillane,Vázquez,37000.000000,IB0800A,EconomyClass,Aterrizado
+935,Jillane,Velazquez,37000.000000,IB0800A,EconomyClass,Aterrizado
 936,Carolina,Cáceres,33000.000000,IB0800A,EconomyClass,Aterrizado
 937,Randy,Yáñez,15000.000000,IB0800A,EconomyClass,Aterrizado
 938,Arabel,Leiva,50000.000000,IB0800A,EconomyClass,Aterrizado
@@ -942,7 +942,7 @@ id,nombre,apellido,precio,tipo de pasajero, codigo de vuelo, estado de vuelo
 941,Nina,Valdés,25000.000000,IB0800A,EconomyClass,Aterrizado
 942,Vernen,Vidal,18000.000000,IB0800A,EconomyClass,Aterrizado
 943,Loria,Salinas,25000.000000,IB0800A,EconomyClass,Aterrizado
-944,Isabeau,Zúñiga,37000.000000,BA2491A,EconomyClass,Aterrizado
+944,Isabeau,Higuain,37000.000000,BA2491A,EconomyClass,Aterrizado
 945,Cherice,Peña,15000.000000,BR3456J,EconomyClass,Demorado
 946,Kimberley,Godoy,18000.000000,BR3456J,EconomyClass,Demorado
 947,Martyn,Lagos,25000.000000,BR3456J,EconomyClass,Demorado
@@ -970,8 +970,8 @@ id,nombre,apellido,precio,tipo de pasajero, codigo de vuelo, estado de vuelo
 969,Charlie,Gonzalez,50000.000000,IB0800A,EconomyClass,Aterrizado
 970,Noach,Ferna�ndez,12000.000000,IB0800A,EconomyClass,Aterrizado
 971,Mercedes,Rodriguez,12000.000000,IB0800A,EconomyClass,Aterrizado
-972,Sloan,López,42000.000000,IB0800A,EconomyClass,Aterrizado
-973,Guglielma,Marti�nez,15000.000000,IB0800A,EconomyClass,Aterrizado
+972,Sloan,Messi,42000.000000,IB0800A,EconomyClass,Aterrizado
+973,Guglielma,Ronaldo,15000.000000,IB0800A,EconomyClass,Aterrizado
 974,Herrick,Sanchez,30000.000000,IB0800A,EconomyClass,Aterrizado
 975,Aleksandr,Pérez,42000.000000,IB0800A,EconomyClass,Aterrizado
 976,Arlina,Gomez,33000.000000,IB0800A,EconomyClass,Aterrizado
@@ -985,11 +985,11 @@ id,nombre,apellido,precio,tipo de pasajero, codigo de vuelo, estado de vuelo
 984,Pebrook,Muñoz,33000.000000,BA2491A,EconomyClass,Aterrizado
 985,Erna,Romero,33000.000000,BA2491A,EconomyClass,Aterrizado
 986,Ferd,Alonso,25000.000000,BA2491A,EconomyClass,Aterrizado
-987,Mohammed,Gutiérrez,42000.000000,BA2491A,EconomyClass,Aterrizado
+987,Mohammed,Gutierrez,42000.000000,BA2491A,EconomyClass,Aterrizado
 988,Dawn,Navarro,37000.000000,BA2491A,EconomyClass,Aterrizado
 989,Wandie,Torres,25000.000000,BA2491A,EconomyClass,Aterrizado
-990,Chiarra,Domínguez,18000.000000,MM0987B,EconomyClass,En Horario
-991,Zaccaria,Vázquez,33000.000000,MM0987B,EconomyClass,En Horario
+990,Mark,Zuckerberg,90000.000000,MM0987B,FirstClass,En Horario
+991,Zaccaria,Vazquez,33000.000000,MM0987B,EconomyClass,En Horario
 992,Trenna,Ramos,10000.000000,MM0987B,EconomyClass,En Horario
 998,Jaye,Gutiérrez,25000.000000,MM0987B,EconomyClass,En Horario
 999,Tamarra,Navarro,15000.000000,MM0987B,EconomyClass,En Horario
@@ -997,7 +997,30 @@ id,nombre,apellido,precio,tipo de pasajero, codigo de vuelo, estado de vuelo
 1001,Tomas,Mastra,12000.000000,MM0987B,FirstClass,Aterrizado
 1002,Maria,Anna,12900.000000,MM0987B,FirstClass,Aterrizado
 1003,Sabrina,Suarez,13500.000000,MM0987B,FirstClass,Aterrizado
-1004,Jose,Listorti,71.000000,Firstclass,BA2491A,Aterrizado
-1005,Santiago,Netto,1.000000,MM0987B,Executiveclass,En horario
+1004,Jose,Listorti,71000.000000,BA2491A,FirstClass,Aterrizado
+1005,Santiago,Netto,100000.000000,MM0987B,Executiveclass,En Vuelo
 1006,Valentin,Velez,12000.000000,IB0800A,FirstClass,Aterrizado
-1007,Tomas,Fonsi,23000.000000,IB0800A,Firstclass,En horario
+1007,Tomas,Fonsi,23000.000000,IB0800A,Firstclass,En Vuelo
+1008,Jeronimo ,Martinez,12000.000000,BA2491A,EconomyClass,Aterrizado
+1009,Joan,Caliccio,24000.000000,GU2345F,FirtClass,En Vuelo
+1010,Olivia,Fenandez,34000.000000,GU2345F,FirstClass,En Vuelo
+1011,Dylan,Pascucci,70000.000000,MM0987B,Executiveclass,En Vuelo
+1012,Natalia,Perez,23000.000000,GU2345F,Economyclass,En Vuelo
+1013,Nicolas,Velez,52000.000000,AB7650G,ExecutiveClass,Demorado
+1014,Juan martin,Garatea,60000.000000,AB7650G,EconomyClass,Demorado
+1015,Juan,Guarnizo,77000.000000,AB7650G,Firstclass,Demorado
+1016,Joaquin,Gomez,12000.000000,AB7650G,EconomyClass,Demorado
+1017,Tomas,Gomez,12000.000000,AB7650G,ExecutiveClass,Demorado
+1018,Marta,Gomez,12000.000000,AB7650G,Economyclass,Demorado
+1019,Genaro,Gomez,12000.000000,AB7650G,Economyclass,Demorado
+1020,Victor,Tilla,13000.000000,KV7591L,Executiveclass,En Vuelo
+1021,Bill,Gates,98000.000000,KV7591L,Firstclass,En Vuelo
+1022,Elon,Musk,99000.000000,KV7591L,Firstclass,En Vuelo
+1023,Daniela,Marcellino,34000.000000,KV7591L,FirstClass,Demorado
+1024,Jeremias,Suarez,12000.000000,KV7591L,Firstclass,En Horario
+1025,Tobias,Suar,30000.000000,KV7591L,Executiveclass,En Horario
+1026,Ivan,Iglesias,52000.000000,AB7650G,EconomyClass,En Horario
+1027,Karrina,Gomez,12000.000000,KV7591L,Economyclass,En Horario
+1028,Jazmin,Toro,13000.000000,KV7591L,Economyclass,En Horario
+1029,Tomas,Martinez,45000.000000,AB7650G,ExecutiveClass,Demorado
+1030,Abril,Ortega,24000.000000,TU6789B,Firstclass,Aterrizo

@@ -29,7 +29,7 @@ Passenger* Passenger_new()
 	return unPasajero;
 }
 
-Passenger* Passenger_newParametros(char* idStr,char* nombreStr,char* tipoPasajeroStr, char* apellidoStr, char* precioStr, char* codigoVueloStr, char* estadoVueloStr)
+Passenger* Passenger_newParametros(char* idStr,char* nombreStr,char* apellidoStr, char* precioStr, char* codigoVueloStr, char* tipoPasajeroStr, char* estadoVueloStr)
 {
 
 	Passenger* unPasajero;
@@ -47,7 +47,7 @@ Passenger* Passenger_newParametros(char* idStr,char* nombreStr,char* tipoPasajer
 
 
 
-		if((Passenger_setId(unPasajero, id)==0) || 	(Passenger_setNombre(unPasajero, nombreStr)==0)  || (Passenger_setPrecio(unPasajero, precio)==0) || (Passenger_setApellido(unPasajero, apellidoStr)==0)	|| 	(Passenger_setTipoPasajero(unPasajero, tipoPasajeroStr)==0) || 	(Passenger_setCodigoVuelo(unPasajero, codigoVueloStr)==0) ||	(Passenger_setEstadoVuelo(unPasajero, estadoVueloStr)==0))
+		if((Passenger_setId(unPasajero, id)==0) || 	(Passenger_setNombre(unPasajero, nombreStr)==0)  || (Passenger_setTipoPasajero(unPasajero, tipoPasajeroStr)==0) || (Passenger_setApellido(unPasajero, apellidoStr)==0)	|| 	(Passenger_setPrecio(unPasajero, precio)==0) || 	(Passenger_setCodigoVuelo(unPasajero, codigoVueloStr)==0) ||	(Passenger_setEstadoVuelo(unPasajero, estadoVueloStr)==0))
 		{
 			 Passenger_delete(unPasajero);
 		}
@@ -256,14 +256,14 @@ void Passenger_printOne(Passenger* unPasajero)
 	{
 	Passenger_getId(unPasajero, &id);
 	Passenger_getNombre(unPasajero, nombre);
-	Passenger_getApellido(unPasajero, apellido);
 	Passenger_getTipoPasajero(unPasajero, tipoPasajero);
+	Passenger_getApellido(unPasajero, apellido);
 	Passenger_getEstadoVuelo(unPasajero, estadoVuelo);
 	Passenger_getCodigoVuelo(unPasajero, codigoVuelo);
 	Passenger_getPrecio(unPasajero, &precio);
 
 
-	printf("%4d %10s %10s %4.2f %10s %10s %10s\n", id, nombre, apellido, precio, tipoPasajero, codigoVuelo, estadoVuelo);
+	printf("%4d %10s %10s %4.2f %10s %10s %10s\n", id, nombre, apellido, precio, codigoVuelo, tipoPasajero, estadoVuelo);
 
 
 	}
@@ -417,6 +417,9 @@ void Passenger_SubMenuModify(Passenger* this)
 	char nombre[21];
 	char apellido[21];
 	float precio;
+	char estadoVuelo[21];
+	char tipoPasajero[21];
+	char codigoVuelo[21];
 	char confirm;
 
 	printf("Pasajero que va a modificar: \n");
@@ -429,7 +432,10 @@ void Passenger_SubMenuModify(Passenger* this)
 										 "1. Modificar Nombre\n"
 										 "2. Modificar Apellido\n"
 										 "3. Modificar precio\n"
-										 "4. Volver al menu principal\n"
+										 "4. Modificar Tipo de Pasajero\n"
+										 "5. Modificar Codigo de Vuelo\n"
+										 "6. Modificar Estado de Vuelo\n"
+										 "7. Volver al menu principal\n"
 										 "Ingrese una opcion: " ,
 										 "\n***************************\n"
 										 "MODIFICAR\n"
@@ -437,8 +443,11 @@ void Passenger_SubMenuModify(Passenger* this)
 										 "1. Modificar Nombre\n"
 										 "2. Modificar Apellido\n"
 										 "3. Modificar precio\n"
-										 "4. Volver al menu principal\n"
-										 "Error, Ingrese de vuelta: " , 1, 4);
+										 "4. Modificar Tipo de Pasajero\n"
+										 "5. Modificar Codigo de Vuelo\n"
+										 "6. Modificar Estado de Vuelo\n"
+										 "7. Volver al menu principal\n"
+										 "Error, Ingrese de vuelta: " , 1, 7);
 
 
 	switch(option)
@@ -482,8 +491,109 @@ void Passenger_SubMenuModify(Passenger* this)
 				}
 
 	break;
-	}
 
+	case 4:
+		getName(tipoPasajero,
+								"\n***************************\n"
+								"TIPO DE PASAJERO\n"
+								"\n***************************\n"
+								"1. FirstClass\n"
+								"2. ExecutiveClass\n"
+								"3. EconomyClass\n"
+								"Ingrese una opcion: " ,
+								"\n***************************\n"
+								"TIPO DE PASAJERO\n"
+								"\n***************************\n"
+								"1. FirstClass\n"
+								"2. ExecutiveClass\n"
+								"3. EconomyClass\n"
+								"Error, Ingrese de vuelta: " , 21);
+
+		getChar(&confirm, "Ingrese S para confirmar: ");
+
+						confirm = tolower(confirm);
+						if(confirm == 's')
+						{
+							Passenger_setTipoPasajero(this, tipoPasajero);
+							printf("Se modifico correctamente\n");
+						}
+
+		break;
+
+
+	case 5:
+		getString(codigoVuelo,
+																	 "\n***************************\n"
+																	 "CODIGO DE VUELO\n"
+																	 "\n***************************\n"
+																	 "1. BA2491A\n"
+																	 "2. IB0800A\n"
+																	 "3. MM0987B\n"
+																	 "4. TU6789B\n"
+																	 "5. GU2345F\n"
+																	 "6. HY4567D\n"
+																	 "7. FR5678G\n"
+																	 "8. BR3456J\n"
+																	 "9. AB7650G\n"
+																	 "10.KV7591L\n"
+																	 "Ingrese una opcion: " ,
+																	 "\n***************************\n"
+																	 "CODIGO DE VUELO\n"
+																	 "\n***************************\n"
+																	 "1. BA2491A\n"
+																	 "2. IB0800A\n"
+																	 "3. MM0987B\n"
+																	 "4. TU6789B\n"
+																	 "5. GU2345F\n"
+																	 "6. HY4567D\n"
+																	 "7. FR5678G\n"
+																	 "8. BR3456J\n"
+																	 "9. AB7650G\n"
+																	 "10.KV7591L\n"
+																	 "Error, Ingrese de vuelta: " , 21);
+
+		getChar(&confirm, "Ingrese S para confirmar: ");
+
+						confirm = tolower(confirm);
+						if(confirm == 's')
+						{
+							Passenger_setCodigoVuelo(this, codigoVuelo);
+							printf("Se modifico correctamente\n");
+						}
+
+		break;
+
+
+	case 6:
+		getString(estadoVuelo,
+																	 "\n***************************\n"
+																	 "ESTADO DE VUELO\n"
+																	 "\n***************************\n"
+																	 "1. En Horario\n"
+																	 "2. Aterrizo\n"
+																	 "3. En Vuelo\n"
+																	 "4. Demorado\n"
+																	 "Ingrese una opcion: " ,
+																	 "\n***************************\n"
+																	 "ESTADO DE VUELO\n"
+																	 "\n***************************\n"
+																	 "1. En Horario\n"
+																	 "2. Aterrizo\n"
+																	 "3. En Vuelo\n"
+																	 "4. Demorado\n"
+																	 "Error, Ingrese de vuelta: " , 21);
+
+		getChar(&confirm, "Ingrese S para confirmar: ");
+
+						confirm = tolower(confirm);
+						if(confirm == 's')
+						{
+							Passenger_setEstadoVuelo(this, estadoVuelo);
+							printf("Se modifico correctamente\n");
+						}
+		break;
+
+	}
 }
 
 

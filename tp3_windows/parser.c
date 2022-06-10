@@ -36,7 +36,7 @@ int parser_PassengerFromText(FILE* pFile , LinkedList* pArrayListPassenger)
 			if(cantidad == 7)
 			{
 
-			unPasajero = Passenger_newParametros(id, nombre, tipo, apellido, precio, codigo, estado);
+			unPasajero = Passenger_newParametros(id, nombre, apellido, precio, codigo, tipo, estado);
 			ll_add(pArrayListPassenger, unPasajero);
 
 			 Passenger_printOne(unPasajero);
@@ -60,28 +60,32 @@ int parser_PassengerFromBinary(FILE* pFile , LinkedList* pArrayListPassenger)
 {
 
 
-		/*Passenger* unPasajero;
-		int cantidad;
+		Passenger* unPasajero;
+
 
 		if(pFile != NULL && pArrayListPassenger != NULL)
 		{
-			 fread(unPasajero, sizeof(Passenger), 1, pFile);
 
 			while(!feof(pFile))
 			{
-				cantidad = fread(unPasajero, sizeof(Passenger), 1, pFile);
+				unPasajero = Passenger_new();
 
-				if(cantidad == 7)
-				{
-				//unPasajero = Passenger_newParametros(id, nombre, tipo, apellido, precio, codigo, estado);
+				 fread(unPasajero, sizeof(Passenger), 1, pFile);
+				 if(feof(pFile))
+
+				 {
+					 break;
+				 }
+
 				ll_add(pArrayListPassenger, unPasajero);
 
 				 Passenger_printOne(unPasajero);
-				}
+
+
 			}
 			fclose(pFile);
 
-		}*/
+		}
 
 
 
