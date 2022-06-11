@@ -311,20 +311,20 @@ int Passenger_comparebyLastName(void* p1, void* p2)
 
 int Passenger_comparebyPrice(void* p1, void* p2)
 {
-	int compara;
-	Passenger* unPasajero;
-	Passenger* otroPasajero;
+	int compara=-1;
+		Passenger* unPasajero;
+		Passenger* otroPasajero;
 
-	if(p1!=NULL && p2!=NULL)
-	{
-	unPasajero = (Passenger*) p1;
-	otroPasajero = (Passenger*) p2;
-
-		if(unPasajero->precio>otroPasajero->precio)
+		if(p1!=NULL && p2!=NULL)
 		{
-			compara = 1;
+		unPasajero = (Passenger*) p1;
+		otroPasajero = (Passenger*) p2;
+
+			if(unPasajero->precio>otroPasajero->precio)
+			{
+				compara = 1;
+			}
 		}
-	}
 
 
 
@@ -333,7 +333,7 @@ int Passenger_comparebyPrice(void* p1, void* p2)
 
 int Passenger_comparebyId(void* p1, void* p2)
 {
-	int compara;
+	int compara=-1;
 	Passenger* unPasajero;
 	Passenger* otroPasajero;
 

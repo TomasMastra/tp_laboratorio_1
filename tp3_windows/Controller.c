@@ -7,7 +7,7 @@
 #include "Controller.h"
 
 
-
+//Mastrapasqua Tomas B
 
 
 /** \brief Carga los datos de los pasajeros desde el archivo data.csv (modo texto).
@@ -479,12 +479,11 @@ int controller_saveAsText(char* path , LinkedList* pArrayListPassenger)
 
 					unPasajero=ll_get(pArrayListPassenger, i);
 					fprintf(pFile, "%d,%s,%s,%f,%s,%s,%s\n", unPasajero->id,unPasajero->nombre,unPasajero->apellido,unPasajero->precio, unPasajero->codigoVuelo,unPasajero->tipoPasajero,unPasajero->estadoVuelo);
-					Passenger_printOne(unPasajero);
 
 
 
 				}
-				printf("Cantidad de pasajeros: %d\n",len);
+				printf("Cantidad de pasajeros guardados: %d\n",len);
 
 				fclose(pFile);
 				pFile=NULL;
@@ -529,10 +528,11 @@ int controller_saveAsBinary(char* path , LinkedList* pArrayListPassenger)
 			unPasajero=ll_get(pArrayListPassenger, i);
 			fwrite(unPasajero, sizeof(Passenger), 1, pFile);
 			ret = 1;
-			Passenger_printOne(unPasajero);
 
 
 		}
+		printf("Cantidad de pasajeros guardados: %d\n",len);
+
 	}
 
 

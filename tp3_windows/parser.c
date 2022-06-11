@@ -4,7 +4,7 @@
 #include "Passenger.h"
 #include "Input.h"
 
-
+//Mastrapasqua Tomas B
 /** \brief Parsea los datos los datos de los pasajeros desde el archivo data.csv (modo texto).
  *
  * \param path char*
@@ -39,7 +39,6 @@ int parser_PassengerFromText(FILE* pFile , LinkedList* pArrayListPassenger)
 			unPasajero = Passenger_newParametros(id, nombre, apellido, precio, codigo, tipo, estado);
 			ll_add(pArrayListPassenger, unPasajero);
 
-			 Passenger_printOne(unPasajero);
 			}
 		}
 		fclose(pFile);
@@ -79,7 +78,6 @@ int parser_PassengerFromBinary(FILE* pFile , LinkedList* pArrayListPassenger)
 
 				ll_add(pArrayListPassenger, unPasajero);
 
-				 Passenger_printOne(unPasajero);
 
 
 			}

@@ -137,8 +137,6 @@ int getString(char* string, char* message, char* messageError, int max)
 			}
 		}
 
-
-
 		strcpy(string, buffer);
 
 
@@ -214,19 +212,15 @@ int tolowerString(char* string)
 
 
 	for(i=0; buffer[i]!='\0' ; i++)
-{
+	{
 
         buffer[i] = tolower(buffer[i]);
+        ret = 0;
 
-}
+	}
 	buffer[0] = toupper(buffer[0]);
 
 	strcpy(string, buffer);
-
-
-
-
-
 
 	return ret;
 }

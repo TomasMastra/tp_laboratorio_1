@@ -1024,3 +1024,4 @@ id,nombre,apellido,precio,tipo de pasajero, codigo de vuelo, estado de vuelo
 1028,Jazmin,Toro,13000.000000,KV7591L,Economyclass,En Horario
 1029,Tomas,Martinez,45000.000000,AB7650G,ExecutiveClass,Demorado
 1030,Abril,Ortega,24000.000000,TU6789B,Firstclass,Aterrizo
+1031,Tobias,Perez,12000.000000,AB7650G,Firstclass,En Horario
