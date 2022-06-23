@@ -24,10 +24,10 @@
 #include "../inc/LinkedList.h"
 
 
-int main(void)//Mastrapasqua Tomas B
+int main(void)
 {
 	startTesting(1);  // ll_newLinkedList
-	/*startTesting(2);  // ll_len
+ /* startTesting(2);  // ll_len
 	startTesting(3);  // getNode - test_getNode
 	startTesting(4);  // addNode - test_addNode
 	startTesting(5);  // ll_add
