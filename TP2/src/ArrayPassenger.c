@@ -674,7 +674,7 @@ int printSubMenu(Passenger list[], int len)
 
 int harcodearPasajeros(Passenger list[], int len)
 {
-	int ret;
+	int ret = -1;
 	int i;
 
 		int id[] = {10000, 10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008, 10009, 10010, 10011, 10012, 10013, 10014, 10015};
@@ -698,7 +698,8 @@ int harcodearPasajeros(Passenger list[], int len)
 			list[i].statusFlight = statusFlight[i];
 
 
-			list[i].isEmpty = 1;
+			list[i].isEmpty = 0;
+			ret = 1;
 
 
 		}
