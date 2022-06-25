@@ -179,7 +179,7 @@ int findPassengerById(Passenger list[], int len,int id)
     for(i=0;i<len;i++)
     {
 
-    	if(list[i].id == id)
+    	if(list[i].id == id && list[i].isEmpty!=EMPTY)
     	{
     		ret = i;
     		break;
@@ -671,5 +671,42 @@ int printSubMenu(Passenger list[], int len)
 	return ret;
 
 }
+
+int harcodearPasajeros(Passenger list[], int len)
+{
+	int ret;
+	int i;
+
+		int id[] = {10000, 10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008, 10009, 10010, 10011, 10012, 10013, 10014, 10015};
+		char nombre[][51] = {"Jesus", "Jose", "Maria", "Tomas", "German", "Matias", "Carolina", "Ezequiel", "Valentina", "Santiago", "Lucas", "Jonathan", "Zahir", "Daniela", "Raul", "Ricardo"};
+		char lastName[][51] = {"Martinez", "Mastrapasqua", "Abelle", "Marcellino", "Netto", "Velez", "Cortese", "Farias", "Suarez", "Gonzalez", "Zuckerberg", "Gomez", "Buchardo", "Hernandez", "Brion", "Sosa"};
+		int typePassenger[] = {1, 1, 2, 3, 1, 3, 2, 2, 2, 3, 1, 2, 3, 2, 1, 3};
+		int statusFlight[] = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1};
+		int price[] = {10000, 10000, 20000, 30000, 10000, 30000, 20000, 20000, 20000, 30000, 10000, 20000, 30000, 20000, 10000, 30000};
+		char flycode[][10] = {"AHU34Y", "DFG77K", "AHU34Y", "TMS54M", "AHU34Y", "TMS54M", "DFG77K", "AHU34Y", "AHU34Y", "TMS54M", "TMS54M", "AHU34Y", "DFG77K", "AHU34Y", "TMS54M", "DFG77K"};
+
+
+
+		for(i=0;i<16;i++)
+		{
+			list[i].id = id[i];
+			strcpy(list[i].name, nombre[i]);
+			strcpy(list[i].lastName, lastName[i]);
+			strcpy(list[i].flycode, flycode[i]);
+			list[i].price = price[i];
+			list[i].typePassenger = typePassenger[i];
+			list[i].statusFlight = statusFlight[i];
+
+
+			list[i].isEmpty = 1;
+
+
+		}
+
+
+	return ret;
+
+}
+
 
 #endif /* ARRAYPASSENGER_C_ */

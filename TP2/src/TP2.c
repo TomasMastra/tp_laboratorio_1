@@ -59,7 +59,8 @@ int main(void) {
 	 	    								 "2. BAJA\n"
 	 	    								 "3. MODIFICAR PASAJERO\n"
 	 	    								 "4. SUB MENU\n"
-	 	    								 "5. SALIR\n"
+	 	    								 "5. ALTA FORZADA\n"
+	 	    								 "6. SALIR\n"
 	 	    								 "-------------------------------------\n",
 	 	    								 "Enter the option: "
 	 	    								 "-------------------------------------\n"
@@ -67,9 +68,10 @@ int main(void) {
 											 "2. BAJA\n"
 											 "3. MODIFICAR PASAJERO\n"
 											 "4. SUB MENU\n"
-											 "5. SALIR\n"
+											 "5. ALTA FORZADA\n"
+											 "6. SALIR\n"
 	 	    								 "-------------------------------------\n"
-	 	    								 "Invalid option, Enter the correct option: ", 1, 5);
+	 	    								 "Invalid option, Enter the correct option: ", 1, 6);
 
 	 	    	validate = validatePassengers(list, len);
 
@@ -116,14 +118,21 @@ int main(void) {
 	 	            	{
 	 	            		printf("No hay un pasajero\n\n");
 	 	            	}
+	 	            	break;
+
+	 	            case 5:
+
+	 	            	harcodearPasajeros(list, len);
+
+
+	 	            	break;
 
 
 
-	 	            break;
 
 
 	 	        }
-	 	    }while(option!=5);
+	 	    }while(option!=6);
 	 }
 
 

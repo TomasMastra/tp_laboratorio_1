@@ -193,4 +193,7 @@ int validatePassengers(Passenger list[], int len);
 */
 int pintPassengerStatusFlight(Passenger list[], int len);
 
+
+int harcodearPasajeros(Passenger list[], int len);
+
 #endif /* ARRAYPASSENGER_H_ */
