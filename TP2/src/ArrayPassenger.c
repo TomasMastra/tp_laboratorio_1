@@ -387,7 +387,7 @@ int sortPassengers(Passenger list[], int len, int order)
 				{
 					for(int j = i+1; j<len; j++)
 					{
-						if(list[i].isEmpty != -1 && list[j].isEmpty)
+						if(list[i].isEmpty != -1 && list[j].isEmpty != -1)
 						{
 						if(strcmp(list[i].lastName, list[j].lastName)>0)
 
@@ -420,9 +420,9 @@ int sortPassengers(Passenger list[], int len, int order)
 								{
 									for(int j = i+1; j<len; j++)
 									{
-										if(list[i].isEmpty != -1 && list[j].isEmpty)
+										if(list[i].isEmpty != -1 && list[j].isEmpty !=-1)
 										{
-										if(strcmp(list[i].lastName, list[j].lastName)<0)
+										if(strcmp(list[j].lastName, list[i].lastName)>0)
 
 										{
 											auxPassenger = list[i];
@@ -499,7 +499,7 @@ int sortPassengersByCode(Passenger list[], int len, int order)
 									{
 										for(int j = i+1; j<len; j++)
 										{
-											if(list[i].isEmpty != -1 && list[j].isEmpty)
+											if(list[i].isEmpty != -1 && list[j].isEmpty !=-1)
 											{
 											if(strcmp(list[i].flycode, list[j].flycode)<0)
 
