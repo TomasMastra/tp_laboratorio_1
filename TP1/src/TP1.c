@@ -19,13 +19,12 @@
 int main(void) {
 
 	setbuf(stdout,NULL);
-	sEquipo equipo[22];
-	//sCantidad cantidad;
 	int cantidadPosicion[4];
-	int tamEquipo = TAM;
+	int cantidadConfederacion[6];
 	int option;
 	int flag = 0;
-	int costoMantenimiento[3];
+	//int costoMantenimiento[3];
+	int cantidadJugadores=0;
 
 	float costoHospedaje=0;
 	float costoComida=0;
@@ -37,33 +36,40 @@ int main(void) {
 	float promedioUefa;
 	float promedioOfc;
 	int aumento=0;
+	float aumentoEuropa;
 	float mantenimiento;
 
 
-	 inicializarEquipo(equipo,  tamEquipo);
-	 inicializarCantidadYCosto(cantidadPosicion, costoMantenimiento);
+	 inicializarCantidadYCosto(cantidadPosicion, cantidadConfederacion);
 
-		//printf("%d\n",cantidad.arqueros);
 
 	do
 		 	    {
 
-		 	    	getInt(&option, "-------------------------------------\n"
-		 	    								 "1. INGRESO COSTO DE MANTENIMIENTO\n"
-		 	    								 "2. CARGA JUGADORES\n"
-		 	    								 "3. REALIZAR CALCULOS\n"
-		 	    								 "4. MOSTRAR RESULTADOS\n"
-		 	    								 "5. SALIR\n"
-		 	    								 "-------------------------------------\n",
-		 	    								 "Ingrese una opcion: "
-		 	    								 "-------------------------------------\n"
-												 "1. INGRESO COSTO DE MANTENIMIENTO\n"
-												 "2. CARGA JUGADORES\n"
-												 "3. REALIZAR CALCULOS\n"
-												 "4. MOSTRAR RESULTADOS\n"
-												 "5. SALIR\n"
-		 	    								 "-------------------------------------\n"
-		 	    								 "ERROR, Ingrese una opcion: ", 1, 5);
+
+
+		printf("afc = %d\n",cantidadConfederacion[0]);
+		printf("caf = %d\n",cantidadConfederacion[1]);
+		printf("concacaf = %d\n",cantidadConfederacion[2]);
+		printf("conmebol = %d\n",cantidadConfederacion[3]);
+
+
+		printf( "1. INGRESO DE LOS COSTOS DE MANTENIMIENTO\n"
+				"Costo de hospedaje   %.2f\n"
+				"Costo de Comida   %.2f\n"
+				"Costo de Transporte   %.2f\n"
+		 	    "2. CARGA JUGADORES\n"
+				"Arqueros  %d \n"
+				"Defensores  %d\n"
+				"Mediocampistas  %d\n"
+				"Delanteros  %d\n"
+				 "3. REALIZAR CALCULOS\n"
+				 "4. MOSTRAR RESULTADOS\n"
+				 "5. SALIR\n"
+				 "-------------------------------------\n"
+				 "\n", costoHospedaje, costoComida, costoTransporte, cantidadPosicion[0], cantidadPosicion[1], cantidadPosicion[2], cantidadPosicion[3]);
+
+		 	    	getInt(&option, "Ingrese una opcion: \n\n", "ERROR, Ingrese una opcion: \n", 1, 5);
 
 
 		 	        switch(option)
@@ -77,7 +83,7 @@ int main(void) {
 		 	            break;
 		 	            case 2:
 
-		 	             cargarJugadores(equipo,  tamEquipo, cantidadPosicion);
+		 	             cargarJugadores(&cantidadJugadores, cantidadPosicion, cantidadConfederacion);
 
 		 	             flag++;
 
@@ -86,7 +92,9 @@ int main(void) {
 		 	            	if(flag>1)
 		 	            	{
 
-		 	            		 aumento=calcularPromedioJugadores(equipo,  tamEquipo, &promedioConmebol, &promedioAfc,  &promedioCaf, &promedioConcacaf,&promedioUefa,&promedioOfc);
+		 	            		 aumento=calcularPromedioJugadores(cantidadConfederacion, &promedioConmebol, &promedioAfc,  &promedioCaf, &promedioConcacaf,&promedioUefa,&promedioOfc);
+		 	            		 calcularMantenimiento(&mantenimiento,  costoHospedaje,  costoComida,  costoTransporte,  aumento, &aumentoEuropa);
+
 		 	            		 mantenimiento=costoHospedaje+costoTransporte+costoComida;
 		 	            		 printf("hospedaje: %f", costoHospedaje);
 		 	            		printf("El mantenimiento es %.2f\n", mantenimiento);
@@ -107,7 +115,7 @@ int main(void) {
 
 		 	            	if(flag >2)
 		 	            	{
-		 	            	 mostrarDatos(promedioConmebol,  promedioAfc,   promedioCaf,  promedioConcacaf, promedioUefa, promedioOfc,  aumento,  mantenimiento);
+		 	            	 mostrarDatos(promedioConmebol,  promedioAfc,   promedioCaf,  promedioConcacaf, promedioUefa, promedioOfc,  aumento,  mantenimiento, aumentoEuropa);
 
 
 		 	            	}else
