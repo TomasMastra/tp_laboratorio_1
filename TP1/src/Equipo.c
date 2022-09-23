@@ -21,6 +21,7 @@ int inicializarCantidadYCosto(int cantidadPosicion[], int cantidadConfederacion[
 	{
 		cantidadPosicion[i]=0;
 		cantidadConfederacion[i]=0;
+		ret=1;
 	}
 
 
@@ -69,6 +70,7 @@ int ingresarCostos(float *costoHospedaje, float* costoComida, float* costoTransp
 
 
 	}
+	ret=1;
 	}while(option!=4);
 
 
@@ -110,7 +112,7 @@ int cargarJugadores(int* cantidadJugadores, int cantidadPosicion[], int cantidad
 
 int pedirPosicion(int cantidadPosicion[])
 {
-	int ret = -1;
+	int ret = 1;
 	int option;
 
 	getInt(&option, "Ingrese la posicion del jugador (1: arquero - 2: defensor - 3: mediocampista- 4: delantero)\n", "ERROR, Ingrese la posicion del jugador\n", 1, 4);
@@ -128,7 +130,7 @@ int pedirPosicion(int cantidadPosicion[])
 
 int pedirConfederacion(int cantidadConfederacion[])
 {
-	int ret = -1;
+	int ret = 1;
 	int option;
 
 	getInt(&option, "Ingrese la confederacion del jugador\n", "ERROR, Ingrese la confederacion del jugador\n", 1,6);
@@ -137,11 +139,11 @@ int pedirConfederacion(int cantidadConfederacion[])
 	return ret;
 }
 
-int validarConfederacion(int cantidadConfederacion[],int option)
+int validarConfederacion(int cantidadConfederacion[],int opcion)
 {
 	int ret = -1;
 
-	switch(option)
+	switch(opcion)
 		{
 		case 1:
 			cantidadConfederacion[0]++;
@@ -180,13 +182,13 @@ int validarConfederacion(int cantidadConfederacion[],int option)
 	return ret;
 }
 
-int calcularCantidad(int cantidadPosicion[], int option)
+int calcularCantidad(int cantidadPosicion[], int opcion)
 {
 	int ret=-1;
 	//int cantidadPosicion[4];
 
 
-	switch(option)
+	switch(opcion)
 	{
 	case 1:
 
@@ -219,11 +221,11 @@ int calcularCantidad(int cantidadPosicion[], int option)
 
 }
 
-int validarPosicion(int cantidadPosicion[], int option)
+int validarPosicion(int cantidadPosicion[], int opcion)
 {
 	int ret=-1;
 
-	switch(option)
+	switch(opcion)
 		{
 		case 1:
 
@@ -277,6 +279,7 @@ int validarPosicion(int cantidadPosicion[], int option)
 
 
 			break;
+
 
 
 		}
@@ -339,17 +342,17 @@ int calcularMantenimiento(float* mantenimiento,  float costoHospedaje, float cos
 
 int mostrarDatos(float promedioConmebol, float promedioAfc,  float promedioCaf, float promedioConcacaf,float promedioUefa,float promedioOfc, int aumento, float mantenimiento, float aumentoEuropa)
 {
-	int ret=-1;
+	int ret=1;
 	//float aumentoEuropa;
 
 	printf("-------------------------\n");
 
 	printf("promedio afc: %.2f\n",promedioAfc);//mostrar en el punto 4
-	printf("cantidad caf: %.2f\n",promedioCaf);
-	printf("cantidad concacaf: %.2f\n",promedioConcacaf);
-	printf("cantidad conmebol: %.2f\n",promedioConmebol);
-	printf("cantidad uefa: %.2f\n",promedioUefa);
-	printf("cantidad ofc: %.2f\n",promedioOfc);
+	printf("promedio caf: %.2f\n",promedioCaf);
+	printf("promedio concacaf: %.2f\n",promedioConcacaf);
+	printf("promedio conmebol: %.2f\n",promedioConmebol);
+	printf("promedio uefa: %.2f\n",promedioUefa);
+	printf("promedio ofc: %.2f\n",promedioOfc);
 
 	printf("El mantenimiento es %.2f\n", mantenimiento);
 	if(aumento==1)

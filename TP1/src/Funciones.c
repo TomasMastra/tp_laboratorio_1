@@ -55,13 +55,12 @@ int validateInt(char* integer)
 	len = strlen(integer);
 
 
-
 			for(int i=0;i<len;i++)
 			{
 
 				validateCaps[i] = tolower(integer[i]);
 
-				if(validateCaps[i] < 48  ||  validateCaps[i]!=57)
+				if(validateCaps[i] < 48  ||  validateCaps[i]>57)
 				{
 					ret = 0;
 
@@ -184,15 +183,12 @@ int getName(char *string, char *message, char *messageError, int max) // La dife
 	 {
 		 printf("ERROR, ");
 		 getString(buffer, message, messageError, max);
-
 		 validarLetras = validateLetters(buffer);
-
 
 	 }
 
 
 	 tolowerString(buffer);
-
 	strcpy(string, buffer);
 
 
@@ -220,8 +216,17 @@ int tolowerString(char* string)
         buffer[i] = tolower(buffer[i]);
         ret = 0;
 
+        if(buffer[i-1] == 32 )
+        {
+        	buffer[i]= toupper(buffer[i]);
+        	printf("%c",buffer[i]);
+
+        }
+
 	}
 	buffer[0] = toupper(buffer[0]);
+	//buffer[index] = toupper(buffer[index]);
+
 
 	strcpy(string, buffer);
 

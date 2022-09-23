@@ -40,6 +40,7 @@ int main(void) {
 	float mantenimiento;
 
 
+
 	 inicializarCantidadYCosto(cantidadPosicion, cantidadConfederacion);
 
 
@@ -48,10 +49,19 @@ int main(void) {
 
 
 
-		printf("afc = %d\n",cantidadConfederacion[0]);
+		/*printf("afc = %d\n",cantidadConfederacion[0]);
 		printf("caf = %d\n",cantidadConfederacion[1]);
 		printf("concacaf = %d\n",cantidadConfederacion[2]);
-		printf("conmebol = %d\n",cantidadConfederacion[3]);
+		printf("conmebol = %d\n",cantidadConfederacion[3]);*/
+
+		/*getName(hola, "ingrese nombre", "ingrese nombre\n",21);
+		printf("%s\n", hola);
+		getString(hola, "ingrese string", "ingrese string\n",21);
+		printf("%s\n", hola);*/
+
+
+
+
 
 
 		printf( "1. INGRESO DE LOS COSTOS DE MANTENIMIENTO\n"
@@ -95,7 +105,7 @@ int main(void) {
 		 	            		 aumento=calcularPromedioJugadores(cantidadConfederacion, &promedioConmebol, &promedioAfc,  &promedioCaf, &promedioConcacaf,&promedioUefa,&promedioOfc);
 		 	            		 calcularMantenimiento(&mantenimiento,  costoHospedaje,  costoComida,  costoTransporte,  aumento, &aumentoEuropa);
 
-		 	            		 mantenimiento=costoHospedaje+costoTransporte+costoComida;
+		 	            		 //mantenimiento=costoHospedaje+costoTransporte+costoComida;
 		 	            		 printf("hospedaje: %f", costoHospedaje);
 		 	            		printf("El mantenimiento es %.2f\n", mantenimiento);
 
