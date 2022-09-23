@@ -146,27 +146,7 @@ int getString(char* string, char* message, char* messageError, int max)
 	return ret;
 }
 
-int getChar(char* character, char* message)
-{
-	int ret = -1;
-	char letter;
 
-	if(character != NULL && message != NULL)
-	{
-		printf("%s", message);
-		fflush(stdin);
-		scanf("%c", letter);
-
-		*character = letter;
-		 tolowerString(character);
-
-
-		//*character = getchar();
-		ret = 0;
-	}
-
-	return ret;
-}
 
 int getName(char *string, char *message, char *messageError, int max) // La diferencia es que getString es Alfanumerico y esta solo para pedir nombres (solo letras y que empieze por mayuscula)
 {
