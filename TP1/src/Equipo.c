@@ -304,12 +304,14 @@ int calcularPromedioJugadores(int cantidadConfederacion[], float* promedioConmeb
 	total=(float)cantidadConfederacion[0]+cantidadConfederacion[1]+cantidadConfederacion[2]+cantidadConfederacion[3]+cantidadConfederacion[4]+cantidadConfederacion[5];
 
 
-	*promedioAfc  = (float)(cantidadConfederacion[0]*100)/total;
-	*promedioCaf = (float) (cantidadConfederacion[1]*100)/total;
-	*promedioConcacaf=(float)(cantidadConfederacion[2]*100)/total;
-	*promedioConmebol=(float)(cantidadConfederacion[3]*100)/total;
-	*promedioUefa=(float)(cantidadConfederacion[4]*100)/total;
-	*promedioOfc=(float)(cantidadConfederacion[5]*100)/total;
+	*promedioAfc  = (float)total/cantidadConfederacion[0];
+	*promedioCaf = (float) total/cantidadConfederacion[1];
+	*promedioConcacaf=(float)total/cantidadConfederacion[2];
+	*promedioConmebol=(float)total/cantidadConfederacion[3];
+	*promedioUefa=(float)total/cantidadConfederacion[4];
+	*promedioOfc=(float)total/cantidadConfederacion[5];//Promedio, no procentaje
+
+
 
 
 
@@ -347,12 +349,16 @@ int mostrarDatos(float promedioConmebol, float promedioAfc,  float promedioCaf, 
 
 	printf("-------------------------\n");
 
-	printf("promedio afc: %.2f\n",promedioAfc);//mostrar en el punto 4
+	printf("promedio afc: %.2f\n",promedioAfc);
 	printf("promedio caf: %.2f\n",promedioCaf);
 	printf("promedio concacaf: %.2f\n",promedioConcacaf);
 	printf("promedio conmebol: %.2f\n",promedioConmebol);
 	printf("promedio uefa: %.2f\n",promedioUefa);
 	printf("promedio ofc: %.2f\n",promedioOfc);
+	/*
+	 * Si no muestra nada en el promedio es porque no se puede dividir sobre 0
+	 *
+	 */
 
 	printf("El mantenimiento es %.2f\n", mantenimiento);
 	if(aumento==1)
