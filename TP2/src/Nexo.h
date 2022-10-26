@@ -33,6 +33,9 @@ void calcularPorcentajeConfederacion(eJugador jugador[], int tamJugador, eConfed
 
 int calcularCantidadConfederacion(eJugador jugador[], int tamJugador, eConfederacion confederacion);
 
+void informarRegionMasJugadores(eJugador jugador[], int tamJugador, eConfederacion confederacion[], int tamConfederacion);
 
+
+void listarJugadoresDeUnaConfederacion(eJugador jugador[], int tamJugador, eConfederacion confederacion[], int tamConfederacion, int idConfederacion);
 
 #endif /* NEXO_H_ */
