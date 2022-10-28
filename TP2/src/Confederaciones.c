@@ -56,9 +56,8 @@ void mostrarConfederacion(eConfederacion confederacion)
 	printf("| %-5d | %-10s  | %-30s | %-d     |\n", confederacion.id, confederacion.nombre, confederacion.region, confederacion.anioCreacion);
 }
 
-int mostrarConfederaciones(eConfederacion confederacion[], int tamConfederacion)
+void mostrarConfederaciones(eConfederacion confederacion[], int tamConfederacion)
 {
-	int ret = -1;
 
 	printf("|-----------------------------------------------------------------|\n");
 	printf("| %-5s | %-11s | %-30s | %-s |\n", "ID", "NOMBRE", "REGION", "CREACION");
@@ -74,7 +73,6 @@ int mostrarConfederaciones(eConfederacion confederacion[], int tamConfederacion)
 	printf("|-----------------------------------------------------------------|\n");
 
 
-	return ret;
 
 }
 

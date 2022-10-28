@@ -68,9 +68,8 @@ int Jugador_agregar(eJugador jugador[], int tamJugador, eConfederacion confedera
 
 
 
-int pedirConfederacion(eJugador jugador[], eConfederacion confederacion[], int tamConfederacion, int index)
+void pedirConfederacion(eJugador jugador[], eConfederacion confederacion[], int tamConfederacion, int index)
 {
-	int ret = -1;
 	int id;
 
 	 mostrarConfederaciones(confederacion, tamConfederacion);
@@ -96,7 +95,6 @@ int pedirConfederacion(eJugador jugador[], eConfederacion confederacion[], int t
 
 
 
-	return ret;
 }
 
 
@@ -166,7 +164,6 @@ int mostrarMenuModificar(eJugador jugador[], int tamJugador, eConfederacion conf
 	char auxString[51];
 
 
-		ret = 1;
 		 getInt(&opcion, "-------------------------------------\n"
 				 "1. NOMBRE\n"
 				 "2. POSICION\n"
@@ -205,6 +202,8 @@ int mostrarMenuModificar(eJugador jugador[], int tamJugador, eConfederacion conf
 			if(validar==1)
 			{
 				strcpy(jugador[index].nombre, auxString);
+				ret = 1;
+
 			}
 
 			break;
@@ -226,6 +225,8 @@ int mostrarMenuModificar(eJugador jugador[], int tamJugador, eConfederacion conf
 			if(validar==1)
 			{
 				strcpy(jugador[index].posicion, auxString);
+				ret = 1;
+
 			}
 
 
@@ -241,6 +242,8 @@ int mostrarMenuModificar(eJugador jugador[], int tamJugador, eConfederacion conf
 			if(validar==1)
 			{
 				jugador[index].numeroCamiseta = auxInt;
+				ret = 1;
+
 			}
 
 
@@ -256,10 +259,12 @@ int mostrarMenuModificar(eJugador jugador[], int tamJugador, eConfederacion conf
 			if(validar==1)
 			{
 				jugador[index].idConfederacion = auxInt;
+				ret = 1;
+
 			}
 
 
-					break;
+			break;
 
 			case 5:
 
@@ -269,10 +274,10 @@ int mostrarMenuModificar(eJugador jugador[], int tamJugador, eConfederacion conf
 						if(validar==1)
 						{
 							jugador[index].salario = auxInt;
+							ret = 1;
+
 						}
-
-
-						break;
+			break;
 
 
 
@@ -284,6 +289,8 @@ int mostrarMenuModificar(eJugador jugador[], int tamJugador, eConfederacion conf
 						if(validar==1)
 						{
 							jugador[index].aniosContrato = auxInt;
+							ret = 1;
+
 						}
 
 
