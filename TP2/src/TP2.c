@@ -26,17 +26,38 @@ int main(void) {
 	int id = 2000;
 	int jugadores = 0;
 
-	int tamConfederacion = 6;
+	int tamConfederacion = 100;
 	eConfederacion confederacion[tamConfederacion];
+
+	/*
+	 *
+	 */
 
 	int tamJugador = 3000;
 	eJugador jugador[tamJugador];
 
-	 harcodearConfederacion(confederacion,  tamConfederacion);
-	 Jugador_inicializar(jugador, tamJugador);
-	 Jugador_harcodear(jugador,  6);
-	 jugadores = 6;
+	 confederacion_inicializar(confederacion,  tamConfederacion);
+	 harcodearConfederacion(confederacion,  6);
 
+	 /*
+	  * EN CASO DE USAR FUNCIONES PARA DAR DE ALTA CONFEDERACION DESCOMENTAR LA FUNCION DE INICIALIZAR Y AGRANDAR EL TAMAÑO
+	  *
+	  */
+
+
+
+	 Jugador_inicializar(jugador, tamJugador);
+	 Jugador_harcodear(jugador,  8);
+	 jugadores = 8;
+
+
+	  confederacion_agregar(confederacion,  tamConfederacion);
+
+
+	 for(int i=0;i<100;i++)
+	 {
+		 printf("%d\n",confederacion[i].isEmpty);
+	 }
 
 	 do{
 		 printf("Jugadores: %d\n" ,jugadores);

@@ -72,16 +72,17 @@ int pedirConfederacion(eJugador jugador[], eConfederacion confederacion[], int t
 {
 	int ret = -1;
 	int id;
+	int idConfederacion;
 
 	 mostrarConfederaciones(confederacion, tamConfederacion);
-	 getInt(&id,"Ingrese la confederacion correspondiente: "
+	 getInt(&id,"Ingrese la confederacion correspondiente: \n"
 			 "1. AFC\n"
 			 "2. CAF\n"
 			 "3. Concacaf\n"
 			 "4. Conmebol\n"
 			 "5. OFC\n"
 			 "6. UEFA\n",
-			 "ERROR, Ingrese la confederacion correspondiente: "
+			 "ERROR, Ingrese la confederacion correspondiente: \n"
 			 "1. AFC\n"
 			 "2. CAF\n"
 			 "3. Concacaf\n"
@@ -89,7 +90,10 @@ int pedirConfederacion(eJugador jugador[], eConfederacion confederacion[], int t
 			 "5. OFC\n"
 			 "6. UEFA\n", 1, 6);
 
-	 jugador[index].idConfederacion = id;
+
+
+		 jugador[index].idConfederacion = id;
+
 
 
 
@@ -135,10 +139,16 @@ int modificarJugador(eJugador jugador[], int tamJugador, eConfederacion confeder
 
 
 	listarJugadores_Confederacion(jugador,  tamJugador, confederacion,  tamConfederacion);
-	getInt(&id,"Ingrese ID del jugador para modificar: ","ERROR, Ingrese ID del jugador para modificar: ",1994,5000);
+	getInt(&id,"Ingrese ID del jugador para modificar: ","ERROR, Ingrese ID del jugador para modificar: ",1000,5000);
 	index = Jugador_buscarPorId(jugador,  tamJugador,  id);
 
+	if(index!=-1)
+	{
 	 mostrarMenuModificar(jugador,  tamJugador, confederacion,  tamConfederacion,  index);
+	}else
+	{
+		printf("ERROR, No se encontro ese jugador\n");
+	}
 
 
 
@@ -334,7 +344,7 @@ int compararJugador_Confederacion(eConfederacion confederacion[], int tamConfede
 
 	for(int i=0;i<tamConfederacion;i++)
 	{
-		if(jugador.idConfederacion == confederacion[i].id  && jugador.isEmpty!=-1)
+		if(jugador.idConfederacion == confederacion[i].id  && jugador.isEmpty!=-1 && confederacion[i].isEmpty!=-1)
 		{
 			ret = i;
 			break;
@@ -350,28 +360,35 @@ void listarConfederacionesConSusJugadores(eJugador jugador[], int tamJugador, eC
 {
 
 	int jugadorCargado = -1;
-	printf("|Lista de jugadores...\n"
-								   "|%-20s | %-20s | %-15s |%-10s |%20s |%-20s |%15s|\n", "ID", "NOMBRE", "POSICION", "NUMERO", "SALARIO", "AÑOS CONTRATO", "CONFEDERACION");
+	printf("|Lista de jugadores...\n");
 	for(int i=0;i<tamConfederacion;i++)
 	{
+		if(confederacion[i].isEmpty!=-1)
+		{
 		jugadorCargado = -1;
 		printf("|--------------------------------------------------------------------------------------------------------------------------------------|\n");
 		printf("|%d - %-130s|\n", confederacion[i].id, confederacion[i].nombre);
-		for(int j=0;j<tamJugador;j++)
-		{
-			if(jugador[j].idConfederacion == confederacion[i].id && jugador[j].isEmpty!=-1)
-			{
-				listarJugador_Confederacion(jugador[j], confederacion[i]);
-				jugadorCargado = 0;
+		 printf("|%-20s | %-20s | %-15s |%-10s |%20s |%-20s |%15s|\n", "ID", "NOMBRE", "POSICION", "NUMERO", "SALARIO", "AÑOS CONTRATO", "CONFEDERACION");
 
-			}else
-				if(jugadorCargado == -1 && j == tamJugador -1)
+			for(int j=0;j<tamJugador;j++)
+			{
+
+
+				if(jugador[j].idConfederacion == confederacion[i].id && jugador[j].isEmpty!=-1 && confederacion[i].isEmpty!=-1)
+				{
+					listarJugador_Confederacion(jugador[j], confederacion[i]);
+					jugadorCargado = 0;
+
+				}else
+				if(jugadorCargado == -1 && j == tamJugador -1 && confederacion[i].isEmpty!=-1)
 				{
 					printf("|No tiene jugadores cargados %-105s |\n", confederacion[i].nombre);
 				}
-			//printf("|--------------------------------------------------------------------------------------------------------------------------------------|\n");
-			//printf("\n\n");
 
+				//printf("|--------------------------------------------------------------------------------------------------------------------------------------|\n");
+				//printf("\n\n");
+
+			}
 		}
 
 	}
@@ -409,7 +426,7 @@ void mostrarJugadoresMasPromedio(eJugador jugador[], int tamJugador, eConfederac
 	for(int i=0;i<tamJugador;i++)
 	{
 		j = compararJugador_Confederacion(confederacion,  tamConfederacion,  jugador[i]);
-		if(j!=-1 && jugador[i].salario >=promedio)
+		if(j!=-1 && jugador[i].salario >=promedio && jugador[i].isEmpty!=-1 && confederacion[j].isEmpty!=-1)
 		{
 			listarJugador_Confederacion(jugador[i], confederacion[j]);
 
@@ -439,6 +456,8 @@ void calcularMasAniosContrato(eJugador jugador[], int tamJugador, eConfederacion
 
 		}
 
+		if(confederacion[i].isEmpty!=-1)
+		{
 		printf("cantidad %s: %d\n", confederacion[i].nombre, cantidadConfederacion);
 
 			if(cantidadConfederacion>masCantidad)
@@ -452,6 +471,7 @@ void calcularMasAniosContrato(eJugador jugador[], int tamJugador, eConfederacion
 				{
 					mostrar =1;
 				}
+		}
 
 
 
@@ -484,7 +504,10 @@ void calcularPorcentajeConfederacion(eJugador jugador[], int tamJugador, eConfed
 
 	 totalConfederacion = calcularCantidadConfederacion(jugador,  tamJugador, confederacion[i]);
 	 porcentaje = (float) (totalConfederacion*100)/jugadores;
+	 if(confederacion[i].isEmpty!=-1)
+	 {
 	 printf("Porcentaje de %s: %.2f   \n", confederacion[i].nombre, porcentaje);
+	 }
 
 	}
 
@@ -516,29 +539,32 @@ void informarRegionMasJugadores(eJugador jugador[], int tamJugador, eConfederaci
 	int idConfederacion;
 	int index = -1;
 
-	for(int i=0;i<6;i++)
+	for(int i=0;i<tamConfederacion;i++)
 		{
 
-		 totalConfederacion = calcularCantidadConfederacion(jugador,  tamJugador, confederacion[i]);
-		 printf("Total de %s: %d\n", confederacion[i].nombre, totalConfederacion);
+			if(confederacion[i].isEmpty!=-1)
+			{
+			 totalConfederacion = calcularCantidadConfederacion(jugador,  tamJugador, confederacion[i]);
+			 printf("Total de %s: %d\n", confederacion[i].nombre, totalConfederacion);
 
-		 if(totalConfederacion>regionMasJugadores)
-		 {
-			 regionMasJugadores = totalConfederacion;
-			 idConfederacion = confederacion[i].id;
-			 index = i;
-			 mostrar = 0;
+				 if(totalConfederacion>regionMasJugadores && confederacion[i].isEmpty!=-1)
+				 {
+					 regionMasJugadores = totalConfederacion;
+					 idConfederacion = confederacion[i].id;
+					 index = i;
+					 mostrar = 0;
 
-		 }else
-		 {
-				if(totalConfederacion>0 && totalConfederacion==regionMasJugadores)
-				{
-					mostrar = 1;
-				}
-		 }
+				 }else
+				 {
+						if(totalConfederacion>0 && totalConfederacion==regionMasJugadores)
+						{
+							mostrar = 1;
+						}
+				 }
+			}
 		}
 
-	;
+
 	if(mostrar==1)
 	{
 		printf("Hay mas de 1 region con la misma cantidad de jugadores\n\n");

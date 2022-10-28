@@ -36,9 +36,9 @@ void Jugador_inicializar(eJugador jugador[], int tamJugador)
 void Jugador_harcodear(eJugador jugador[], int cantidad)
 {
 
-	eJugador auxJugador[6] = {{1994, "Lionel Messi", "Delantero", 10, 4, 90000000, 6, 1}, {1995, "Kylian Mbappe", "Delantero", 7, 6, 70000000, 4, 1},{1996, "Cristiano Ronaldo", "Delantero", 7, 6, 80000000, 3, 1},{1997, "Keylor Navas", "Arquero", 1, 3, 45000000, 1, 1},{1998, "Nicolas Otamendi", "Defensor", 30, 4, 20000000, 2, 1}, {1999, "Rodrigo De Paul", "Mediocampista", 7, 4, 10000000, 4, 1}};
+	eJugador auxJugador[8] = {{1992, "Lionel Messi", "Delantero", 10, 4, 90000000, 6, 1}, {1993, "Kylian Mbappe", "Delantero", 7, 6, 70000000, 4, 1},{1994, "Cristiano Ronaldo", "Delantero", 7, 6, 80000000, 3, 1},{1995, "Keylor Navas", "Arquero", 1, 3, 45000000, 1, 1},{1996, "Nicolas Otamendi", "Defensor", 30, 4, 20000000, 2, 1}, {1997, "Rodrigo De Paul", "Mediocampista", 7, 4, 10000000, 4, 1},{1998, "Erling Haaland", "Delantero", 9, 6, 70000000, 4, 1}, {1999, "Mohamed Salah", "Delantero", 9, 2, 60000000, 3, 1}};
 
-	for(int i=0;i<6;i++)
+	for(int i=0;i<cantidad;i++)
 	{
 		jugador[i] = auxJugador[i];
 	}
