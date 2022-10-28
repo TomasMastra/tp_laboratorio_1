@@ -39,17 +39,15 @@ int main(void) {
 	 confederacion_inicializar(confederacion,  tamConfederacion);//en caso de que se usen funciones para agregar
 	 harcodearConfederacion(confederacion,  6);
 
-	 /*
-	  * EN CASO DE USAR FUNCIONES PARA DAR DE ALTA CONFEDERACION DESCOMENTAR LA FUNCION DE INICIALIZAR Y AGRANDAR EL TAMAÑO
-	  *
-	  */
+
 
 
 
 	 Jugador_inicializar(jugador, tamJugador);
-	 Jugador_harcodear(jugador,  8);
-	 jugadores = 8;
+	 /*Jugador_harcodear(jugador,  8);
+	 jugadores = 8;*/
 
+	 //DESCOMENTAR AMBAS PARA HARCODEAR
 
 
 
