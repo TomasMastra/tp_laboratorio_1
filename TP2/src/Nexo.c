@@ -72,7 +72,6 @@ int pedirConfederacion(eJugador jugador[], eConfederacion confederacion[], int t
 {
 	int ret = -1;
 	int id;
-	int idConfederacion;
 
 	 mostrarConfederaciones(confederacion, tamConfederacion);
 	 getInt(&id,"Ingrese la confederacion correspondiente: \n"
@@ -142,9 +141,11 @@ int modificarJugador(eJugador jugador[], int tamJugador, eConfederacion confeder
 	getInt(&id,"Ingrese ID del jugador para modificar: ","ERROR, Ingrese ID del jugador para modificar: ",1000,5000);
 	index = Jugador_buscarPorId(jugador,  tamJugador,  id);
 
-	if(index!=-1)
+	printf("%d\n",index);
+	if(index>-1)
 	{
 	 mostrarMenuModificar(jugador,  tamJugador, confederacion,  tamConfederacion,  index);
+
 	}else
 	{
 		printf("ERROR, No se encontro ese jugador\n");
@@ -164,8 +165,6 @@ int mostrarMenuModificar(eJugador jugador[], int tamJugador, eConfederacion conf
 	float auxFloat;
 	char auxString[51];
 
-	if(index!= -1)
-		{
 
 		ret = 1;
 		 getInt(&opcion, "-------------------------------------\n"
@@ -292,10 +291,7 @@ int mostrarMenuModificar(eJugador jugador[], int tamJugador, eConfederacion conf
 
 			}
 
-		}else
-		{
-			printf("No existe ese jugador!!!\n");
-		}
+
 
 
 

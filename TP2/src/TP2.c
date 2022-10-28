@@ -36,7 +36,7 @@ int main(void) {
 	int tamJugador = 3000;
 	eJugador jugador[tamJugador];
 
-	 confederacion_inicializar(confederacion,  tamConfederacion);
+	 confederacion_inicializar(confederacion,  tamConfederacion);//en caso de que se usen funciones para agregar
 	 harcodearConfederacion(confederacion,  6);
 
 	 /*
@@ -51,13 +51,9 @@ int main(void) {
 	 jugadores = 8;
 
 
-	  confederacion_agregar(confederacion,  tamConfederacion);
 
 
-	 for(int i=0;i<100;i++)
-	 {
-		 printf("%d\n",confederacion[i].isEmpty);
-	 }
+
 
 	 do{
 		 printf("Jugadores: %d\n" ,jugadores);
