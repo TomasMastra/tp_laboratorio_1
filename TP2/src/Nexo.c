@@ -117,6 +117,7 @@ int eliminarJugador(eJugador jugador[], int tamJugador, eConfederacion confedera
 		if(confirmar == 1)
 		{
 			jugador[index].isEmpty=-1;
+			printf("%d\n",index);
 			printf("Jugador eliminado con exito\n");
 			ret = 1;
 		}
@@ -141,7 +142,6 @@ int modificarJugador(eJugador jugador[], int tamJugador, eConfederacion confeder
 	getInt(&id,"Ingrese ID del jugador para modificar: ","ERROR, Ingrese ID del jugador para modificar: ",1000,5000);
 	index = Jugador_buscarPorId(jugador,  tamJugador,  id);
 
-	printf("%d\n",index);
 	if(index>-1)
 	{
 	 mostrarMenuModificar(jugador,  tamJugador, confederacion,  tamConfederacion,  index);

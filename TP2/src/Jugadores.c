@@ -52,7 +52,7 @@ int Jugador_buscarPorId(eJugador jugador[], int tamJugador, int id)
 
 	for(int i=0;i<tamJugador; i++)
 	{
-		if(jugador[i].id == id)
+		if(jugador[i].id == id && jugador[i].isEmpty!=-1)
 		{
 			ret = i;
 			break;

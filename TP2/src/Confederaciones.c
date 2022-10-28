@@ -38,7 +38,7 @@ int Confederacion_BuscarPorId(eConfederacion confederacion[], int tamConfederaci
 	int ret=-1;
 		for(int i=0;i<tamConfederacion; i++)
 		{
-			if(confederacion[i].id == id)
+			if(confederacion[i].id == id && confederacion[i].isEmpty!=-1)
 			{
 				ret = i;
 				break;
