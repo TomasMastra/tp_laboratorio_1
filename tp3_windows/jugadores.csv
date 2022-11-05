@@ -9,7 +9,7 @@ id,nombreCompleto,edad,posicion,nacionalidad,idSelecion
 8,Cristian Romero,23,Defensa central,Argentino,0
 9,Lisandro Martinez,23,Defensa central,Argentino,0
 10,Marcos Senesi,24,Defensa central,Argentino,0
-11,Lucas Martinez,25,Defensa central,Argentino,0
+11,Lucas Martinez Quarta,25,Defensa central,Argentino,0
 12,Facundo Medina,22,Defensa central,Argentino,0
 13,Nicolas Otamendi,33,Defensa central,Argentino,0
 14,German Pezzella,30,Defensa central,Argentino,0
@@ -153,7 +153,7 @@ id,nombreCompleto,edad,posicion,nacionalidad,idSelecion
 152,Conor Coady,29,Defensa central,Ingles,0
 153,Ben Chilwell,25,Lateral izquierdo,Ingles,0
 154,Luke Shaw,27,Lateral izquierdo,Ingles,0
-155,Trent Alexander Arnold,24,Lateral derecho,Ingles,20
+155,Trent Alexander Arnold,24,Lateral derecho,Ingles,0
 156,Reece James,22,Lateral derecho,Ingles,0
 157,Kyle Walker,32,Lateral derecho,Ingles,0
 158,Kieran Trippier,32,Lateral derecho,Ingles,0
@@ -186,7 +186,7 @@ id,nombreCompleto,edad,posicion,nacionalidad,idSelecion
 185,Leroy Sane ,26,Extremo izquierdo,Aleman,0
 186,Lukas Nmecha,23,Delantero centro,Aleman,0
 187,Mahmoud Dahoud,24,Mediocentro,Aleman,0
-188,Marc Andre,30,Portero,Aleman,0
+188,Marc Andre ter Stegen,30,Portero,Aleman,0
 189,Matthias Ginter,28,Defensa central,Aleman,0
 190,Maximilian Arnold,28,Mediocentro,Aleman,0
 191,Nadiem Amiri,23,Mediocentro,Aleman,0
@@ -260,7 +260,7 @@ id,nombreCompleto,edad,posicion,nacionalidad,idSelecion
 259,Devis Epassy,29,Portero,Camerunes,0
 260,Simon Ngapandouetnbu,19,Portero,Camerunes,0
 261,Christopher Wooh,21,Defensa central,Camerunes,0
-262,Jean Charles,27,Defensa central,Camerunes,0
+262,Jean Charles Castelletto,27,Defensa central,Camerunes,0
 263,Nicolas N Koulou,32,Defensa central,Camerunes,0
 264,Oumar Gonzalez,24,Defensa central,Camerunes,0
 265,Enzo Tchato,19,Defensa central,Camerunes,0
@@ -324,7 +324,7 @@ id,nombreCompleto,edad,posicion,nacionalidad,idSelecion
 323,Connor Metcalfe,22,Pivote,Australiano,0
 324,Keanu Baccus,24,Pivote,Australiano,0
 325,Cammy Devlin ,24,Pivote,Australiano,0
-326,Aaron Mooy,32,Mediocentro,Australiano,4
+326,Aaron Mooy,32,Mediocentro,Australiano,0
 327,Riley McGree,23,Mediocentro,Australiano,0
 328,Jackson Irvine,29,Mediocentro,Australiano,0
 329,Tyrese Francois,22,Mediocentro,Australiano,0
@@ -353,7 +353,7 @@ id,nombreCompleto,edad,posicion,nacionalidad,idSelecion
 352,Musab Khoder,29,Lateral derecho,Qatari,0
 353,Karim Boudiaf,32,Pivote,Qatari,0
 354,Ahmed Fadel,29,Pivote,Qatari,0
-355,Jassem Gaber,20,Pivote,Qatari,0
+355,Jassem Gaber Abdulsallam,20,Pivote,Qatari,0
 356,Abdulaziz Hatem,32,Mediocentro,Qatari,0
 357,Mohammed Waad,23,Mediocentro,Qatari,0
 358,Osama Al Tairi,20,Mediocentro,Qatari,0
@@ -369,4 +369,3 @@ id,nombreCompleto,edad,posicion,nacionalidad,idSelecion
 368,Almoez Ali,26,Delantero centro,Qatari,0
 369,Ahmed Alaaeldin,29,Delantero centro,Qatari,0
 370,Mohammed Muntari,28,Delantero centro,Qatari,0
-371,Tomas Mastrapasqua, 19, Mediocentro Ofensivo, Argentino, 2

@@ -26,10 +26,8 @@ int controller_cargarJugadoresDesdeTexto(char* path , LinkedList* pArrayListJuga
 
 			if(path!=NULL && pArrayListJugador!=NULL)
 			{
-				printf("1\n");
 				if(pFile!=NULL)
 				{
-					printf("2\n");
 
 					parser_JugadorFromText(pFile,  pArrayListJugador);
 
@@ -353,7 +351,7 @@ int controller_ordenarJugadores(LinkedList* pArrayListJugador, LinkedList* pArra
 			break;
 	case 7:
 
-			ll_sort(pArrayListJugador, jug_compararPorNombre, 1);//no
+			ll_sort(pArrayListJugador, jug_compararPorNombre, 1);//puede que haya nombres que empieza con minuscula
 			break;
 	case 8:
 

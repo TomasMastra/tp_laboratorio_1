@@ -239,9 +239,9 @@ int jug_getIdSeleccion(Jugador* this,int* idSeleccion)
 void jug_print(Jugador* this)
 {
 	int id;
-	char nombreCompleto[21];
-	char posicion[21];
-	char nacionalidad[21];
+	char nombreCompleto[51];
+	char posicion[50];
+	char nacionalidad[31];
 	int edad;
 	int idSeleccion;
 
@@ -418,8 +418,8 @@ int jug_compararPorNombre(void* p1, void* p2)
 	Jugador* unJugador;
 	Jugador* otroJugador;
 
-	char nombre[21];
-	char otroNombre[21];
+	char nombre[41];
+	char otroNombre[41];
 
 	if(p1!=NULL && p2!=NULL)
 	{
@@ -432,15 +432,6 @@ int jug_compararPorNombre(void* p1, void* p2)
 
 	compara = strcmp(nombre, otroNombre);
 	}
-
-	//printf("nombre: %s / nombre2: %s / strcmp: %d \n",nombre,otroNombre,compara);
-
-	//printf("%4d %10s %10s %10s %10d %10d\n", unJugador->id, unJugador->nombreCompleto, unJugador->posicion, unJugador->nacionalidad, unJugador->edad, unJugador->idSeleccion);
-	//printf("%4d %10s %10s %10s %10d %10d\n", otroJugador->id, otroJugador->nombreCompleto, otroJugador->posicion, otroJugador->nacionalidad, otroJugador->edad, otroJugador->idSeleccion);
-
-
-
-
 
 	return compara;
 }
