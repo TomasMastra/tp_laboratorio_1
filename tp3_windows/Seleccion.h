@@ -30,7 +30,7 @@ int selec_getConvocados(Seleccion* this,int* convocados);
 
 void selec_print(Seleccion* this);
 
-int selec_comparebyConfederacion(void* p1, void* p2);
+int selec_compararPorConfederacion(void* p1, void* p2);
 
 void selec_disminuirConvocados(Seleccion* this, int cantidad);
 

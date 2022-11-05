@@ -153,7 +153,7 @@ id,nombreCompleto,edad,posicion,nacionalidad,idSelecion
 152,Conor Coady,29,Defensa central,Ingles,0
 153,Ben Chilwell,25,Lateral izquierdo,Ingles,0
 154,Luke Shaw,27,Lateral izquierdo,Ingles,0
-155,Trent Alexander Arnold,24,Lateral derecho,Ingles,0
+155,Trent Alexander Arnold,24,Lateral derecho,Ingles,20
 156,Reece James,22,Lateral derecho,Ingles,0
 157,Kyle Walker,32,Lateral derecho,Ingles,0
 158,Kieran Trippier,32,Lateral derecho,Ingles,0
@@ -324,7 +324,7 @@ id,nombreCompleto,edad,posicion,nacionalidad,idSelecion
 323,Connor Metcalfe,22,Pivote,Australiano,0
 324,Keanu Baccus,24,Pivote,Australiano,0
 325,Cammy Devlin ,24,Pivote,Australiano,0
-326,Aaron Mooy,32,Mediocentro,Australiano,0
+326,Aaron Mooy,32,Mediocentro,Australiano,4
 327,Riley McGree,23,Mediocentro,Australiano,0
 328,Jackson Irvine,29,Mediocentro,Australiano,0
 329,Tyrese Francois,22,Mediocentro,Australiano,0

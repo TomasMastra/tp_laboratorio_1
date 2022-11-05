@@ -201,7 +201,7 @@ void selec_print(Seleccion* this)
 
 }
 
-int selec_comparebyConfederacion(void* p1, void* p2)
+int selec_compararPorConfederacion(void* p1, void* p2)
 {
 	int compara;
 	Seleccion* unaSeleccion;

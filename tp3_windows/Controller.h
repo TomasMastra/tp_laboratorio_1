@@ -10,7 +10,7 @@ int controller_guardarJugadoresModoBinario(char* path , LinkedList* pArrayListJu
 int controller_cargarSeleccionesDesdeTexto(char* path , LinkedList* pArrayListSeleccion);//1
 int controller_editarSeleccion(LinkedList* pArrayListSeleccion);//3 CREO QUE NO SE PIDE
 int controller_listarSelecciones(LinkedList* pArrayListSeleccion);//5
-int controller_ordenarSelecciones(LinkedList* pArrayListSeleccion);//7
+int controller_ordenarSelecciones(LinkedList* pArrayListSeleccion);//NO SE USA
 int controller_guardarSeleccionesModoTexto(char* path , LinkedList* pArrayListSeleccion);//10
 
 int controller_mostrarMenuListar(LinkedList* pArrayListJugador, LinkedList* pArrayListSeleccion);//5

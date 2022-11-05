@@ -297,7 +297,7 @@ int controller_listarJugadores(LinkedList* pArrayListJugador)
  * \return int
  *
  */
-int controller_ordenarJugadores(LinkedList* pArrayListJugador)
+int controller_ordenarJugadores(LinkedList* pArrayListJugador, LinkedList* pArrayListSeleccion)//cambiar nombre
 {
 
 	int opcion;
@@ -325,6 +325,40 @@ int controller_ordenarJugadores(LinkedList* pArrayListJugador)
 
 	switch(opcion)
 	{
+
+	case 1:
+
+		ll_sort(pArrayListJugador, jug_compararPorNacionalidad, 1);
+		break;
+
+	case 2:
+
+			ll_sort(pArrayListJugador, jug_compararPorNacionalidad, 0);
+			break;
+	case 3:
+
+			ll_sort(pArrayListSeleccion, selec_compararPorConfederacion, 1);
+			break;
+	case 4:
+
+			ll_sort(pArrayListSeleccion, selec_compararPorConfederacion, 0);
+			break;
+	case 5:
+
+			ll_sort(pArrayListJugador, jug_compararPorEdad, 1);//si
+			break;
+	case 6:
+
+			ll_sort(pArrayListJugador, jug_compararPorEdad, 0);//si
+			break;
+	case 7:
+
+			ll_sort(pArrayListJugador, jug_compararPorNombre, 1);//no
+			break;
+	case 8:
+
+			ll_sort(pArrayListJugador, jug_compararPorNombre, 0);
+			break;
 
 	}
     return 1;

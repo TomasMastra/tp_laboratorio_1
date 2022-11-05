@@ -433,6 +433,12 @@ int jug_compararPorNombre(void* p1, void* p2)
 	compara = strcmp(nombre, otroNombre);
 	}
 
+	//printf("nombre: %s / nombre2: %s / strcmp: %d \n",nombre,otroNombre,compara);
+
+	//printf("%4d %10s %10s %10s %10d %10d\n", unJugador->id, unJugador->nombreCompleto, unJugador->posicion, unJugador->nacionalidad, unJugador->edad, unJugador->idSeleccion);
+	//printf("%4d %10s %10s %10s %10d %10d\n", otroJugador->id, otroJugador->nombreCompleto, otroJugador->posicion, otroJugador->nacionalidad, otroJugador->edad, otroJugador->idSeleccion);
+
+
 
 
 
