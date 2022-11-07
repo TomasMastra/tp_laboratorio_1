@@ -109,8 +109,8 @@ int main()
 
    			 if(banderaSeleccion == 1 || banderaJugador == 1)
    			 {
-   			 /*controller_listarJugadores(listaJugadores);
-   			 controller_listarSelecciones(listaSelecciones);*/
+   			 controller_mostrarMenuConvocar(listaJugadores,listaSelecciones);
+
    			 }
 
 

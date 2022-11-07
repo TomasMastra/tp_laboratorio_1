@@ -685,4 +685,178 @@ int controller_listarJugadoresConvocados(LinkedList* pArrayListJugador)
 }
 
 
+int controller_mostrarMenuConvocar(LinkedList* pArrayListJugador, LinkedList* pArrayListSeleccion)
+{
+	int opcion;
+	getInt(&opcion,
+				"1. Convocar\n"
+				"2. Quitar de la seleccion\n"
+				"3. Volver al menu\n"
+				"Elija una opcion: \n",
+				"1. Convocar\n"
+				"2. Quitar de la seleccion\n"
+				"3. Volver al menu\n"
+				"Elija una opcion: \n",1,3);
+
+
+		switch(opcion)
+		{
+		case 1:
+
+		controller_convocarJugadores(pArrayListJugador, pArrayListSeleccion);
+
+		break;
+
+
+		case 2:
+
+			 controller_quitarJugadorDeSeleccion(pArrayListJugador,pArrayListSeleccion);
+
+		break;
+
+
+
+
+		}
+
+	return 1;
+}
+
+int controller_convocarJugadores(LinkedList* pArrayListJugador, LinkedList* pArrayListSeleccion)
+{
+	int id;
+	int idJugador;
+	int idSeleccion;
+	int seleccionJugador;
+	int lenJugadores;
+	int lenSelecciones;
+	int confirmar;
+	Jugador* unJugador;
+	Seleccion* unaSeleccion;
+
+	lenJugadores = ll_len(pArrayListJugador);
+	lenSelecciones = ll_len(pArrayListSeleccion);
+
+
+	controller_listarJugadores(pArrayListJugador);
+
+	getInt(&id, "Ingrese el id del jugador: ","Ingrese el id del jugador: ",1,1000);
+
+
+				for(int i=0;i<lenJugadores;i++)
+				{
+					unJugador = ll_get(pArrayListJugador, i);
+					jug_getId(unJugador,&idJugador);
+					if(idJugador == id)
+					{
+						jug_getIdSeleccion(unJugador, &seleccionJugador);
+
+						controller_listarSelecciones(pArrayListSeleccion);
+						getInt(&id, "Elija la seleccion a la que sera convocado: ", "ERROR, Elija la seleccion a la que sera convocado: ",1,35);
+
+						//id = 5;
+						for(int j=0;j<lenSelecciones;j++)
+						{
+							unaSeleccion = ll_get(pArrayListSeleccion, j);
+							selec_getId(unaSeleccion,&idSeleccion);
+
+
+							if(idSeleccion == id && seleccionJugador == 0)
+							{
+								 selec_disminuirConvocados(unaSeleccion,1);
+								 jug_setIdSeleccion(unJugador, id);
+								 break;
+
+							}else
+							if(j == lenSelecciones-1)
+							{
+								printf("No existe esa seleccion o el jugador ya esta convocado!!!\n");
+								break;
+							}
+						}
+						break;
+
+					}
+
+
+				}
+
+			return 1;
+
+}
+
+
+int controller_quitarJugadorDeSeleccion(LinkedList* pArrayListJugador, LinkedList* pArrayListSeleccion)
+{
+	int id;
+	int idJugador;
+	int idSeleccion;
+	int seleccionJugador;
+	int confirmar;
+	int lenJugadores;
+	int lenSelecciones;
+	Jugador* unJugador;
+	Seleccion* unaSeleccion;
+
+		lenJugadores = ll_len(pArrayListJugador);
+		lenSelecciones = ll_len(pArrayListSeleccion);
+
+
+		controller_listarJugadores(pArrayListJugador);
+
+		getInt(&id, "Ingrese el id del jugador para sacarlo de la seleccion: ","Ingrese el id del jugador para sacarlo de la seleccion: ",1,1000);
+
+
+					for(int i=0;i<lenJugadores;i++)
+					{
+						unJugador = ll_get(pArrayListJugador, i);
+						jug_getId(unJugador,&idJugador);
+						if(idJugador == id)
+						{
+
+							jug_getIdSeleccion(unJugador,&seleccionJugador);
+
+							for(int j=0;j<lenSelecciones;j++)
+							{
+								unaSeleccion = ll_get(pArrayListSeleccion, j);
+								selec_getId(unaSeleccion,&idSeleccion);
+
+
+								if(idSeleccion == seleccionJugador)
+								{
+
+									getInt(&confirmar, "Ingrese 1 para confirmar: ", "Ingrese 1 para confirmar: ",1,10000);
+
+									if(confirmar==1)
+									{
+									 selec_disminuirConvocados(unaSeleccion,0);
+									 jug_setIdSeleccion(unJugador, 0);
+									 break;
+									}
+
+
+								}else
+									if(j == lenSelecciones-1)
+								{
+										printf("No se encontro la selecion/jugador o el jugador no esta convocado\n");
+								}
+
+							}
+
+						}
+
+
+
+					}
+
+
+
+
+
+
+				return 1;
+
+}
+
+
 

@@ -16,5 +16,7 @@ int controller_guardarSeleccionesModoTexto(char* path , LinkedList* pArrayListSe
 int controller_mostrarMenuListar(LinkedList* pArrayListJugador, LinkedList* pArrayListSeleccion);//5
 int controller_listarJugadoresConvocados(LinkedList* pArrayListJugador);//5
 
-int controller_disminuirConvocadosConfederacion(LinkedList* pArrayListJugador, LinkedList* pArrayListSeleccion);
+int controller_mostrarMenuConvocar(LinkedList* pArrayListJugador, LinkedList* pArrayListSeleccion);//6
+int controller_convocarJugadores(LinkedList* pArrayListJugador, LinkedList* pArrayListSeleccion);//6
+int controller_quitarJugadorDeSeleccion(LinkedList* pArrayListJugador, LinkedList* pArrayListSeleccion);
 

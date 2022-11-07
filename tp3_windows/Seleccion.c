@@ -242,11 +242,10 @@ void selec_disminuirConvocados(Seleccion* this, int cantidad)
 
 	}else
 	{
-		/*selec_getConvocados(this, &convocados);
-		printf("convocados: %d\n", convocados);
-
+		selec_getConvocados(this, &convocados);
 		selec_setConvocados(this, convocados+1);
-		//printf("convocados: %d\n", convocados);*/
+		printf("convocados: %d\n", this->convocados);
+
 
 	}
 
