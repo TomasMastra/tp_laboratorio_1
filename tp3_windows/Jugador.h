@@ -13,38 +13,251 @@ typedef struct
 	int idSeleccion;
 }Jugador;
 
+
+/**
+ * @fn int jug_new() reserva espacio para un jugador realizando un malloc
+
+ * @brief
+ *
+ * @return unJugador
+ */
 Jugador* jug_new();
+
+/**
+ * @fn Jugador* jug_newParametros*(char*, char*, char*, char*, char*, char*)
+ * @brief reserva un espacio para un Passenger nuevo realizando un maloc reciviendo los datos para setear la estructura
+ *
+ * @param idStr recive un puntero a char con un id
+ * @param nombreCompletoStr recive un puntero a char con un nombre
+ * @param edadStr recive un puntero a char con la edad
+ * @param posicionStr recive un puntero a char con la posicion
+ * @param nacionalidadStr recive un puntero a char con la nacionalidad
+ * @param idSeleccionStr recive un puntero a char con el id de la seleccion
+ * @return retorna un puntero a un Jugador
+ */
 Jugador* jug_newParametros(char* idStr,char* nombreCompletoStr,char* edadStr, char* posicionStr, char* nacionalidadStr, char* idSeleccionStr);
 
+
+/**
+ * @fn void jug_delete(Jugador*)
+ * @brief hace un free a un jugador para borrarlo en caso de que
+ *
+ * @param Jugador* this:  recive un puntero a un jugador
+ */
 void jug_delete(Jugador* this);
 
+
+/**
+ * @fn int jug_setId(Jugador*,int);
+
+ * @brief
+ *
+ * @param Jugador*:  un jugador
+ * @param int id:
+ * @return 1 si salio bien y 0 si salio mal
+ */
 int jug_setId(Jugador* this,int id);
+
+
+/**
+ * @fn int jug_getId(Jugador*,int*);
+
+ * @brief
+ *
+ * @param Jugador*:  un jugador
+ * @param int* id:
+ * @return 1 si salio bien y 0 si salio mal
+ */
 int jug_getId(Jugador* this,int* id);
 
+
+/**
+ * @fn int jug_setNombreCompleto(Jugador*,char*);
+
+ * @brief
+ *
+ * @param Jugador*:  un jugador
+ * @param char* nombreCompleto:
+ * @return 1 si salio bien y 0 si salio mal
+ */
 int jug_setNombreCompleto(Jugador* this,char* nombreCompleto);
+
+/**
+ * @fn int jug_getNombreCompleto(Jugador*,char*);
+
+ * @brief
+ *
+ * @param Jugador*:  un jugador
+ * @param char* nombreCompleto:
+ * @return 1 si salio bien y 0 si salio mal
+ */
 int jug_getNombreCompleto(Jugador* this,char* nombreCompleto);
 
+
+/**
+ * @fn int jug_setPosicion(Jugador*,char*);
+
+ * @brief
+ *
+ * @param Jugador*:  un jugador
+ * @param char* posicion:
+ * @return 1 si salio bien y 0 si salio mal
+ */
 int jug_setPosicion(Jugador* this,char* posicion);
+
+/**
+ * @fn int jug_getPosicion(Jugador*,char*);
+
+ * @brief
+ *
+ * @param Jugador*:  un jugador
+ * @param char* posicion:
+ * @return 1 si salio bien y 0 si salio mal
+ */
 int jug_getPosicion(Jugador* this,char* posicion);
 
+
+/**
+ * @fn int jug_setNacionalidad(Jugador*,char*);
+
+ * @brief
+ *
+ * @param Jugador*:  un jugador
+ * @param char* nacionalidad:
+ * @return 1 si salio bien y 0 si salio mal
+ */
 int jug_setNacionalidad(Jugador* this,char* nacionalidad);
+
+/**
+ * @fn int jug_getNacionalidad(Jugador*,char*);
+
+ * @brief
+ *
+ * @param Jugador*:  un jugador
+ * @param char* nacionalidad:
+ * @return 1 si salio bien y 0 si salio mal
+ */
 int jug_getNacionalidad(Jugador* this,char* nacionalidad);
 
+
+/**
+ * @fn int jug_setEdad(Jugador*,int);
+
+ * @brief
+ *
+ * @param Jugador*:  un jugador
+ * @param int* edad:
+ * @return 1 SI SALIO BIEN Y 0 SI SALIO MAL
+ */
 int jug_setEdad(Jugador* this,int edad);
+
+/**
+ * @fn int jug_getEdad(Jugador*,int*);
+
+ * @brief
+ *
+ * @param Jugador*:  un jugador
+ * @param int* edad:
+ * @return 1 si salio bien y 0 si salio mal
+ */
 int jug_getEdad(Jugador* this,int* edad);
 
+/**
+ * @fn int jug_setIdSeleccion(Jugador*,int);
+
+ * @brief
+ *
+ * @param Jugador*:  un jugador
+ * @param int idSeleccion:
+ * @return 1 si salio bien y 0 si salio mal
+ */
 int jug_setIdSeleccion(Jugador* this,int idSeleccion);
+
+/**
+ * @fn int jug_getIdSeleccion(Jugador*,int*);
+
+ * @brief
+ *
+ * @param Jugador*:  un jugador
+ * @param int* idSeleccion:
+ * @return 1 si salio bien y 0 si salio mal
+ */
 int jug_getIdSeleccion(Jugador* this,int* idSeleccion);
 
-int jug_setIsEmpty(Jugador* this,int isEmpty);
-int jug_getIsEmpty(Jugador* this,int* isEmpty);
 
+
+
+/**
+ * @fn int jug_print(Jugador*);
+
+ * @brief
+ *
+ * @param Jugador*:  un jugador
+ * @return void
+ */
 void jug_print(Jugador* this);
+
+/**
+ * @fn int jug_printSubmenuModify(Jugador*);
+
+ * @brief
+ *
+ * @param Jugador*:  un jugador
+ * @return void
+ */
 void jug_printSubmenuModify(Jugador* this);
 
+/**
+ * @fn int jug_compararPorNombre(void*, void*);
+
+ * @brief
+ *
+ * @param void*
+ * @param void*
+ * @return ret compara, 1 si un nombre es mayor a la otra, -1 al revez y 0 ambas son iguales
+ */
 int jug_compararPorNombre(void* p1, void* p2);
+
+/**
+ * @fn int jug_compararPorEdad(void*, void*);
+
+ * @brief
+ *
+ * @param void*
+ * @param void*
+ * @return ret compara, 1 si una edad es mayor a la otra, -1 al revez y 0 ambas son iguales
+ */
 int jug_compararPorEdad(void* p1, void* p2);
+
+/**
+ * @fn int jug_compararPorNacionalidad(void*, void*);
+
+ * @brief
+ *
+ * @param void*
+ * @param void*
+ * @return ret compara, 1 si una nacionalidad es mayor a la otra, -1 al revez y 0 ambas son iguales
+ */
 int jug_compararPorNacionalidad(void* p1, void* p2);
 
+
+/**
+ * @fn int jug_obtenerId(char*,  int )
+ * @brief
+ *
+ * @param char* path: puntero a char que indica la ruta del archivo
+ * @return ret ultimoId (la ultima id cargada)
+ */
+int jug_obtenerId(char* path);
+
+/**
+ * @fn int jug_guardarUltimaId(char*,  int )
+ * @brief
+ *
+ * @param char* path: puntero a char que indica la ruta del archivo
+ * @param int id: el id que va a guardar dentro del archivo
+ * @return ret 1
+ */
+int jug_guardarUltimaId(char* path,  int id);
 
 #endif // jug_H_INCLUDED

@@ -24,10 +24,14 @@ int controller_cargarJugadoresDesdeTexto(char* path , LinkedList* pArrayListJuga
 
 		pFile = fopen(path, "r");
 
+
 			if(path!=NULL && pArrayListJugador!=NULL)
 			{
+
+
 				if(pFile!=NULL)
 				{
+
 
 					parser_JugadorFromText(pFile,  pArrayListJugador);
 
@@ -59,8 +63,10 @@ int controller_cargarJugadoresDesdeBinario(char* path , LinkedList* pArrayListJu
 
 		if(path!=NULL && pArrayListJugador!=NULL)
 		{
+
 			if(pFile!=NULL)
 			{
+
 				parser_JugadorFromBinary(pFile,  pArrayListJugador);
 
 			fclose(pFile);
@@ -68,6 +74,7 @@ int controller_cargarJugadoresDesdeBinario(char* path , LinkedList* pArrayListJu
 			}else
 			{
 				printf("No se encontro el archivo\n");
+
 			}
 		}
 
@@ -101,18 +108,15 @@ int controller_agregarJugador(LinkedList* pArrayListJugador)
 
 
 
-	//id = 1009;//id autoincremental
+	id = (jug_obtenerId("ultimaId.csv")+1);
 	if(pArrayListJugador!=NULL)
 	{
-
-		getInt(&id, "Ingrese el id: ", "ERROR, Ingrese el id", 1000, 450000);//borrar
 
 	getName(nombre, "Ingrese el nombre: ", "ERROR, Ingrese el nombre (Solo letras): ", 50);
 	getName(posicion, "Ingrese la posicion: ", "ERROR, Ingrese la posicion (Solo letras): ", 50);//mostrar menu
 	getInt(&edad, "Ingrese la edad: ", "ERROR, Ingrese la edad", 17, 45);
-	getInt(&idSeleccion, "Ingrese el id de la seleccion: ", "ERROR, Ingrese el id de la seleccion", 0, 45);
 	getName(nacionalidad, "Ingrese la nacionalidad: ", "ERROR, Ingrese la nacionalidad (Solo letras): ", 50);//mostrar menu
-
+	idSeleccion = 0;
 
 
 
@@ -121,10 +125,13 @@ int controller_agregarJugador(LinkedList* pArrayListJugador)
 	itoa(edad, edadStr, 10);
 	itoa(idSeleccion, idSeleccionStr, 10);
 
+
 	unJugador = jug_newParametros(idStr, nombre, edadStr, posicion, nacionalidad, idSeleccionStr);
 
 	ll_add(pArrayListJugador,unJugador);
-	jug_print(unJugador);
+    //jug_obtenerId("ultimaId.csv");
+	 jug_guardarUltimaId("ultimaId.csv",  id);
+
 	}
 
 	return 1;
@@ -377,11 +384,12 @@ int controller_guardarJugadoresModoTexto(char* path , LinkedList* pArrayListJuga
 		FILE* pFile;
 		pFile = fopen(path, "w");
 		int id;
-		char nombreCompleto[20];
+		char nombreCompleto[40];
 		int edad;
-		char posicion[20];
-		char nacionalidad[20];
+		char posicion[40];
+		char nacionalidad[30];
 		int idSeleccion;
+
 
 
 		len = ll_len(pArrayListJugador);
@@ -404,9 +412,9 @@ int controller_guardarJugadoresModoTexto(char* path , LinkedList* pArrayListJuga
 						fprintf(pFile, "%d,%s,%d,%s,%s,%d\n",id,nombreCompleto,edad,posicion,nacionalidad,idSeleccion);
 
 
-
 					}
-					printf("Cantidad de selecciones guardadas: %d\n",len);
+					printf("Cantidad de jugadores guardados: %d\n",len);
+
 
 					fclose(pFile);
 					pFile=NULL;
@@ -431,33 +439,58 @@ int controller_guardarJugadoresModoTexto(char* path , LinkedList* pArrayListJuga
 int controller_guardarJugadoresModoBinario(char* path , LinkedList* pArrayListJugador, LinkedList* pArrayListSeleccion)
 {
 	Jugador* unJugador;
+	Seleccion* unaSeleccion;
 	int len;
+	int lenSelecciones;
 	FILE* pFile;
-	int idConfederacion;
-
+	char confederacion[21];
+	char confederacionSeleccion[21];
+	//char paisJugador[31];
+	//char paisConfederacion[31];
+	int idSeleccion;
+	int seleccion;
 
 
 	pFile = fopen(path, "wb");
 
 	len = ll_len(pArrayListJugador);
+	lenSelecciones= ll_len(pArrayListSeleccion);
 
 	 controller_listarSelecciones(pArrayListSeleccion);
 
-	getInt(&idConfederacion, "Ingrese la Confederacion: ", "ERROR, Ingrese la confederacion: ", 0, 50);
+	getString(confederacion, "Ingrese la Confederacion (Nombre y sus mayusculas): ", "ERROR, Ingrese la confederacion (Nombre y sus mayusculas): ", 50);
+	printf("La confederacion es %s\n",confederacion);
 	if(pArrayListJugador != NULL && path!= NULL)
 	{
 
 		for(int i=0;i<len;i++)
 		{
 			unJugador=ll_get(pArrayListJugador, i);
+			jug_getIdSeleccion(unJugador, &idSeleccion);
 
-			fwrite(unJugador, sizeof(Jugador), 1, pFile);
-			jug_print(unJugador);
+
+			for(int j=0;j<lenSelecciones;j++)
+			{
+				unaSeleccion=ll_get(pArrayListSeleccion, j);
+
+				selec_getConfederacion(unaSeleccion, confederacionSeleccion);
+				selec_getId(unaSeleccion, &seleccion);
+
+
+				if((strcmp(confederacionSeleccion, confederacion)==0) && seleccion == idSeleccion)
+				{
+					//printf("confederacion  %s - paisConfederacion %s// idSeleccion %d - seleccion %d \n",confederacion, confederacionSeleccion, idSeleccion, seleccion);
+
+				fwrite(unJugador, sizeof(Jugador), 1, pFile);
+
+				//jug_print(unJugador);
+				break;
+				}
+			}
 
 
 
 		}
-		printf("Cantidad de jugadores guardados: %d\n",len);
 
 	}
 
@@ -728,6 +761,7 @@ int controller_convocarJugadores(LinkedList* pArrayListJugador, LinkedList* pArr
 	int idJugador;
 	int idSeleccion;
 	int seleccionJugador;
+	int cantidadConvocados;
 	int lenJugadores;
 	int lenSelecciones;
 	int confirmar;
@@ -759,18 +793,24 @@ int controller_convocarJugadores(LinkedList* pArrayListJugador, LinkedList* pArr
 						{
 							unaSeleccion = ll_get(pArrayListSeleccion, j);
 							selec_getId(unaSeleccion,&idSeleccion);
+							selec_getConvocados(unaSeleccion,&cantidadConvocados);
 
 
-							if(idSeleccion == id && seleccionJugador == 0)
+							if(idSeleccion == id && seleccionJugador == 0 && cantidadConvocados <23)
 							{
+								getInt(&confirmar, "Ingrese 1 para confirmar: ", "Ingrese 1 para confirmar: ",1,10000);
+
+								if(confirmar == 1)
+								{
 								 selec_disminuirConvocados(unaSeleccion,1);
 								 jug_setIdSeleccion(unJugador, id);
 								 break;
+								}
 
 							}else
 							if(j == lenSelecciones-1)
 							{
-								printf("No existe esa seleccion o el jugador ya esta convocado!!!\n");
+								printf("*\nPosibles errores:\n1. No existe esa seleccion\n2. El jugador ya esta convocado o no existe\n3.La seleccion llego al limite de convocados\n*\n");
 								break;
 							}
 						}

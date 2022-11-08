@@ -435,3 +435,55 @@ int jug_compararPorNombre(void* p1, void* p2)
 
 	return compara;
 }
+
+
+int jug_guardarUltimaId(char* path, int id)
+{
+	FILE* pFile = fopen(path, "w");
+	int ultimoId;
+
+	 //fscanf(pFile,"%d\n", &ultimoId);
+
+	printf("%d\n",id);
+	fprintf(pFile,"%d\n", id);
+
+	fclose(pFile);
+	pFile=NULL;
+
+
+
+	return 1;
+}
+
+
+int jug_obtenerId(char* path)//funciona bien
+{
+
+	FILE* pFile = fopen(path, "r");
+	int ultimoId;
+	char id[21];
+
+
+	if(path!=NULL && pFile!=NULL)
+	{
+
+
+		fscanf(pFile,"%[^\n]", id);
+		printf("id: %s \n",id);
+
+
+
+	}
+	ultimoId=atoi(id);
+	fclose(pFile);
+	pFile=NULL;
+
+
+
+
+
+
+	return ultimoId;
+
+}
+

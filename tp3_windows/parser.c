@@ -28,25 +28,21 @@ int parser_JugadorFromText(FILE* pFile , LinkedList* pArrayListJugador)
 
 	if(pFile != NULL && pArrayListJugador != NULL)
 	{
-		//printf("4\n");
 
 		fscanf(pFile,"%[^,], %[^,], %[^,], %[^,], %[^,], %[^\n]", id, nombre, edad, posicion, nacionalidad,idSeleccion);//scaneo falso para que se saltee la primera linea
 		while(!feof(pFile))
 		{
-			//printf("5\n");
 
 			cantidad = fscanf(pFile,"%[^,], %[^,], %[^,], %[^,], %[^,],%[^\n]", id, nombre, edad, posicion, nacionalidad,idSeleccion);
 			//printf("%4s %10s %10s %10s %10s %10s\n", id, nombre, posicion, nacionalidad, edad, idSeleccion);
 
 			if(cantidad == 6)
 			{
-				//printf("6\n");
 
 
 
 			unJugador = jug_newParametros(id, nombre, edad, posicion, nacionalidad, idSeleccion);
 
-			//printf("%4d %10s %10s %10s %10d %10d\n", unJugador->id, unJugador->nombreCompleto, unJugador->posicion, unJugador->nacionalidad, unJugador->edad, unJugador->idSeleccion);
 
 			ll_add(pArrayListJugador, unJugador);
 			//jug_print(unJugador);
@@ -74,38 +70,37 @@ int parser_JugadorFromText(FILE* pFile , LinkedList* pArrayListJugador)
  */
 int parser_JugadorFromBinary(FILE* pFile , LinkedList* pArrayListJugador)
 {
+
+
 	Jugador* unJugador;
 
 
-			if(pFile != NULL && pArrayListJugador != NULL)
-			{
+	if(pFile != NULL && pArrayListJugador != NULL)
+	{
 
-				while(!feof(pFile))
-				{
+		while(!feof(pFile))
+		{
+			unJugador = jug_new();
 
+			 fread(unJugador, sizeof(Jugador), 1, pFile);
+			 if(feof(pFile))
 
-					 fread(unJugador, sizeof(Jugador), 1, pFile);
-					 unJugador = jug_new();
-					 if(feof(pFile))
+			 {
+				 break;
+			 }
 
-					 {
-						 break;
-					 }
-
-					ll_add(pArrayListJugador, unJugador);
-
-					//jug_print(unJugador);
+			ll_add(pArrayListJugador, unJugador);
 
 
 
-				}
-				fclose(pFile);
+		}
+		fclose(pFile);
 
-			}
+	}
 
 
 
-	    return 1;
+return 1;
 }
 
 
@@ -119,8 +114,8 @@ int parser_JugadorFromBinary(FILE* pFile , LinkedList* pArrayListJugador)
 int parser_SeleccionFromText(FILE* pFile , LinkedList* pArrayListSeleccion)
 {
 	char id[20];
-	char pais[20];
-	char confederacion[20];
+	char pais[40];
+	char confederacion[40];
 	char convocados[40];
 
 

@@ -1,5 +1,5 @@
 id,nombreCompleto,edad,posicion,nacionalidad,idSelecion
-1,Emiliano Martinez,28,Portero,Argentino,0
+1,Emiliano Martinez,28,Portero,Argentino,1
 2,Juan Musso,27,Portero,Argentino,0
 3,Agustin Marchesin,33,Portero,Argentino,0
 4,Esteban Andrada,30,Portero,Argentino,0
@@ -31,7 +31,7 @@ id,nombreCompleto,edad,posicion,nacionalidad,idSelecion
 30,Lucas Ocampos,26,Extremo izquierdo,Argentino,0
 31,Nicolas Gonzalez ,23,Extremo izquierdo,Argentino,0
 32,Papu Gomez,33,Extremo izquierdo,Argentino,0
-33,angel Correa,26,Extremo derecho,Argentino,0
+33,angel Correa,26,Extremo derecho,Argentino,1
 34,Emiliano Buendia,24,Extremo derecho,Argentino,0
 35,angel Di Maria ,33,Extremo derecho,Argentino,0
 36,Eduardo Salvio,30,Extremo derecho,Argentino,0
@@ -43,7 +43,7 @@ id,nombreCompleto,edad,posicion,nacionalidad,idSelecion
 42,Lucas Alario,28,Delantero centro,Argentino,0
 43,Sergio Aguero,33,Delantero centro,Argentino,0
 44,Julian alvarez,21,Delantero centro,Argentino,0
-45,Giovanni Simeone,25,Delantero centro,Argentino,0
+45,Giovanni Simeone,25,Delantero centro,Argentino,12
 46,Lucas Boye,25,Delantero centro,Argentino,0
 47,Alisson,30,Portero,Brasilero,0
 48,Ederson,29,Portero,Brasilero,0
@@ -343,7 +343,7 @@ id,nombreCompleto,edad,posicion,nacionalidad,idSelecion
 342,Salah Zakaria,23,Portero,Qatari,0
 343,Saad Al Sheeb,32,Portero,Qatari,0
 344,Yousef Hassan,26,Portero,Qatari,0
-345,Tarek Salman,24,Defensa central,Qatari,0
+345,Tarek Salman,24,Defensa central,Qatari,30
 346,Pedro Miguel,32,Defensa central,Qatari,0
 347,Bassam Al Rawi,24,Defensa central,Qatari,0
 348,Boualem Khoukhi,32,Defensa central,Qatari,0
@@ -366,6 +366,6 @@ id,nombreCompleto,edad,posicion,nacionalidad,idSelecion
 365,Hasan Al Haydos,31,Extremo derecho,Qatari,0
 366,Ismaeel Mohammed,32,Extremo derecho,Qatari,0
 367,Naif Al Hadhrami,21,Extremo derecho,Qatari,0
-368,Almoez Ali,26,Delantero centro,Qatari,0
+368,Almoez Ali,26,Delantero centro,Qatari,23
 369,Ahmed Alaaeldin,29,Delantero centro,Qatari,0
 370,Mohammed Muntari,28,Delantero centro,Qatari,0

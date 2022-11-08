@@ -15,11 +15,11 @@ int main()
     LinkedList* listaSelecciones = ll_newLinkedList();
 
 
-     /*controller_cargarJugadoresDesdeBinario("jugadoresConvocados.bin", listaJugadores);
-      banderaJugador=1;
-       banderaSeleccion = 1;*/
+
 
     puts("funciona ok");
+
+
 
 
     do{
@@ -79,23 +79,46 @@ int main()
 
    		 case 2:
 
-   		 controller_agregarJugador(listaJugadores);
+   			 if(banderaJugador==1)
+   			 {
+
+   				 controller_agregarJugador(listaJugadores);
+   			 }else
+   			 {
+   				 printf("Agregue un jugador!!!\n");
+   			 }
 
 
    			 break;
    		 case 3:
 
+   			 if(banderaJugador==1)
+   			 {
+
    		 controller_editarJugador(listaJugadores);
+   			 }else
+   			 {
+   				 printf("Agregue un jugador!!!\n");
+   			 }
+
 
    			 break;
-   		 case 4://validar que haya cargado los datos
+   		 case 4:
 
+   			 if(banderaJugador == 1)
+   			 {
    			 controller_removerJugador(listaJugadores, listaSelecciones);
+   			 }else
+   			 {
+   				 printf("Agregue un jugador!!!\n");
+   			 }
+
 
 
    			 break;
 
    		 case 5:
+
 
    			 controller_mostrarMenuListar(listaJugadores, listaSelecciones);
 
@@ -120,8 +143,10 @@ int main()
    		 case 7:
 
    			 printf("ordenando....\n");
-   			//ll_sort(listaJugadores, jug_compararPorEdad, 0);//prueba, borrar
-   			 controller_ordenarJugadores(listaJugadores, listaSelecciones);//cambiar nombre
+   			 if(banderaJugador==1 && banderaSeleccion==1)
+   			 {
+   			 controller_ordenarJugadores(listaJugadores, listaSelecciones);
+   			 }
 
 
 
@@ -130,7 +155,7 @@ int main()
    		 case 8:
    			 if(banderaJugador == 1)
    			 {
-   			 controller_guardarJugadoresModoBinario("jugadoresConvocados.bin", listaJugadores, listaSelecciones);
+   			   controller_guardarJugadoresModoBinario("jugadoresConvocados.bin", listaJugadores, listaSelecciones);
    			 }
 
 
@@ -140,9 +165,8 @@ int main()
 
    		 case 9:
 
-   			 controller_cargarJugadoresDesdeBinario("jugadoresConvocados.bin", listaJugadores);
+   			 banderaJugador=controller_cargarJugadoresDesdeBinario("jugadoresConvocados.bin", listaJugadores);
    			banderaSeleccion = 1;
-   			banderaJugador = 1;
 
 
 
@@ -177,6 +201,8 @@ int main()
 
    	 }while(opcion!=12);
 
+
+
    /* do{
         switch(option)
         {
@@ -186,6 +212,9 @@ int main()
                 break;
         }
     }while(option != 10);*/
+
+
+
 
     return 0;
 }
