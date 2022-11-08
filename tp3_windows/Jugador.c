@@ -255,7 +255,7 @@ void jug_print(Jugador* this)
 		jug_getIdSeleccion(this, &idSeleccion);
 
 
-		printf("%4d %10s %10s %10s %10d %10d\n", id, nombreCompleto, posicion, nacionalidad, edad, idSeleccion);
+		printf("%5d %30s %20s %20s %20d %20d\n", id, nombreCompleto, posicion, nacionalidad, edad, idSeleccion);
 	}
 
 
@@ -372,12 +372,12 @@ int jug_compararPorEdad(void* p1, void* p2)
 			compara = 1;
 		}else
 		if(edad<otraEdad)
-				{
-					compara = -1;
-				}else
-				{
-					compara = 0;
-				}
+		{
+			compara = -1;
+		}else
+		{
+			compara = 0;
+		}
 	}
 
 
@@ -440,11 +440,8 @@ int jug_compararPorNombre(void* p1, void* p2)
 int jug_guardarUltimaId(char* path, int id)
 {
 	FILE* pFile = fopen(path, "w");
-	int ultimoId;
 
-	 //fscanf(pFile,"%d\n", &ultimoId);
 
-	printf("%d\n",id);
 	fprintf(pFile,"%d\n", id);
 
 	fclose(pFile);
@@ -456,7 +453,7 @@ int jug_guardarUltimaId(char* path, int id)
 }
 
 
-int jug_obtenerId(char* path)//funciona bien
+int jug_obtenerId(char* path)
 {
 
 	FILE* pFile = fopen(path, "r");

@@ -14,7 +14,6 @@
  */
 int parser_JugadorFromText(FILE* pFile , LinkedList* pArrayListJugador)
 {
-	//printf("3\n");
 
 	char id[20];
 	char nombre[50];
@@ -34,7 +33,6 @@ int parser_JugadorFromText(FILE* pFile , LinkedList* pArrayListJugador)
 		{
 
 			cantidad = fscanf(pFile,"%[^,], %[^,], %[^,], %[^,], %[^,],%[^\n]", id, nombre, edad, posicion, nacionalidad,idSeleccion);
-			//printf("%4s %10s %10s %10s %10s %10s\n", id, nombre, posicion, nacionalidad, edad, idSeleccion);
 
 			if(cantidad == 6)
 			{
@@ -45,7 +43,6 @@ int parser_JugadorFromText(FILE* pFile , LinkedList* pArrayListJugador)
 
 
 			ll_add(pArrayListJugador, unJugador);
-			//jug_print(unJugador);
 
 
 

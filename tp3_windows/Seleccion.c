@@ -195,7 +195,7 @@ void selec_print(Seleccion* this)
 
 
 
-		printf("%4d %10s %10s %10d\n", id, pais, confederacion, convocados);
+		printf("%5d %20s %20s %10d\n", id, pais, confederacion, convocados);
 	}
 
 

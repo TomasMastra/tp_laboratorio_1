@@ -142,7 +142,6 @@ int main()
 
    		 case 7:
 
-   			 printf("ordenando....\n");
    			 if(banderaJugador==1 && banderaSeleccion==1)
    			 {
    			 controller_ordenarJugadores(listaJugadores, listaSelecciones);

@@ -129,7 +129,6 @@ int controller_agregarJugador(LinkedList* pArrayListJugador)
 	unJugador = jug_newParametros(idStr, nombre, edadStr, posicion, nacionalidad, idSeleccionStr);
 
 	ll_add(pArrayListJugador,unJugador);
-    //jug_obtenerId("ultimaId.csv");
 	 jug_guardarUltimaId("ultimaId.csv",  id);
 
 	}
@@ -149,7 +148,6 @@ int controller_editarJugador(LinkedList* pArrayListJugador)
 	int id;
 	int index = -1;
 	int len;
-	//int option;
 	Jugador* unJugador;
 
 
@@ -213,7 +211,7 @@ int controller_removerJugador(LinkedList* pArrayListJugador, LinkedList* pArrayL
 
 	   if(pArrayListJugador!=NULL)
 	   {
-		   //controller_ListPassenger(pArrayListJugador);
+		   controller_listarJugadores(pArrayListJugador);
 
 		   getInt(&id, "Ingrese el ID del jugador para eliminar: ", "ERROR, Ingrese el ID del jugador para eliminar: ",1, 20000);
 			len=ll_len(pArrayListJugador);
@@ -228,6 +226,7 @@ int controller_removerJugador(LinkedList* pArrayListJugador, LinkedList* pArrayL
 				{
 					index = i;
 					jug_getIdSeleccion(unJugador, &idSeleccion);
+					break;
 
 				}
 
@@ -236,6 +235,7 @@ int controller_removerJugador(LinkedList* pArrayListJugador, LinkedList* pArrayL
 		   if(index!=-1)
 		   {
 			   ll_remove(pArrayListJugador, index);//Preguntar si quiere eliminarlo
+			   jug_delete(unJugador);
 			   unJugador = NULL;
 			   for(int j=0;j<lenSeleccion;j++)
 			   {
@@ -267,28 +267,24 @@ int controller_removerJugador(LinkedList* pArrayListJugador, LinkedList* pArrayL
  */
 int controller_listarJugadores(LinkedList* pArrayListJugador)
 {
-	//int ret=1;
-			Jugador* listaJugadores=NULL;
-			int len;
-			if(pArrayListJugador != NULL)
+		Jugador* listaJugadores=NULL;
+		int len;
+		if(pArrayListJugador != NULL)
+		{
+			len = ll_len(pArrayListJugador);
+			printf("\n%-5s %-20s %-20s %-20s %-20s %-20s\n\n","ID","NOMBRE","EDAD","POSICION","NACIONALIDAD","ID SELECCION");
+			for(int i=0;i<len;i++)
 			{
-				len = ll_len(pArrayListJugador);
-				//printf("%d\n", len);
-				//printf("\n%-5s %-20s %-10s %-10s\n\n","ID","NOMBRE","APELLIDO","PRECIO");
-				for(int i=0;i<len;i++)
-				{
-					listaJugadores=ll_get(pArrayListJugador, i);
+				listaJugadores=ll_get(pArrayListJugador, i);
 
 
-			 	 	 jug_print(listaJugadores);
-						//printf("%4d %10s %10s %4.2f %10s %10s %10s\n", listaPasajeros->id, listaPasajeros->nombre, listaPasajeros->apellido, listaPasajeros->precio, listaPasajeros->tipoPasajero, listaPasajeros->codigoVuelo, listaPasajeros->estadoVuelo);
+				 jug_print(listaJugadores);
 
 
 
-				}
 			}
+		}
 
-			//printf("------------------------------");
 
 
 		return 1;
@@ -334,35 +330,49 @@ int controller_ordenarJugadores(LinkedList* pArrayListJugador, LinkedList* pArra
 	case 1:
 
 		ll_sort(pArrayListJugador, jug_compararPorNacionalidad, 1);
+		printf("Ya se ordeno...\n");
 		break;
 
 	case 2:
 
 			ll_sort(pArrayListJugador, jug_compararPorNacionalidad, 0);
+			printf("Ya se ordeno...\n");
+
 			break;
 	case 3:
 
 			ll_sort(pArrayListSeleccion, selec_compararPorConfederacion, 1);
+			printf("Ya se ordeno...\n");
+
 			break;
 	case 4:
 
 			ll_sort(pArrayListSeleccion, selec_compararPorConfederacion, 0);
+			printf("Ya se ordeno...\n");
+
 			break;
 	case 5:
 
-			ll_sort(pArrayListJugador, jug_compararPorEdad, 1);//si
+			ll_sort(pArrayListJugador, jug_compararPorEdad, 1);
+			printf("Ya se ordeno...\n");
+
 			break;
 	case 6:
 
-			ll_sort(pArrayListJugador, jug_compararPorEdad, 0);//si
+			ll_sort(pArrayListJugador, jug_compararPorEdad, 0);
+			printf("Ya se ordeno...\n");
+
 			break;
 	case 7:
 
 			ll_sort(pArrayListJugador, jug_compararPorNombre, 1);//puede que haya nombres que empieza con minuscula
+			printf("Ya se ordeno...\n");
 			break;
 	case 8:
 
 			ll_sort(pArrayListJugador, jug_compararPorNombre, 0);
+			printf("Ya se ordeno...\n");
+
 			break;
 
 	}
@@ -445,8 +455,6 @@ int controller_guardarJugadoresModoBinario(char* path , LinkedList* pArrayListJu
 	FILE* pFile;
 	char confederacion[21];
 	char confederacionSeleccion[21];
-	//char paisJugador[31];
-	//char paisConfederacion[31];
 	int idSeleccion;
 	int seleccion;
 
@@ -479,11 +487,9 @@ int controller_guardarJugadoresModoBinario(char* path , LinkedList* pArrayListJu
 
 				if((strcmp(confederacionSeleccion, confederacion)==0) && seleccion == idSeleccion)
 				{
-					//printf("confederacion  %s - paisConfederacion %s// idSeleccion %d - seleccion %d \n",confederacion, confederacionSeleccion, idSeleccion, seleccion);
 
 				fwrite(unJugador, sizeof(Jugador), 1, pFile);
 
-				//jug_print(unJugador);
 				break;
 				}
 			}
@@ -556,14 +562,12 @@ int controller_editarSeleccion(LinkedList* pArrayListSeleccion)
  */
 int controller_listarSelecciones(LinkedList* pArrayListSeleccion)
 {
-	//printf("hola\n");
 
 	Seleccion* listaSelecciones=NULL;
 	int len;
 	if(pArrayListSeleccion != NULL)
 	{
 		len = ll_len(pArrayListSeleccion);
-		//printf("\n%-5s %-20s %-10s %-10s\n\n","ID","PAIS","CONFEDERACION","CONVOCADOS");
 		for(int i=0;i<len;i++)
 		{
 			listaSelecciones=ll_get(pArrayListSeleccion, i);
@@ -651,6 +655,8 @@ int controller_guardarSeleccionesModoTexto(char* path , LinkedList* pArrayListSe
 int controller_mostrarMenuListar(LinkedList* pArrayListJugador, LinkedList* pArrayListSeleccion)
 {
 	int opcion;
+	int lenJugadores = ll_len(pArrayListJugador);
+	int lenSelecciones = ll_len(pArrayListSeleccion);
 	getInt(&opcion,
 			"1. MOSTRAR JUGADORES\n"
 			"2. MOSTRAR SELECCIONES\n"
@@ -666,15 +672,30 @@ int controller_mostrarMenuListar(LinkedList* pArrayListJugador, LinkedList* pArr
 	switch(opcion)
 	{
 	case 1:
+		if(lenJugadores>0)
+		{
 		 controller_listarJugadores(pArrayListJugador);
+		}else
+		{
+			printf("No cargo los jugadores!!!\n");
+		}
 		break;
 	case 2:
+		if(lenSelecciones>0)
+		{
 		 controller_listarSelecciones(pArrayListSeleccion);
+		}			printf("No cargo las selecciones, el punto 9 SOLO carga jugadores!!!\n");
+
 	break;
 	case 3:
-	 controller_listarJugadoresConvocados(pArrayListJugador);
-	 //controller_listarJugadores(pArrayListJugador);
+		if(lenJugadores>0)
+		{
+	 controller_listarJugadoresConvocados(pArrayListJugador,  pArrayListSeleccion);
+		}else
+		{
+			printf("No cargo los jugadores!!!\n");
 
+		}
 
 
 	break;
@@ -686,24 +707,50 @@ int controller_mostrarMenuListar(LinkedList* pArrayListJugador, LinkedList* pArr
 
 }
 
-int controller_listarJugadoresConvocados(LinkedList* pArrayListJugador)
+int controller_listarJugadoresConvocados(LinkedList* pArrayListJugador, LinkedList* pArrayListSeleccion)
 {
 		Jugador* listaJugadores=NULL;
+		Seleccion* listaSelecciones=NULL;
+
 		int len;
+		int lenSelecciones;
 		int idSeleccion;
+		int seleccion;
+		char confederacion[21];
+
+
 		if(pArrayListJugador != NULL)
 		{
+
+
 			len = ll_len(pArrayListJugador);
-			//printf("\n%-5s %-20s %-10s %-10s\n\n","ID","NOMBRE","POSICION","NACIONALIDAD");
+			lenSelecciones = ll_len(pArrayListSeleccion);
+
 			for(int i=0;i<len;i++)
 			{
 
 				listaJugadores=ll_get(pArrayListJugador, i);
 				jug_getIdSeleccion(listaJugadores, &idSeleccion);
 
-				if(idSeleccion>0)
+				for(int j=0;j<lenSelecciones;j++)
 				{
-				 jug_print(listaJugadores);
+					listaSelecciones=ll_get(pArrayListSeleccion, j);
+					selec_getId(listaSelecciones, &seleccion);
+
+					if(idSeleccion == seleccion)
+					{
+						printf("××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××\n");
+						printf("%10s %5s %30s %20s %25s %17s %20s\n", "CONFEDERACION", "ID", "NOMBRE", "POSICION", "NACIONALIDAD", "EDAD", "ID SELECCION");
+						selec_getConfederacion(listaSelecciones, confederacion);
+
+						printf("%-14s ", confederacion);
+						jug_print(listaJugadores);
+
+						//printf("××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××\n");
+
+
+
+					}
 				}
 
 
@@ -711,7 +758,6 @@ int controller_listarJugadoresConvocados(LinkedList* pArrayListJugador)
 			}
 		}
 
-		//printf("------------------------------");
 
 
 	return 1;
