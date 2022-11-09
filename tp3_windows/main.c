@@ -5,6 +5,8 @@
 #include "Jugador.h"
 #include "Funciones.h"
 
+
+//Mastrapasqua Tomas D
 int main()
 {
 	setbuf(stdout,NULL);
