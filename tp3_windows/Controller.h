@@ -42,7 +42,7 @@ int controller_agregarJugador(LinkedList* pArrayListJugador);//2
  * @param LinkedList* pArrayListJugador: recive la lista de jugadores
  * @return 1
  */
-int controller_editarJugador(LinkedList* pArrayListJugador);//3
+int controller_editarJugador(LinkedList* pArrayListJugador, LinkedList* pArrayListSeleccion);//3
 
 /**
  * @fn int controller_removerJugador(LinkedList*)
@@ -60,9 +60,10 @@ int controller_removerJugador(LinkedList* pArrayListJugador, LinkedList* pArrayL
  * @brief muestra los jugadores
  *
  * @param LinkedList* pArrayListJugador: recive la lista de jugadores
+ * @param LinkedList* pArrayListSeleccion
  * @return 1
  */
-int controller_listarJugadores(LinkedList* pArrayListJugador);//5
+int controller_listarJugadores(LinkedList* pArrayListJugador, LinkedList* pArrayListSeleccion);//5
 
 
 /**

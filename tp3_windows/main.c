@@ -97,7 +97,7 @@ int main()
    			 if(banderaJugador==1)
    			 {
 
-   		 controller_editarJugador(listaJugadores);
+   		 controller_editarJugador(listaJugadores, listaSelecciones);
    			 }else
    			 {
    				 printf("Agregue un jugador!!!\n");
@@ -121,8 +121,13 @@ int main()
 
    		 case 5:
 
-
+   			 if(banderaJugador == 1 && banderaSeleccion == 1)
+   			 {
    			 controller_mostrarMenuListar(listaJugadores, listaSelecciones);
+   			 }else
+   			 {
+   				 printf("No cargo los jugadores y selecciones!!!");
+   			 }
 
 
    			 break;
@@ -136,6 +141,9 @@ int main()
    			 {
    			 controller_mostrarMenuConvocar(listaJugadores,listaSelecciones);
 
+   			 }else
+   			 {
+   				 printf("Cargue los jugadores y selecciones para poder convocar!!!");
    			 }
 
 
@@ -147,6 +155,9 @@ int main()
    			 if(banderaJugador==1 && banderaSeleccion==1)
    			 {
    			 controller_ordenarJugadores(listaJugadores, listaSelecciones);
+   			 }else
+   			 {
+   				 printf("Cargue los jugadores para poder ordenar!!!");
    			 }
 
 
@@ -157,6 +168,9 @@ int main()
    			 if(banderaJugador == 1)
    			 {
    			   controller_guardarJugadoresModoBinario("jugadoresConvocados.bin", listaJugadores, listaSelecciones);
+   			 }else
+   			 {
+   				 printf("Cargue los jugadores");
    			 }
 
 
@@ -166,8 +180,14 @@ int main()
 
    		 case 9:
 
+   			 if(banderaJugador == 0 && banderaSeleccion == 0)
+   			 {
    			 banderaJugador=controller_cargarJugadoresDesdeBinario("jugadoresConvocados.bin", listaJugadores);
-   			banderaSeleccion = 1;
+			 banderaSeleccion = controller_cargarSeleccionesDesdeTexto("selecciones.csv", listaSelecciones);//algunas funciones piden el uso de la seleccion
+   			 }else
+   			 {
+   				 printf("Ya cargo los jugadores y selecciones!!!");
+   			 }
 
 
 
@@ -180,6 +200,9 @@ int main()
    			 controller_guardarJugadoresModoTexto("jugadores.csv", listaJugadores);
 
    			 controller_guardarSeleccionesModoTexto("selecciones.csv", listaSelecciones);
+   			 }else
+   			 {
+   				 printf("Cargue los jugadores para poder guardar!!!");
    			 }
 
 

@@ -143,7 +143,7 @@ int controller_agregarJugador(LinkedList* pArrayListJugador)
  * \return int
  *
  */
-int controller_editarJugador(LinkedList* pArrayListJugador)
+int controller_editarJugador(LinkedList* pArrayListJugador, LinkedList* pArrayListSeleccion)
 {
 	int id;
 	int index = -1;
@@ -153,7 +153,7 @@ int controller_editarJugador(LinkedList* pArrayListJugador)
 
 	   if(pArrayListJugador!=NULL)
 	   {
-		   controller_listarJugadores(pArrayListJugador);
+		   controller_listarJugadores(pArrayListJugador,  pArrayListSeleccion);
 
 		   getInt(&id, "Ingrese el ID del jugador para modificar: ", "ERROR, Ingrese el ID del jugador para modificar: ",1, 20000);
 			len=ll_len(pArrayListJugador);
@@ -205,13 +205,13 @@ int controller_removerJugador(LinkedList* pArrayListJugador, LinkedList* pArrayL
 	 int index = -1;
 	 int len;
 	 int lenSeleccion;
-	 Jugador* unJugador;
-	 Seleccion* unaSeleccion;
+	 Jugador* unJugador=NULL;
+	 Seleccion* unaSeleccion=NULL;
 
 
 	   if(pArrayListJugador!=NULL)
 	   {
-		   controller_listarJugadores(pArrayListJugador);
+		   controller_listarJugadores(pArrayListJugador,  pArrayListJugador);
 
 		   getInt(&id, "Ingrese el ID del jugador para eliminar: ", "ERROR, Ingrese el ID del jugador para eliminar: ",1, 20000);
 			len=ll_len(pArrayListJugador);
@@ -265,20 +265,58 @@ int controller_removerJugador(LinkedList* pArrayListJugador, LinkedList* pArrayL
  * \return int
  *
  */
-int controller_listarJugadores(LinkedList* pArrayListJugador)
+int controller_listarJugadores(LinkedList* pArrayListJugador, LinkedList* pArrayListSeleccion)
 {
 		Jugador* listaJugadores=NULL;
+		Seleccion* listaSelecciones=NULL;
 		int len;
+		int lenSelecciones;
+		int idSeleccion;
+		int seleccion;
 		if(pArrayListJugador != NULL)
 		{
 			len = ll_len(pArrayListJugador);
-			printf("\n%-5s %-20s %-20s %-20s %-20s %-20s\n\n","ID","NOMBRE","EDAD","POSICION","NACIONALIDAD","ID SELECCION");
+			lenSelecciones = ll_len(pArrayListSeleccion);
 			for(int i=0;i<len;i++)
 			{
 				listaJugadores=ll_get(pArrayListJugador, i);
+				jug_getIdSeleccion(listaJugadores,&idSeleccion);
+				printf("******************************************************************************************************************************************\n");
 
-
+				if(idSeleccion==0)
+				{
+					printf("%5s %30s %20s %25s %17s %20s\n", "ID", "NOMBRE", "POSICION", "NACIONALIDAD", "EDAD", "ID SELECCION");
 				 jug_print(listaJugadores);
+
+				}else
+				{
+					for(int j=0;j<lenSelecciones;j++)
+					{
+						listaSelecciones=ll_get(pArrayListSeleccion, j);
+
+						selec_getId(listaSelecciones, &seleccion);
+
+						if(seleccion == idSeleccion)
+						{
+							printf("%5s %30s %20s %25s %17s %20s\n", "ID", "NOMBRE", "POSICION", "NACIONALIDAD", "EDAD", "ID SELECCION");
+
+							jug_print(listaJugadores);
+							printf("\n%5s %20s %20s %20s\n","ID","PAIS","CONFEDERACION","CONVOCADOS");
+
+							selec_print(listaSelecciones);
+
+
+
+
+						}
+
+
+
+					}
+
+				}
+
+
 
 
 
@@ -674,7 +712,7 @@ int controller_mostrarMenuListar(LinkedList* pArrayListJugador, LinkedList* pArr
 	case 1:
 		if(lenJugadores>0)
 		{
-		 controller_listarJugadores(pArrayListJugador);
+		 controller_listarJugadores(pArrayListJugador, pArrayListSeleccion);
 		}else
 		{
 			printf("No cargo los jugadores!!!\n");
@@ -818,7 +856,7 @@ int controller_convocarJugadores(LinkedList* pArrayListJugador, LinkedList* pArr
 	lenSelecciones = ll_len(pArrayListSeleccion);
 
 
-	controller_listarJugadores(pArrayListJugador);
+	controller_listarJugadores(pArrayListJugador,  pArrayListSeleccion);
 
 	getInt(&id, "Ingrese el id del jugador: ","Ingrese el id del jugador: ",1,1000);
 
@@ -888,7 +926,7 @@ int controller_quitarJugadorDeSeleccion(LinkedList* pArrayListJugador, LinkedLis
 		lenSelecciones = ll_len(pArrayListSeleccion);
 
 
-		controller_listarJugadores(pArrayListJugador);
+		controller_listarJugadores(pArrayListJugador,  pArrayListJugador);
 
 		getInt(&id, "Ingrese el id del jugador para sacarlo de la seleccion: ","Ingrese el id del jugador para sacarlo de la seleccion: ",1,1000);
 

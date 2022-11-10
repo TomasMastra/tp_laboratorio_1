@@ -230,7 +230,6 @@ void selec_disminuirConvocados(Seleccion* this, int cantidad)
 {
 
 	int convocados;
-	printf("cantidad: %d\n", cantidad);
 
 	if(cantidad==0)
 	{
