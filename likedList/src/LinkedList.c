@@ -385,9 +385,19 @@ int ll_isEmpty(LinkedList* this)
  */
 int ll_push(LinkedList* this, int index, void* pElement)
 {
-    int returnAux = -1;
-
-    return returnAux;
+	int returnAux = -1;
+	 int len = ll_len(this);
+	 if(this != NULL)
+	 {
+		 if(index > -1 && index < len + 1)
+		  {
+		  if(!addNode(this, index, pElement))
+			{
+			  returnAux = 0;
+			}
+		  }
+	 }
+	 return returnAux;
 }
 
 
@@ -401,9 +411,20 @@ int ll_push(LinkedList* this, int index, void* pElement)
  */
 void* ll_pop(LinkedList* this,int index)
 {
-    void* returnAux = NULL;
-
-    return returnAux;
+	void* returnAux = NULL;
+	int len = ll_len(this);
+	if(this != NULL)
+	{
+		if(index > - 1 && index < len)
+		{
+			returnAux = ll_get(this, index);
+			if(ll_remove(this, index))
+			{
+				returnAux = NULL;
+			}
+		}
+	}
+	return returnAux;
 }
 
 
@@ -417,9 +438,25 @@ void* ll_pop(LinkedList* this,int index)
 */
 int ll_contains(LinkedList* this, void* pElement)
 {
-    int returnAux = -1;
-
-    return returnAux;
+	int returnAux = -1;
+	int i;
+	int len = ll_len(this);
+	Node* pNodeAux;
+	if(this != NULL)
+	{
+		pNodeAux = NULL;
+		returnAux = 0;
+		for(i=0 ; i<len ; i++)
+		{
+			pNodeAux = ll_get(this, i);
+			if(pNodeAux == pElement)
+			{
+				returnAux = 1;
+				break;
+			}
+		}
+	}
+	return returnAux;
 }
 
 /** \brief  Determina si todos los elementos de la lista (this2)
@@ -433,9 +470,26 @@ int ll_contains(LinkedList* this, void* pElement)
 */
 int ll_containsAll(LinkedList* this,LinkedList* this2)
 {
-    int returnAux = -1;
+	int returnAux = -1;
+	int i;
+	int len = ll_len(this2);
+	Node* pAuxNode;
 
-    return returnAux;
+	if(this != NULL && this2 != NULL)
+	{
+		returnAux = 1;
+		pAuxNode = NULL;
+		for(i=0 ; i<len ; i++)
+		{
+			pAuxNode = ll_get(this2, i);
+			if(!ll_contains(this, pAuxNode))
+			{
+				returnAux = 0;
+				break;
+			}
+		}
+	}
+	return returnAux;
 }
 
 /** \brief Crea y retorna una nueva lista con los elementos indicados
