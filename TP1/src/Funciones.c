@@ -27,12 +27,17 @@ int getInt(int* integer, char* message, char* messageError, int min, int max)
 		scanf("%s", number);
 		auxNumber = atoi(number);
 
-		while((auxNumber < min || auxNumber > max) && (validateInt(number)==0))
+		//printf("number: %d\n", auxNumber);
+		while(!validateInt(number) || (auxNumber < min || auxNumber > max))
 		{
+// (!isNumber(numAux) && !validateSpace(message)) || (numIntAux>max||numIntAux<min)
+
+			//printf("HOLA?????\n");
 			printf("%s", messageError);
 			fflush(stdin);
 			scanf("%s", number);
 			auxNumber = atoi(number);
+
 
 		}
 
@@ -64,10 +69,13 @@ int validateInt(char* integer)
 				{
 					ret = 0;
 
+				}else
+				{
+
+
 				}
 
 			}
-
 
 		return ret;
 }
@@ -233,7 +241,7 @@ int validateLetters(char *string)
 
 			validateCaps[i] = tolower(string[i]);
 
-			if((validateCaps[i] < 97 && validateCaps[i]!=32) || (validateCaps[i] > 122 && validateCaps[i]!=32))
+			if((validateCaps[i] < 97  && validateCaps[i]!=32) || (validateCaps[i] > 122  && validateCaps[i]!=32))
 			{
 				ret = 0;
 
@@ -246,7 +254,25 @@ int validateLetters(char *string)
 }
 
 
-
+int isValidFecha(int dia, int mes, int anio)
+{
+    int ret  = -1;
+    if(dia > 0 && mes > 0 &&  anio > 0)
+    {
+        if(((mes == 1 || mes == 3 || mes == 5 || mes == 7 || mes == 8 || mes == 10 || mes == 12) &&
+                (dia > 0 && dia <= 31)) ||
+                ((mes == 4 || mes == 6 || mes == 9 || mes == 11) &&
+                 (dia > 0 && dia <= 30)) ||
+                ((mes == 2 && (anio % 4) == 0) &&
+                 (dia > 0 && dia <= 29)) ||
+                ((mes == 2 && (anio % 4) != 0) &&
+                 (dia > 0 && dia <= 28)))
+        {
+            ret = 1;
+        }
+    }
+    return ret;
+}
 
 
 #endif /* FUNCIONES_C_ */

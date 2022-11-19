@@ -97,6 +97,7 @@ int validateInt(char* integer);
 
 int getName(char *string, char *message, char *messageError, int max);
 
+int isValidFecha(int dia, int mes, int anio);
 
 
 

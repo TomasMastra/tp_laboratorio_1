@@ -9,14 +9,8 @@
 #define EQUIPO_H_
 
 
-/**
- * @brief recive las cantidades de cada posicion de jugador y la cantidad de cada confederacion paar inicialzarlas en 0
- *
- * @param int cantidadPosicion[] : Cantidad de jugadores que estan en una poscion, por ejemplo cantidadPosicion[0] seria arquero
- * @param int cantidadConfederacion[] : Cantidad de jugadores que estan en una confederacion, por ejemplo cantidadConfederacion[4] seria Conmebol (Como no hay ningun jugador ingresado cuando se incia el programa es necesario inicalzarla en 0)
- * @return ret 1 si salio bien y -1 su hubo un error
- */
-int inicializarCantidadYCosto(int cantidadPosicion[], int cantidadConfederacion[]);//
+
+
 
 
 /**
@@ -49,7 +43,7 @@ int cargarJugadores(int* cantidadJugadores, int cantidadPosicion[],int cantidadC
  *
  * @return ret 1 si salio bien
  */
-int pedirPosicion(int cantidadPosicion[]);//
+int pedirPosicion(int *cantidadArqueros, int *cantidadDefensores, int *cantidadDelanteros, int *cantidadMediocampistas);//
 
 /**
  * @brief pide el ingreso de la confederacion del jugador
@@ -58,7 +52,10 @@ int pedirPosicion(int cantidadPosicion[]);//
  *
  * @return ret 1 si salio bien
  */
-int pedirConfederacion(int cantidadConfederacion[]);//
+int pedirConfederacion(int *cantidadConcacaf, int *cantidadConmebol, int *cantidadUefa, int *cantidadCaf, int *cantidadAfc, int *cantidadOfc);//
+
+
+int pedirNumero();
 
 
 /**
@@ -69,7 +66,7 @@ int pedirConfederacion(int cantidadConfederacion[]);//
  *
  * @return ret 1 si salio bien y -1 su hubo un error
  */
-int calcularCantidad(int cantidadPosicion[], int opcion);//
+int calcularCantidad(int* cantidadArquero, int* cantidadDefensor, int* cantidadDelantero, int* cantidadMediocampista, int opcion);//
 
 /**
  * @brief recive la cantidad de cada posicion y la posicion ingresada
@@ -79,7 +76,7 @@ int calcularCantidad(int cantidadPosicion[], int opcion);//
  *
  * @return ret 1 si salio bien y -1 su hubo un error
  */
-int validarPosicion(int cantidadPosicion[],int opcion);//
+int validarPosicion(int* cantidadArqueros,int* cantidadDefensores, int* cantidadDelanteros, int* cantidadMediocampistas,int opcion);//
 
 /**
  * @brief recive la cantidad de jugadores ingresados de cada confederacion y la confederacion ingresada
@@ -89,7 +86,7 @@ int validarPosicion(int cantidadPosicion[],int opcion);//
  *
  * @return ret 1 si salio bien y -1 su hubo un error
  */
-int validarConfederacion(int cantidadConfederacion[],int opcion);//
+int validarConfederacion(int* cantidadAfc, int* cantidadUefa,int* cantidadCaf, int* cantidadOfc, int* cantidadConmebol, int* cantidadConcacaf, int opcion);//
 
 
 /**
@@ -106,7 +103,7 @@ int validarConfederacion(int cantidadConfederacion[],int opcion);//
  *
  * @return ret 1 si la mayoria es de Europa, -1 si no se cumple
  */
-int calcularPromedioJugadores(int cantidadConfederacion[], float* promedioConmebol, float* promedioAfc,  float* promedioCaf, float* promedioConcacaf,float* promedioUefa,float* promedioOfc);
+int calcularPromedioJugadores(int cantidadConcacaf, int cantidadConmebol, int cantidadUefa, int cantidadAfc, int cantidadCaf, int cantidadOfc, float* promedioConmebol, float* promedioAfc,  float* promedioCaf, float* promedioConcacaf, float* promedioUefa, float* promedioOfc);
 
 /**
  * @brief recive el costo de mantenimiento y los suma
