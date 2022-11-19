@@ -25,13 +25,19 @@ int ingresarCostos(float *costoHospedaje, float* costoComida, float* costoTransp
 	{
 
 
-	printf("Ingrese Costo de:\n"
-			"1. Hospedaje\n"
-			"2. Comida\n"
-			"3. Transporte\n"
-			"4. Volver al menu prncipal: ");
-
-	scanf("%d", &option);
+	getInt(&option,
+	"Ingrese Costo de:\n"
+	"1. Hospedaje\n"
+	"2. Comida\n"
+	"3. Transporte\n"
+	"4. Volver al menu principal: "
+	"Ingrese una opcion: ",
+	"ERROR, Ingrese Costo de:\n"
+	"1. Hospedaje\n"
+	"2. Comida\n"
+	"3. Transporte\n"
+	"4. Volver al menu principal: "
+	"Ingrese una opcion: ",1,4);
 	switch(option)
 	{
 	case 1:
@@ -41,6 +47,7 @@ int ingresarCostos(float *costoHospedaje, float* costoComida, float* costoTransp
 		{
 				*costoHospedaje=costo;
 				printf("El costo de hospedaje actualizado es: %.4f\n", *costoHospedaje);
+				ret=1;
 		}else
 		{
 			printf("El costo de hospedaje seguira siendo: %.4f\n", *costoHospedaje);
@@ -58,6 +65,7 @@ int ingresarCostos(float *costoHospedaje, float* costoComida, float* costoTransp
 		{
 				*costoComida=costo;
 				printf("El costo de comida actualizado es: %.4f\n", *costoComida);
+				ret=1;
 		}else
 		{
 			printf("El costo de comida seguira siendo: %.4f\n", *costoComida);
@@ -74,6 +82,7 @@ int ingresarCostos(float *costoHospedaje, float* costoComida, float* costoTransp
 		{
 				*costoTransporte=costo;
 				printf("El costo de transporte actualizado es: %.4f\n", *costoTransporte);
+				ret=1;
 		}else
 		{
 			printf("El costo de transporte seguira siendo: %.4f\n", *costoTransporte);
@@ -84,7 +93,6 @@ int ingresarCostos(float *costoHospedaje, float* costoComida, float* costoTransp
 
 
 	}
-	ret=1;
 	}while(option!=4);
 
 
@@ -126,7 +134,7 @@ int pedirPosicion(int* cantidadArqueros, int* cantidadDefensores, int* cantidadD
 				"Ingrese una opcion: ", 1, 4);
 
 	}
-	 calcularCantidad(cantidadArqueros, cantidadDefensores, cantidadDelanteros, cantidadMediocampistas, opcion);
+	 calcularCantidadPosicion(cantidadArqueros, cantidadDefensores, cantidadDelanteros, cantidadMediocampistas, opcion);
 
 	return opcion;
 }
@@ -151,14 +159,14 @@ int pedirConfederacion(int *cantidadConcacaf, int *cantidadConmebol, int *cantid
 			"5.Ofc\n"
 			"6.Uefa\n"
 			"Ingrese una opcion", 1,6);
-	 validarConfederacion(cantidadAfc, cantidadUefa,cantidadCaf, cantidadOfc, cantidadConmebol, cantidadConcacaf,  opcion);
+	 calcularCantidadConfederacion(cantidadAfc, cantidadUefa,cantidadCaf, cantidadOfc, cantidadConmebol, cantidadConcacaf,  opcion);
 
 
 
 	return opcion;
 }
 
-int validarConfederacion(int* cantidadAfc, int* cantidadUefa,int* cantidadCaf, int* cantidadOfc, int* cantidadConmebol, int* cantidadConcacaf, int opcion)
+int calcularCantidadConfederacion(int* cantidadAfc, int* cantidadUefa,int* cantidadCaf, int* cantidadOfc, int* cantidadConmebol, int* cantidadConcacaf, int opcion)
 {
 	int ret = -1;
 
@@ -205,7 +213,7 @@ int validarConfederacion(int* cantidadAfc, int* cantidadUefa,int* cantidadCaf, i
 	return ret;
 }
 
-int calcularCantidad(int* cantidadArqueros, int* cantidadDefensores, int* cantidadDelanteros, int* cantidadMediocampistas, int opcion)
+int calcularCantidadPosicion(int* cantidadArqueros, int* cantidadDefensores, int* cantidadDelanteros, int* cantidadMediocampistas, int opcion)
 {
 	int ret=-1;
 
@@ -317,26 +325,25 @@ int calcularPromedioJugadores(int cantidadConcacaf, int cantidadConmebol, int ca
 	totalJugadores=(float)cantidadUefa+cantidadConmebol+cantidadConcacaf+cantidadCaf+cantidadAfc+cantidadOfc;
 
 
+
+	if(totalJugadores>0)
+	{
 	*promedioAfc  = (float)cantidadAfc/totalJugadores;
 	*promedioCaf = (float) cantidadCaf/totalJugadores;
 	*promedioConcacaf=(float)cantidadConcacaf/totalJugadores;
 	*promedioConmebol=(float)cantidadConmebol/totalJugadores;
 	*promedioUefa=(float)cantidadUefa/totalJugadores;
 	*promedioOfc=(float)cantidadOfc/totalJugadores;
+	}
 
 
 
-
-
-
-
-
-	if(cantidadUefa>(totalJugadores - cantidadUefa))
+	if(cantidadUefa>(totalJugadores-cantidadUefa))//si uefa representa mas del 50% de jugadores, es decir mas de la mitad
 	{
 		ret = 1;
 	}
 
-
+	printf("Ya se calculo todo!!!\n\n");
 	return ret;
 }
 
@@ -375,6 +382,9 @@ int mostrarDatos(float promedioConmebol, float promedioAfc,  float promedioCaf, 
 	if(aumento==1)//en caso de que sea la mayoria de europa muestra, caso contrario no muestra
 	{
 		printf("Con aumento del 35º/º: %.2f\n", aumentoEuropa);
+	}else
+	{
+		printf("No hay aumento del 35º/º, debido a que la mayoria de los jugadores no son de uefa\n");
 	}
 
 	printf("-------------------------\n");

@@ -23,17 +23,7 @@
  */
 int ingresarCostos(float* costoHospedaje, float* costoComida, float* costoTransporte);//
 
-/**
- * @brief pide el ingreso de datos al usuario en su respectiva funcion con su validacion
- *
- * @param int cantidadJugadores: total de jugadores
- * @param int cantidadPosicion[] : Cantidad de jugadores que estan en una posicion para poder sumarle 1 en la posicion en la que se ingresa el jugador
- * @param int cantidadConfederacion[] : Cantidad de jugadores que estan en una confederacion para poder sumarle 1 en la confederacion en la que se ingresa el jugador
- * @param
- *
- * @return ret 1 si salio bien y -1 su hubo un error
- */
-int cargarJugadores(int* cantidadJugadores, int cantidadPosicion[],int cantidadConfederacion[]);//
+
 
 
 /**
@@ -41,7 +31,7 @@ int cargarJugadores(int* cantidadJugadores, int cantidadPosicion[],int cantidadC
  *
  * @param int cantidadPosicion[] : Cantidad de jugadores que estan en una posicion para poder sumarle 1 en la posicion en la que se ingresa el jugador
  *
- * @return ret 1 si salio bien
+ * @return ret la posicion
  */
 int pedirPosicion(int *cantidadArqueros, int *cantidadDefensores, int *cantidadDelanteros, int *cantidadMediocampistas);//
 
@@ -50,11 +40,16 @@ int pedirPosicion(int *cantidadArqueros, int *cantidadDefensores, int *cantidadD
  *
  * @param int cantidadConfederacion[] : Cantidad de jugadores que estan en una confederacion para poder sumarle 1 en la posicion en la que se ingresa el jugador
  *
- * @return ret 1 si salio bien
+ * @return ret la confederacion
  */
 int pedirConfederacion(int *cantidadConcacaf, int *cantidadConmebol, int *cantidadUefa, int *cantidadCaf, int *cantidadAfc, int *cantidadOfc);//
 
-
+/**
+ * @brief pide el ingreso de el numero de camiseta
+ *
+ *
+ * @return ret el numero de camiseta
+ */
 int pedirNumero();
 
 
@@ -66,7 +61,7 @@ int pedirNumero();
  *
  * @return ret 1 si salio bien y -1 su hubo un error
  */
-int calcularCantidad(int* cantidadArquero, int* cantidadDefensor, int* cantidadDelantero, int* cantidadMediocampista, int opcion);//
+int calcularCantidadPosicion(int* cantidadArquero, int* cantidadDefensor, int* cantidadDelantero, int* cantidadMediocampista, int opcion);//
 
 /**
  * @brief recive la cantidad de cada posicion y la posicion ingresada
@@ -86,11 +81,11 @@ int validarPosicion(int* cantidadArqueros,int* cantidadDefensores, int* cantidad
  *
  * @return ret 1 si salio bien y -1 su hubo un error
  */
-int validarConfederacion(int* cantidadAfc, int* cantidadUefa,int* cantidadCaf, int* cantidadOfc, int* cantidadConmebol, int* cantidadConcacaf, int opcion);//
+int calcularCantidadConfederacion(int* cantidadAfc, int* cantidadUefa,int* cantidadCaf, int* cantidadOfc, int* cantidadConmebol, int* cantidadConcacaf, int opcion);//
 
 
 /**
- * @brief recive el promedio y devuelve por referencia el promedio de cada confederacion
+ * @brief recive el promedio y devuelve por referencia el promedio de cada confederacion, se valida por cero
  *
 
  * @param int cantidadConfederacion[]

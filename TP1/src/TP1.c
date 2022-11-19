@@ -87,8 +87,7 @@ int main(void) {
 		 	        switch(option)
 		 	        {
 		 	            case 1:
-		 	            	 ingresarCostos(&costoHospedaje, &costoComida, &costoTransporte);
-		 	            	 flagCosto = 1;
+		 	            	 flagCosto=ingresarCostos(&costoHospedaje, &costoComida, &costoTransporte);
 
 
 		 	            break;
@@ -108,8 +107,6 @@ int main(void) {
 
 		 	            		 aumento=calcularPromedioJugadores(cantidadConcacaf, cantidadConmebol, cantidadUefa, cantidadAfc, cantidadCaf, cantidadOfc, &promedioConmebol, &promedioAfc,  &promedioCaf, &promedioConcacaf,&promedioUefa,&promedioOfc);
 		 	            		 calcularMantenimiento(&mantenimiento,  costoHospedaje,  costoComida,  costoTransporte,  aumento, &aumentoEuropa);
-
-
 
 		 	            		flagCalculos=1;
 
