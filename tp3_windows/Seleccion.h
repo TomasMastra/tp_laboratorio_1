@@ -22,16 +22,7 @@ Seleccion* selec_newParametros(char* idStr,char* paisStr,char* confederacionStr,
  */
 void selec_delete(Seleccion* this);
 
-/**
- * @fn int selec_setId(Seleccion*,int);
 
- * @brief setea el id a la estructura de Seleccion
- *
- * @param Seleccion*: recive un puntero a la seleccion
- * @param int id: recive el id
- * @return 1 si salio bien y 0 si salio mal
- */
-int selec_setId(Seleccion* this,int id);
 
 /**
  * @fn int selec_getId(Seleccion*,int*);
@@ -46,17 +37,6 @@ int selec_getId(Seleccion* this,int* id);
 
 
 /**
- * @fn int selec_setPais(Seleccion*,char*);
-
- * @brief setea el pais a la estructura de Seleccion
- *
- * @param Seleccion*: recive un puntero a la seleccion
- * @param char* pais: recive un puntero con el pais
- * @return 1 si salio bien y 0 si salio mal
- */
-int selec_setPais(Seleccion* this,char* pais);
-
-/**
  * @fn int selec_getPais(Seleccion*,char*);
 
  * @brief recive y devuelve el pais
@@ -67,16 +47,6 @@ int selec_setPais(Seleccion* this,char* pais);
  */
 int selec_getPais(Seleccion* this,char* pais);
 
-/**
- * @fn int selec_setConfederacion(Seleccion*,char*);
-
- * @brief setea la confederacion a la estructura de Seleccion
- *
- * @param Seleccion*: recive un puntero a la seleccion
- * @param char* confederacion: recive puntero con la confederacion
- * @return 1 si salio bien y 0 si salio mal
- */
-int selec_setConfederacion(Seleccion* this,char* confederacion);
 
 /**
  * @fn int selec_getConfederacion(Seleccion*,char*);

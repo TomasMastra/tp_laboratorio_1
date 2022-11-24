@@ -40,10 +40,14 @@ Seleccion* selec_newParametros(char* idStr,char* paisStr,char* confederacionStr,
 			id = atoi(idStr);
 			convocados = atoi(convocadosStr);
 
-			selec_setId(unaSeleccion, id);
-			selec_setPais(unaSeleccion, paisStr);
-			selec_setConfederacion(unaSeleccion, confederacionStr);
-			selec_setConvocados(unaSeleccion, convocados);
+
+
+			strcpy(unaSeleccion->pais, paisStr);
+			strcpy(unaSeleccion->confederacion, confederacionStr);
+			unaSeleccion->id = id;
+			unaSeleccion->convocados = convocados;
+
+
 
 
 			/*if((jug_setId(unJugador, id)==0) || 	(jug_setNombreCompleto(unJugador, nombreCompletoStr)==0)  || (jug_setPosicion(unJugador, posicionStr)==0) || (jug_setNacionalidad(unJugador, nacionalidadStr)==0)	|| 	(jug_setEdad(unJugador, edad)==0) || 	(jug_setIdSeleccion(unJugador, idSeleccion)==0))
@@ -59,21 +63,7 @@ Seleccion* selec_newParametros(char* idStr,char* paisStr,char* confederacionStr,
 
 
 
-int selec_setId(Seleccion* this,int id)
-{
-	int ret;
-	ret = 0;
-	if(this!=NULL && id>0)
-	{
 
-		this->id = id;
-		//printf("%d\n",this->id);
-		ret = 1;
-	}
-
-
-	return ret;
-}
 int selec_getId(Seleccion* this,int* id)
 {
 	int ret;
@@ -88,22 +78,7 @@ int selec_getId(Seleccion* this,int* id)
 
 }
 
-int selec_setPais(Seleccion* this,char* pais)
-{
-	int ret;
-	ret = 0;
 
-
-	if(this!=NULL && pais>0)
-	{
-
-		strcpy(this->pais, pais);
-
-		ret = 1;
-	}
-
-	return ret;
-}
 int selec_getPais(Seleccion* this,char* pais)
 {
 	int ret;
@@ -121,21 +96,7 @@ int selec_getPais(Seleccion* this,char* pais)
 
 
 
-int selec_setConfederacion(Seleccion* this,char* confederacion)
-{
-	int ret;
-	ret = 0;
 
-
-	if(this!=NULL && confederacion>0)
-	{
-		strcpy(this->confederacion, confederacion);
-
-		ret = 1;
-	}
-
-	return ret;
-}
 int selec_getConfederacion(Seleccion* this,char* confederacion)
 {
 	int ret;
