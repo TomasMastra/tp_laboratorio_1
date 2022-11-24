@@ -31,7 +31,7 @@ int controller_cargarJugadoresDesdeBinario(char* path , LinkedList* pArrayListJu
  * @param LinkedList* pArrayListJugador: recive la lista de jugadores
  * @return 1
  */
-int controller_agregarJugador(LinkedList* pArrayListJugador);//2
+int controller_agregarJugador(LinkedList* pArrayListJugador, LinkedList* pArrayListSeleccion);//2
 
 
 /**
@@ -203,4 +203,19 @@ int controller_convocarJugadores(LinkedList* pArrayListJugador, LinkedList* pArr
  * @return 1
  */
 int controller_quitarJugadorDeSeleccion(LinkedList* pArrayListJugador, LinkedList* pArrayListSeleccion);
+
+
+/**
+ * @fn int controller_mostrarConfederaciones(LinkedList*)
+
+ * @brief pide el ingreso de un jugador y si esta convocado se lo saca de esa seleccion
+ *
+ * @param LinkedList* pArrayListSeleccion: recive la lista de selecciones
+ * @return 1 si salio todo bien y -1 si no pudo mostar nada
+ */
+int controller_mostrarConfederaciones(LinkedList* pArrayListSeleccion);
+
+
+int controller_validarNacionalidad(LinkedList* pArrayListSeleccion, char* nacionalidadIngresada);
+
 

@@ -26,6 +26,7 @@ Jugador* jug_newParametros(char* idStr,char* nombreCompletoStr,char* edadStr, ch
 		int id;
 		int edad;
 		int idSeleccion;
+		//int retorno=0;
 
 		if(idStr!=NULL &&  nombreCompletoStr!=NULL && edadStr!=NULL && posicionStr!=NULL &&  nacionalidadStr!=NULL &&  idSeleccionStr!=NULL)
 		{
@@ -49,10 +50,7 @@ Jugador* jug_newParametros(char* idStr,char* nombreCompletoStr,char* edadStr, ch
 
 
 
-			/*if((jug_setId(unJugador, id)==0) || 	(jug_setNombreCompleto(unJugador, nombreCompletoStr)==0)  || (jug_setPosicion(unJugador, posicionStr)==0) || (jug_setNacionalidad(unJugador, nacionalidadStr)==0)	|| 	(jug_setEdad(unJugador, edad)==0) || 	(jug_setIdSeleccion(unJugador, idSeleccion)==0))
-			{
-				 //jug_delete(unJugador);
-			}*/
+
 		}
 
 
@@ -67,7 +65,6 @@ int jug_setId(Jugador* this,int id)
 	{
 
 		this->id = id;
-		//printf("%d\n",this->id);
 		ret = 1;
 	}
 
@@ -97,7 +94,6 @@ int jug_setNombreCompleto(Jugador* this,char* nombre)
 	if(this!=NULL && nombre>0)
 	{
 		strcpy(this->nombreCompleto, nombre);
-		//printf("%s\n",this->nombreCompleto);
 
 		ret = 1;
 	}
@@ -243,7 +239,6 @@ void jug_print(Jugador* this)
 	char posicion[50];
 	char nacionalidad[31];
 	int edad;
-	int idSeleccion;
 
 	if(this!=NULL)
 	{
@@ -252,22 +247,22 @@ void jug_print(Jugador* this)
 		jug_getNacionalidad(this, nacionalidad);
 		jug_getPosicion(this, posicion);
 		jug_getEdad(this, &edad);
-		jug_getIdSeleccion(this, &idSeleccion);
 
 
-		printf("%5d %30s %20s %20s %20d %20d\n", id, nombreCompleto, posicion, nacionalidad, edad, idSeleccion);
+		printf("%20d %30s %30s %30s %30d\n", id, nombreCompleto, posicion, nacionalidad, edad);
 	}
 
 
 }
 
 
-void jug_printSubmenuModify(Jugador* this)
+int jug_printSubmenuModify(Jugador* this)
 {
 	int auxInt;
 	char auxString[30];
 	int opcion;
 	int confirmar;
+	int ret = -1;
 
 
 	getInt(&opcion,
@@ -300,6 +295,8 @@ void jug_printSubmenuModify(Jugador* this)
 		{
 			jug_setNombreCompleto(this, auxString);
 			printf("Se modifico correctamente el nombre!!!\n");
+			ret = 1;
+
 		}
 
 		break;
@@ -313,6 +310,8 @@ void jug_printSubmenuModify(Jugador* this)
 	{
 		jug_setEdad(this, auxInt);
 		printf("Se modifico correctamente la edad!!!\n");
+		ret = 1;
+
 	}
 
 			break;
@@ -326,6 +325,8 @@ void jug_printSubmenuModify(Jugador* this)
 			{
 				jug_setNacionalidad(this, auxString);
 				printf("Se modifico correctamente la nacionalidad!!!\n");
+				ret = 1;
+
 			}
 
 			break;
@@ -339,13 +340,14 @@ void jug_printSubmenuModify(Jugador* this)
 			{
 				jug_setPosicion(this, auxString);
 				printf("Se modifico correctamente la posicion!!!\n");
+				ret = 1;
 			}
 
 			break;
 	}
 
 
-
+	return  ret;
 }
 
 int jug_compararPorEdad(void* p1, void* p2)
@@ -403,6 +405,10 @@ int jug_compararPorNacionalidad(void* p1, void* p2)
 	jug_getNacionalidad(otroJugador,otraNacionalidad);
 
 	compara = strcmp(nacionalidad, otraNacionalidad);
+		/*if(compara == 1 || compara == -1)
+		{
+		printf("comparacion %d // p1: %s - p2: %s\n",compara, nacionalidad,otraNacionalidad);
+		}*/
 	}
 
 
@@ -464,23 +470,40 @@ int jug_obtenerId(char* path)
 	if(path!=NULL && pFile!=NULL)
 	{
 
-
 		fscanf(pFile,"%[^\n]", id);
 		printf("id: %s \n",id);
-
-
 
 	}
 	ultimoId=atoi(id);
 	fclose(pFile);
 	pFile=NULL;
 
-
-
-
-
-
 	return ultimoId;
 
+}
+
+
+
+
+int jug_validarPosicion(char* posicionIngresada, LinkedList* listaJugadores)
+{
+	int ret = -1;
+	Jugador* unJugador;
+	char posicion[41];
+
+	for(int i=0;i<ll_len(listaJugadores);i++)
+	{
+		unJugador = ll_get(listaJugadores, i);
+		jug_getPosicion(unJugador, posicion);
+
+		if(strcmp(posicionIngresada, posicion)==0)
+		{
+			ret = 1;
+			break;
+		}
+	}
+
+
+	return ret;
 }
 

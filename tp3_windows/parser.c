@@ -24,10 +24,11 @@ int parser_JugadorFromText(FILE* pFile , LinkedList* pArrayListJugador)
 
 	Jugador* unJugador;
 	int cantidad;
+	int ret=-1;
 
 	if(pFile != NULL && pArrayListJugador != NULL)
 	{
-
+		ret = 1;
 		fscanf(pFile,"%[^,], %[^,], %[^,], %[^,], %[^,], %[^\n]", id, nombre, edad, posicion, nacionalidad,idSeleccion);//scaneo falso para que se saltee la primera linea
 		while(!feof(pFile))
 		{
@@ -46,16 +47,16 @@ int parser_JugadorFromText(FILE* pFile , LinkedList* pArrayListJugador)
 
 
 
-
-
-
+			}else
+			{
+				jug_delete(unJugador);
 			}
 		}
 
 
 	}
 
-	return 1;
+	return ret;
 }
 
 /** \brief Parsea los datos de los jugadores desde el archivo binario.
@@ -67,37 +68,45 @@ int parser_JugadorFromText(FILE* pFile , LinkedList* pArrayListJugador)
  */
 int parser_JugadorFromBinary(FILE* pFile , LinkedList* pArrayListJugador)
 {
-
-
 	Jugador* unJugador;
+	int ret = -1;
 
 
-	if(pFile != NULL && pArrayListJugador != NULL)
-	{
-
-		while(!feof(pFile))
+		if(pFile != NULL && pArrayListJugador != NULL)
 		{
-			unJugador = jug_new();
+			printf("%20s %30s %30s %30s %30s\n","ID", "NOMBRE", "POSICION", "NACIONALIDAD", "EDAD");
 
-			 fread(unJugador, sizeof(Jugador), 1, pFile);
+			while(!feof(pFile))
+			{
+				unJugador = jug_new();
+
+			  if(fread(unJugador, sizeof(Jugador), 1, pFile)==1)
+			  {
+					ll_add(pArrayListJugador, unJugador);
+
+					jug_print(unJugador);
+					ret = 1;
+
+			  }else
+			  {
+				  jug_delete(unJugador);
+			  }
+
 			 if(feof(pFile))
-
 			 {
 				 break;
 			 }
 
-			ll_add(pArrayListJugador, unJugador);
 
 
+
+			}
 
 		}
-		fclose(pFile);
-
-	}
 
 
 
-return 1;
+	return ret;
 }
 
 
@@ -118,6 +127,7 @@ int parser_SeleccionFromText(FILE* pFile , LinkedList* pArrayListSeleccion)
 
 		Seleccion* unaSeleccion;
 		int cantidad;
+		int ret=-1;
 
 		if(pFile != NULL && pArrayListSeleccion != NULL)
 		{
@@ -142,9 +152,9 @@ int parser_SeleccionFromText(FILE* pFile , LinkedList* pArrayListSeleccion)
 				}
 			}
 
-
+			ret=1;
 		}
 
-		return 1;
+		return ret;
 }
 

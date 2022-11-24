@@ -145,5 +145,5 @@ int selec_compararPorConfederacion(void* p1, void* p2);
  */
 void selec_disminuirConvocados(Seleccion* this, int cantidad);
 
-
+int selec_validarConfederacion(char* confederacionIngresada, LinkedList* listaSelecciones);
 #endif // selec_H_INCLUDED

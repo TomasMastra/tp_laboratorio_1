@@ -249,3 +249,27 @@ void selec_disminuirConvocados(Seleccion* this, int cantidad)
 	}
 
 }
+
+
+int selec_validarConfederacion(char* confederacionIngresada, LinkedList* listaSelecciones)
+{
+	int ret = -1;
+	Seleccion* unaSeleccion;
+	char confederacion[41];
+
+	for(int i=0;i<ll_len(listaSelecciones);i++)
+	{
+		unaSeleccion = ll_get(listaSelecciones, i);
+		selec_getConfederacion(unaSeleccion, confederacion);
+
+		if(strcmp(confederacionIngresada, confederacion)==0)
+		{
+			ret = 1;
+			break;
+		}
+	}
+
+
+	return ret;
+}
+

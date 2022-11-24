@@ -84,7 +84,7 @@ int main()
    			 if(banderaJugador==1)
    			 {
 
-   				 controller_agregarJugador(listaJugadores);
+   				 controller_agregarJugador(listaJugadores, listaSelecciones);
    			 }else
    			 {
    				 printf("Agregue un jugador!!!\n");
@@ -126,7 +126,7 @@ int main()
    			 controller_mostrarMenuListar(listaJugadores, listaSelecciones);
    			 }else
    			 {
-   				 printf("No cargo los jugadores y selecciones!!!");
+   				 printf("No cargo los jugadores y selecciones!!!\n");
    			 }
 
 
@@ -143,7 +143,7 @@ int main()
 
    			 }else
    			 {
-   				 printf("Cargue los jugadores y selecciones para poder convocar!!!");
+   				 printf("Cargue los jugadores y selecciones para poder convocar!!!\n");
    			 }
 
 
@@ -157,7 +157,7 @@ int main()
    			 controller_ordenarJugadores(listaJugadores, listaSelecciones);
    			 }else
    			 {
-   				 printf("Cargue los jugadores para poder ordenar!!!");
+   				 printf("Cargue los jugadores para poder ordenar!!!\n");
    			 }
 
 
@@ -170,7 +170,7 @@ int main()
    			   controller_guardarJugadoresModoBinario("jugadoresConvocados.bin", listaJugadores, listaSelecciones);
    			 }else
    			 {
-   				 printf("Cargue los jugadores");
+   				 printf("Cargue los jugadores!!!\n");
    			 }
 
 
@@ -183,10 +183,12 @@ int main()
    			 if(banderaJugador == 0 && banderaSeleccion == 0)
    			 {
    			 banderaJugador=controller_cargarJugadoresDesdeBinario("jugadoresConvocados.bin", listaJugadores);
-			 banderaSeleccion = controller_cargarSeleccionesDesdeTexto("selecciones.csv", listaSelecciones);//algunas funciones piden el uso de la seleccion
+			 banderaSeleccion = controller_cargarSeleccionesDesdeTexto("selecciones.csv", listaSelecciones);
+
+
    			 }else
    			 {
-   				 printf("Ya cargo los jugadores y selecciones!!!");
+   				 printf("Ya cargo los jugadores y selecciones!!!\n");
    			 }
 
 
@@ -198,11 +200,10 @@ int main()
    			 if(banderaSeleccion == 1 || banderaJugador == 1)
    			 {
    			 controller_guardarJugadoresModoTexto("jugadores.csv", listaJugadores);
-
    			 controller_guardarSeleccionesModoTexto("selecciones.csv", listaSelecciones);
    			 }else
    			 {
-   				 printf("Cargue los jugadores para poder guardar!!!");
+   				 printf("Cargue los jugadores para poder guardar!!!\n");
    			 }
 
 
@@ -215,6 +216,8 @@ int main()
    			 if(opcion==0)
    			 {
    				 opcion = 12;
+
+   				 printf("Saliendo...\n");
    			 }
 
 

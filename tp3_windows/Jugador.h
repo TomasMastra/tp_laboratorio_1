@@ -205,7 +205,7 @@ void jug_print(Jugador* this);
  * @param Jugador*: puntero a un jugador
  * @return void
  */
-void jug_printSubmenuModify(Jugador* this);
+int jug_printSubmenuModify(Jugador* this);
 
 /**
  * @fn int jug_compararPorNombre(void*, void*);
@@ -259,5 +259,9 @@ int jug_obtenerId(char* path);
  * @return ret 1
  */
 int jug_guardarUltimaId(char* path,  int id);
+
+int jug_validarNacionalidad(Jugador* this, char* nacionalidad, LinkedList* listaJugadores);
+
+int jug_validarPosicion(char* posicion, LinkedList* listaJugadores);
 
 #endif // jug_H_INCLUDED
