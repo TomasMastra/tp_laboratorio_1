@@ -476,46 +476,24 @@ int controller_ordenarJugadores(LinkedList* pArrayListJugador, LinkedList* pArra
 int controller_guardarJugadoresModoTexto(char* path , LinkedList* pArrayListJugador)
 {
 	int len;
-		Jugador* unJugador;
 
 		FILE* pFile;
-		pFile = fopen(path, "w");
-		int id;
-		char nombreCompleto[40];
-		int edad;
-		char posicion[40];
-		char nacionalidad[30];
-		int idSeleccion;
+
 		int ret = -1;
 
 		len = ll_len(pArrayListJugador);
 
-			if(path!=NULL && pArrayListJugador!=NULL && pFile!=NULL && len > 0)
+			if(pArrayListJugador!=NULL &&  len > 0)
 			{
-
-					fprintf(pFile, "%s", "id,nombreCompleto,edad,posicion,nacionalidad,idSelecion\n");
-					for(int i=0;i<len;i++)
-					{
-
-						unJugador=ll_get(pArrayListJugador, i);
-
-						jug_getId(unJugador, &id);
-						jug_getNombreCompleto(unJugador, nombreCompleto);
-						jug_getNacionalidad(unJugador, nacionalidad);
-						jug_getPosicion(unJugador, posicion);
-						jug_getEdad(unJugador, &edad);
-						jug_getIdSeleccion(unJugador, &idSeleccion);
-						fprintf(pFile, "%d,%s,%d,%s,%s,%d\n",id,nombreCompleto,edad,posicion,nacionalidad,idSeleccion);
-
-
-					}
-					printf("Cantidad de jugadores guardados: %d\n",len);
-
+				pFile = fopen(path, "w");
+				if(path!=NULL && pFile!=NULL)
+				{
+				 parser_SaveJugadorFromText(pFile , pArrayListJugador);
 
 					fclose(pFile);
 					pFile=NULL;
-					unJugador=NULL;
 					ret = 1;
+				}
 
 
 			}else
@@ -536,21 +514,13 @@ int controller_guardarJugadoresModoTexto(char* path , LinkedList* pArrayListJuga
  */
 int controller_guardarJugadoresModoBinario(char* path , LinkedList* pArrayListJugador, LinkedList* pArrayListSeleccion)
 {
-	Jugador* unJugador;
-		Seleccion* unaSeleccion;
-		int len;
-		int lenSelecciones;
 		FILE* pFile;
 		char confederacion[21];
-		char confederacionSeleccion[21];
-		int idSeleccion;
-		int seleccion;
 		int ret = -1;
 
 
 
-		len = ll_len(pArrayListJugador);
-		lenSelecciones= ll_len(pArrayListSeleccion);
+
 
 		 controller_mostrarConfederaciones(pArrayListSeleccion);
 
@@ -566,30 +536,8 @@ int controller_guardarJugadoresModoBinario(char* path , LinkedList* pArrayListJu
 
 			if(pFile!=NULL)
 			{
-				for(int i=0;i<len;i++)
-				{
-					unJugador=ll_get(pArrayListJugador, i);
-					jug_getIdSeleccion(unJugador, &idSeleccion);
+				 parser_SaveJugadorFromBinary(pFile , pArrayListJugador,  pArrayListSeleccion, confederacion);
 
-
-					for(int j=0;j<lenSelecciones;j++)
-					{
-						unaSeleccion=ll_get(pArrayListSeleccion, j);
-
-						selec_getConfederacion(unaSeleccion, confederacionSeleccion);
-						selec_getId(unaSeleccion, &seleccion);
-
-
-						if((strcmp(confederacionSeleccion, confederacion)==0) && seleccion == idSeleccion)
-						{
-
-						fwrite(unJugador, sizeof(Jugador), 1, pFile);
-
-						break;
-						}
-					}
-					ret = 1;
-				}
 			}
 
 			fclose(pFile);
@@ -696,13 +644,9 @@ int controller_ordenarSelecciones(LinkedList* pArrayListSeleccion)
 int controller_guardarSeleccionesModoTexto(char* path , LinkedList* pArrayListSeleccion)
 {
 	int len;
-	Seleccion* unaSeleccion;
 
 	FILE* pFile;
-	int id;
-	char pais[20];
-	char confederacion[20];
-	int convocados;
+
 	int ret = -1;
 
 
@@ -715,27 +659,11 @@ int controller_guardarSeleccionesModoTexto(char* path , LinkedList* pArrayListSe
 			if(pFile!=NULL)
 			{
 
-				fprintf(pFile, "%s", "id,pais,confederacion,convocados\n");
-				for(int i=0;i<len;i++)
-				{
+				 parser_SaveSeleccionFromText(pFile , pArrayListSeleccion);
 
-					unaSeleccion=ll_get(pArrayListSeleccion, i);
-
-					selec_getId(unaSeleccion, &id);
-					selec_getPais(unaSeleccion, pais);
-					selec_getConfederacion(unaSeleccion, confederacion);
-					selec_getConvocados(unaSeleccion, &convocados);
-
-					fprintf(pFile, "%d,%s,%s,%d\n",id,pais,confederacion,convocados);
-
-
-
-				}
-				printf("Cantidad de selecciones guardadas: %d\n",len);
 
 				fclose(pFile);
 				pFile=NULL;
-				unaSeleccion=NULL;
 				ret = 1;
 			}
 
